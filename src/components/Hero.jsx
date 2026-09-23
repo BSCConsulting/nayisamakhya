@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 export default function Hero({ lang = 'te' }) {
   const isTelugu = lang === 'te'
 
@@ -8,8 +10,8 @@ export default function Hero({ lang = 'te' }) {
   const support = isTelugu
     ? 'ప్రజల కోసం, ప్రజలతో — సేవ, సమాచారం, సంఘటన ఒకే చోట.'
     : 'For the people, with the people — services, information, and collective action in one place.'
-  const primaryCta = isTelugu ? 'సేవలు చూడండి' : 'Explore services'
-  const secondaryCta = isTelugu ? 'మీ స్వరం ఇవ్వండి' : 'Share your voice'
+  const primaryCta = isTelugu ? 'కోదాడ మండలం చూడండి' : 'Open Kodada mandal'
+  const secondaryCta = isTelugu ? 'సర్వే ప్రారంభించండి' : 'Start survey'
 
   return (
     <section id="home" className="py-20 text-center px-4">
@@ -35,22 +37,22 @@ export default function Hero({ lang = 'te' }) {
         </p>
 
         <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
-          <a
-            href="#services"
+          <Link
+            to="/suryapet/kodad"
             className={`bg-[#18181B] text-white hover:bg-[#27272A] rounded-full px-7 py-3 text-sm font-medium transition-all ${
               isTelugu ? 'font-telugu' : 'font-ui'
             }`}
           >
             {primaryCta}
-          </a>
-          <a
-            href="#voice"
+          </Link>
+          <Link
+            to="/suryapet/kodad/survey"
             className={`bg-white border border-[#EBE8E0] text-[#18181B] hover:bg-[#F4F2EB] rounded-full px-7 py-3 text-sm font-medium transition-all ${
               isTelugu ? 'font-telugu' : 'font-ui'
             }`}
           >
             {secondaryCta}
-          </a>
+          </Link>
         </div>
       </div>
     </section>

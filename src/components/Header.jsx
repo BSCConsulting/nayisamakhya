@@ -1,41 +1,50 @@
+import { Link, NavLink } from 'react-router-dom'
+
 export default function Header({ lang = 'te', onLangChange }) {
   const isTelugu = lang === 'te'
 
   const navItems = isTelugu
     ? [
-        { href: '#home', label: 'హోమ్' },
-        { href: '#services', label: 'సేవలు' },
-        { href: '#voice', label: 'స్వరం' },
+        { to: '/', label: 'హోమ్', end: true },
+        { to: '/suryapet/kodad', label: 'మండలం' },
+        { to: '/suryapet/kodad/survey', label: 'సర్వే' },
       ]
     : [
-        { href: '#home', label: 'Home' },
-        { href: '#services', label: 'Services' },
-        { href: '#voice', label: 'Voice' },
+        { to: '/', label: 'Home', end: true },
+        { to: '/suryapet/kodad', label: 'Mandal' },
+        { to: '/suryapet/kodad/survey', label: 'Survey' },
       ]
 
   return (
     <header className="sticky top-4 z-50 px-4">
       <nav className="max-w-6xl mx-auto bg-[#FBFBF9]/80 backdrop-blur-md border border-[#EBE8E0] rounded-full px-6 py-3 flex items-center justify-between gap-4">
-        <a
-          href="#home"
+        <Link
+          to="/"
           className={`text-sm font-semibold tracking-tight text-[#18181B] shrink-0 ${
             isTelugu ? 'font-telugu' : 'font-ui'
           }`}
         >
           {isTelugu ? 'నయి' : 'Nayi'}
-        </a>
+        </Link>
 
         <ul className="hidden sm:flex items-center gap-1">
           {navItems.map((item) => (
-            <li key={item.href}>
-              <a
-                href={item.href}
-                className={`px-3.5 py-1.5 rounded-full text-sm text-[#71717A] hover:text-[#18181B] hover:bg-[#F4F2EB] transition-colors ${
-                  isTelugu ? 'font-telugu' : 'font-ui'
-                }`}
+            <li key={item.to}>
+              <NavLink
+                to={item.to}
+                end={item.end}
+                className={({ isActive }) =>
+                  `px-3.5 py-1.5 rounded-full text-sm transition-colors ${
+                    isTelugu ? 'font-telugu' : 'font-ui'
+                  } ${
+                    isActive
+                      ? 'bg-[#18181B] text-white'
+                      : 'text-[#71717A] hover:text-[#18181B] hover:bg-[#F4F2EB]'
+                  }`
+                }
               >
                 {item.label}
-              </a>
+              </NavLink>
             </li>
           ))}
         </ul>

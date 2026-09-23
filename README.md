@@ -20,3 +20,12 @@ Open [http://127.0.0.1:43123](http://127.0.0.1:43123).
 
 - **Phase 1:** Design tokens, global styles, floating frosted `Header`, open warm-canvas `Hero`
 - **Phase 2:** `StrategicLoop` 5-column pipeline + editorial `Dashboard` (metrics, welfare, education, dignity) powered by `src/data/mockData.js`
+- **Phase 3:** Mandal hub `/suryapet/kodad` + 6-step mobile `SurveyWizard` at `/suryapet/kodad/survey`
+
+## Routes
+
+| Path | View |
+|------|------|
+| `/` | Home (Hero, Strategic Loop, Dashboard) |
+| `/suryapet/kodad` | Kodada Mandal Samakhya Hub |
+| `/suryapet/kodad/survey` | 6-step enumeration wizard |

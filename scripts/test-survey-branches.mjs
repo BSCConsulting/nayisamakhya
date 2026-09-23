@@ -37,8 +37,7 @@ async function main() {
   // ——— TEST B first while on step 3, then continue to step 4 ———
   await advanceToStep3(page)
 
-  const memberCardsBefore = await page.locator('li').filter({ has: page.locator('text=/^0\\d$/') }).count()
-  // Count by mono step markers inside roster
+  // Count roster rows by mono step markers
   const rowsBefore = await page.locator('ul.space-y-4 > li').count()
   const totalBeforeText = await page.locator('text=మొత్తం సభ్యులు').locator('..').locator('.font-mono').innerText()
 

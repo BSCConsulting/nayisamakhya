@@ -6,12 +6,12 @@ export default function Header({ lang = 'te', onLangChange }) {
   const navItems = isTelugu
     ? [
         { to: '/', label: 'హోమ్', end: true },
-        { to: '/suryapet/kodad', label: 'మండలం' },
+        { to: '/suryapet/kodad', label: 'మండలం', end: true },
         { to: '/suryapet/kodad/survey', label: 'సర్వే' },
       ]
     : [
         { to: '/', label: 'Home', end: true },
-        { to: '/suryapet/kodad', label: 'Mandal' },
+        { to: '/suryapet/kodad', label: 'Mandal', end: true },
         { to: '/suryapet/kodad/survey', label: 'Survey' },
       ]
 

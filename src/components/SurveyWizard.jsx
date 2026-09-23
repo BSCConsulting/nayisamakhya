@@ -5,7 +5,11 @@ import { kodadaMandal, surveyOptions } from '../data/mandalData.js'
 const TOTAL_STEPS = 6
 
 function emptyMember() {
-  return { id: crypto.randomUUID(), name: '', gender: 'M', age: '', role: 'head' }
+  const id =
+    typeof crypto !== 'undefined' && crypto.randomUUID
+      ? crypto.randomUUID()
+      : `m-${Date.now()}-${Math.random().toString(16).slice(2)}`
+  return { id, name: '', gender: 'M', age: '', role: 'head' }
 }
 
 function createInitialForm() {
@@ -103,7 +107,7 @@ function PillChip({ active, onClick, children, lang }) {
   )
 }
 
-function Counter({ label, value, onChange, lang }) {
+function Counter({ label, value, onChange, lang, min = 0 }) {
   return (
     <div className="bg-[#FBFBF9] border border-[#EBE8E0] rounded-xl p-4">
       <p className={`text-sm text-[#71717A] mb-3 ${lang === 'te' ? 'font-telugu' : 'font-ui'}`}>
@@ -113,7 +117,7 @@ function Counter({ label, value, onChange, lang }) {
         <button
           type="button"
           aria-label="Decrease"
-          onClick={() => onChange(Math.max(0, value - 1))}
+          onClick={() => onChange(Math.max(min, value - 1))}
           className="w-9 h-9 rounded-full border border-[#EBE8E0] bg-white text-[#18181B] hover:bg-[#F4F2EB] text-lg leading-none"
         >
           −
@@ -189,11 +193,17 @@ export default function SurveyWizard({ lang = 'te' }) {
   const setField = (key, value) => setForm((prev) => ({ ...prev, [key]: value }))
 
   const syncMembers = (count) => {
+    const safeCount = Math.max(1, count)
     setForm((prev) => {
       const next = [...prev.members]
-      while (next.length < count) next.push(emptyMember())
-      while (next.length > count) next.pop()
-      return { ...prev, totalMembers: count, members: next }
+      while (next.length < safeCount) next.push(emptyMember())
+      while (next.length > safeCount) next.pop()
+      return {
+        ...prev,
+        totalMembers: safeCount,
+        totalVoters: Math.min(prev.totalVoters, safeCount),
+        members: next,
+      }
     })
   }
 
@@ -257,7 +267,11 @@ export default function SurveyWizard({ lang = 'te' }) {
       )
     }
     if (step === 2) return Boolean(form.gramPanchayat)
-    if (step === 3) return form.members.every((row) => row.name.trim())
+    if (step === 3) {
+      return (
+        form.members.length >= 1 && form.members.every((row) => row.name.trim().length > 0)
+      )
+    }
     if (step === 4) {
       if (!form.incomeSource) return false
       const branch = incomeBranch(form.incomeSource)
@@ -370,7 +384,7 @@ export default function SurveyWizard({ lang = 'te' }) {
   return (
     <section className="px-4 py-6 md:py-10 pb-16">
       <div className="max-w-xl mx-auto">
-        <div className="sticky top-4 z-40 mb-4 flex justify-center">
+        <div className="sticky top-20 z-40 mb-4 flex justify-center">
           <div className="inline-flex items-center gap-3 rounded-full border border-[#EBE8E0] bg-[#FBFBF9]/90 backdrop-blur-md px-4 py-2 text-xs text-[#71717A]">
             <span>📍 Suryapet &gt; Kodad Mandal</span>
             <span className="font-mono metric-tnum text-[#18181B]">
@@ -554,15 +568,19 @@ export default function SurveyWizard({ lang = 'te' }) {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <Counter
                     lang={lang}
+                    min={1}
                     label={isTelugu ? 'మొత్తం సభ్యులు' : 'Total Members'}
                     value={form.totalMembers}
                     onChange={syncMembers}
                   />
                   <Counter
                     lang={lang}
+                    min={0}
                     label={isTelugu ? 'మొత్తం ఓటర్లు' : 'Total Voters'}
                     value={form.totalVoters}
-                    onChange={(v) => setField('totalVoters', v)}
+                    onChange={(v) =>
+                      setField('totalVoters', Math.min(v, form.totalMembers))
+                    }
                   />
                 </div>
 

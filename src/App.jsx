@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import Header from './components/Header.jsx'
 import Hero from './components/Hero.jsx'
+import StrategicLoop from './components/StrategicLoop.jsx'
+import Dashboard from './components/Dashboard.jsx'
 
 export default function App() {
   const [lang, setLang] = useState('te')
@@ -10,8 +12,8 @@ export default function App() {
       <Header lang={lang} onLangChange={setLang} />
       <main>
         <Hero lang={lang} />
-        {/* Dashboard and survey sections intentionally untouched in Phase 1 */}
-        <div id="services" className="sr-only" aria-hidden="true" />
+        <StrategicLoop lang={lang} />
+        <Dashboard lang={lang} />
         <div id="voice" className="sr-only" aria-hidden="true" />
       </main>
     </div>

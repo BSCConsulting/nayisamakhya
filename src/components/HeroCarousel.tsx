@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { useLanguageStore } from "@/lib/store/preferences";
@@ -17,7 +18,7 @@ const slides = [
       title: "Community Empowerment",
       body: "Mandal services, welfare, and collective voice — one authoritative portal.",
     },
-    tone: "from-[#3f2a1d]/80 via-[#18181B]/55 to-transparent",
+    tone: "from-[#3f2a1d]/70 via-[#121417]/40 to-transparent",
   },
   {
     id: "heritage",
@@ -31,7 +32,7 @@ const slides = [
       title: "Bajantri Heritage",
       body: "Dignity, pensions, and cultural protection for artisan lineages.",
     },
-    tone: "from-[#4a1c0a]/80 via-[#18181B]/50 to-transparent",
+    tone: "from-[#4a1c0a]/70 via-[#121417]/40 to-transparent",
   },
   {
     id: "scholars",
@@ -45,16 +46,28 @@ const slides = [
       title: "Next-Gen Scholars",
       body: "BC study circles, scholarships, and coaching pathways for youth.",
     },
-    tone: "from-[#1c1917]/85 via-[#292524]/45 to-transparent",
+    tone: "from-[#1c1917]/75 via-[#121417]/35 to-transparent",
   },
 ] as const;
 
 const stalwarts = [
-  { name: "Karpoori Thakur", role: { te: "సామాజిక న్యాయం", en: "Social Justice" } },
-  { name: "Sant Sena Maharaj", role: { te: "ఆధ్యాత్మిక సేవ", en: "Spiritual Service" } },
+  {
+    name: "Karpoori Thakur",
+    role: { te: "సామాజిక న్యాయం", en: "Social Justice" },
+    portrait:
+      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=200",
+  },
+  {
+    name: "Sant Sena Maharaj",
+    role: { te: "ఆధ్యాత్మిక సేవ", en: "Spiritual Service" },
+    portrait:
+      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=200",
+  },
   {
     name: "Dr. Sheik Chinna Moulana",
     role: { te: "నాదస్వర విద్వాంసుడు", en: "Nadaswaram Maestro" },
+    portrait:
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200",
   },
 ] as const;
 
@@ -75,7 +88,16 @@ export function HeroCarousel() {
   const copy = slide[lang];
 
   return (
-    <section className="relative overflow-hidden border-b border-line bg-[#1c1917]">
+    <section className="relative overflow-hidden border-b border-white/5 bg-gradient-to-b from-[#18181B] to-[#121417]">
+      <div
+        className="pointer-events-none absolute inset-0 opacity-40"
+        style={{
+          background:
+            "radial-gradient(ellipse 60% 50% at 20% 40%, rgb(194 65 12 / 0.18), transparent), radial-gradient(ellipse 40% 40% at 85% 20%, rgb(255 255 255 / 0.06), transparent)",
+        }}
+        aria-hidden
+      />
+
       <div className="relative mx-auto grid min-h-[22rem] max-w-7xl lg:min-h-[28rem] lg:grid-cols-[1.4fr_0.9fr]">
         <div className="relative px-4 py-10 sm:px-6 sm:py-14 lg:py-16">
           <AnimatePresence mode="wait">
@@ -91,7 +113,9 @@ export function HeroCarousel() {
           </AnimatePresence>
 
           <div className="relative z-[1] max-w-xl">
-            <p className={`text-xs font-semibold uppercase tracking-[0.18em] text-[#fdba74] ${lang === "te" ? "font-telugu normal-case tracking-normal" : ""}`}>
+            <p
+              className={`text-xs font-semibold uppercase tracking-[0.18em] text-[#fdba74] ${lang === "te" ? "font-telugu normal-case tracking-normal" : ""}`}
+            >
               {copy.kicker}
             </p>
             <h1
@@ -121,25 +145,34 @@ export function HeroCarousel() {
           </div>
         </div>
 
-        <aside className="relative z-[1] border-t border-white/10 bg-black/25 px-4 py-8 backdrop-blur-sm sm:px-6 lg:border-l lg:border-t-0 lg:py-14">
+        <aside className="relative z-[1] border-t border-white/10 bg-white/[0.03] px-4 py-8 backdrop-blur-sm sm:px-6 lg:border-l lg:border-t-0 lg:py-14">
           <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#fdba74]">
             {lang === "te" ? "స్ఫూర్తి స్థంభాలు" : "Guiding Stalwarts"}
           </p>
-          <ul className="mt-5 space-y-4">
+          <ul className="mt-5 space-y-2">
             {stalwarts.map((person) => (
-              <li
-                key={person.name}
-                className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 p-3"
-              >
-                <span className="flex h-12 w-12 items-center justify-center rounded-full border border-[#C2410C]/40 bg-[#C2410C]/20 font-serif text-lg text-[#fdba74]">
-                  {person.name.charAt(0)}
-                </span>
-                <span>
-                  <span className="block text-sm font-semibold text-white">{person.name}</span>
-                  <span className={`block text-xs text-zinc-300 ${lang === "te" ? "font-telugu" : ""}`}>
-                    {person.role[lang]}
+              <li key={person.name}>
+                <div className="flex items-center gap-3 rounded-xl p-3 transition-colors hover:bg-white/10">
+                  <span className="relative h-12 w-12 shrink-0 overflow-hidden rounded-full border border-white/20 shadow-md">
+                    <Image
+                      src={person.portrait}
+                      alt={person.name}
+                      fill
+                      sizes="48px"
+                      className="object-cover"
+                    />
                   </span>
-                </span>
+                  <span className="min-w-0">
+                    <span className="block truncate text-sm font-semibold text-white">
+                      {person.name}
+                    </span>
+                    <span
+                      className={`block text-xs text-zinc-300 ${lang === "te" ? "font-telugu" : ""}`}
+                    >
+                      {person.role[lang]}
+                    </span>
+                  </span>
+                </div>
               </li>
             ))}
           </ul>

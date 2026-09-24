@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
-import { Link } from 'react-router-dom'
-import { kodadaMandal, surveyOptions } from '../data/mandalData.js'
+import { Link, Navigate, useParams } from 'react-router-dom'
+import { getMandal, surveyOptions } from '../data/mandalData.js'
 
 const TOTAL_STEPS = 6
 
@@ -174,9 +174,16 @@ function incomeBranch(sourceId) {
   return src?.branch || 'skip'
 }
 
+function refPrefix(m) {
+  const d = (m.districtSlug || 'xx').slice(0, 4).toUpperCase()
+  const md = (m.mandalSlug || 'xx').slice(0, 2).toUpperCase()
+  return `#${d}-${md}`
+}
+
 export default function SurveyWizard({ lang = 'te' }) {
+  const { district, mandal } = useParams()
+  const m = getMandal(district, mandal)
   const isTelugu = lang === 'te'
-  const m = kodadaMandal
   const [step, setStep] = useState(1)
   const [form, setForm] = useState(createInitialForm)
   const [submitted, setSubmitted] = useState(false)
@@ -289,7 +296,7 @@ export default function SurveyWizard({ lang = 'te' }) {
     setSubmitting(true)
     await new Promise((r) => setTimeout(r, 700))
     const seq = String(Math.floor(Math.random() * 9000) + 1000)
-    setRefId(`#SRPT-KD-${seq}`)
+    setRefId(`${refPrefix(m)}-${seq}`)
     setSubmitting(false)
     setSubmitted(true)
   }
@@ -301,6 +308,8 @@ export default function SurveyWizard({ lang = 'te' }) {
     setRefId('')
     setGpFilter('')
   }
+
+  if (!m) return <Navigate to="/mandals" replace />
 
   if (submitted) {
     return (
@@ -342,8 +351,8 @@ export default function SurveyWizard({ lang = 'te' }) {
               }`}
             >
               {isTelugu
-                ? '💬 కోదాడ మండల వాట్సాప్ గ్రూప్‌లో చేరండి'
-                : '💬 Join Kodada mandal WhatsApp group'}
+                ? `💬 ${m.mandalShortTe} మండల వాట్సాప్ గ్రూప్‌లో చేరండి`
+                : `💬 Join ${m.mandalEn} mandal WhatsApp group`}
             </a>
             <a
               href={m.telegramChannel}
@@ -371,7 +380,7 @@ export default function SurveyWizard({ lang = 'te' }) {
           </div>
 
           <Link
-            to="/suryapet/kodad"
+            to={m.path}
             className="inline-block mt-6 text-xs text-[#71717A] hover:text-[#18181B]"
           >
             {isTelugu ? '← మండల కేంద్రానికి తిరిగి' : '← Back to mandal hub'}
@@ -386,7 +395,9 @@ export default function SurveyWizard({ lang = 'te' }) {
       <div className="max-w-xl mx-auto">
         <div className="sticky top-20 z-40 mb-4 flex justify-center">
           <div className="inline-flex items-center gap-3 rounded-full border border-[#EBE8E0] bg-[#FBFBF9]/90 backdrop-blur-md px-4 py-2 text-xs text-[#71717A]">
-            <span>📍 Suryapet &gt; Kodad Mandal</span>
+            <span>
+              📍 {m.districtEn} &gt; {m.mandalEn} Mandal
+            </span>
             <span className="font-mono metric-tnum text-[#18181B]">
               Step {step} of {TOTAL_STEPS}
             </span>
@@ -500,10 +511,14 @@ export default function SurveyWizard({ lang = 'te' }) {
                 </h2>
                 <div className="flex flex-wrap gap-2">
                   <span className="rounded-full border border-[#EBE8E0] bg-[#F4F2EB] px-3 py-1 text-xs text-[#18181B]">
-                    {isTelugu ? 'జిల్లా: సూర్యాపేట' : 'District: Suryapet'}
+                    {isTelugu
+                      ? `జిల్లా: ${m.districtTe.replace(' జిల్లా', '')}`
+                      : `District: ${m.districtEn}`}
                   </span>
                   <span className="rounded-full border border-[#EBE8E0] bg-[#F4F2EB] px-3 py-1 text-xs text-[#18181B]">
-                    {isTelugu ? 'మండలం: కోదాడ' : 'Mandal: Kodad'}
+                    {isTelugu
+                      ? `మండలం: ${m.mandalShortTe}`
+                      : `Mandal: ${m.mandalEn}`}
                   </span>
                 </div>
                 <div>

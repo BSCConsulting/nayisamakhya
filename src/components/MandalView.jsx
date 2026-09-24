@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
-import { Link } from 'react-router-dom'
-import { kodadaMandal } from '../data/mandalData.js'
+import { Link, Navigate, useParams } from 'react-router-dom'
+import { getMandal } from '../data/mandalData.js'
 
 function SummaryChip({ label, value, mono }) {
   return (
@@ -16,22 +16,27 @@ function SummaryChip({ label, value, mono }) {
 }
 
 export default function MandalView({ lang = 'te' }) {
+  const { district, mandal } = useParams()
+  const m = getMandal(district, mandal)
   const isTelugu = lang === 'te'
-  const m = kodadaMandal
   const [gpQuery, setGpQuery] = useState('')
+
+  const whatsappHref = useMemo(() => {
+    if (!m) return '#'
+    const hub = isTelugu ? m.hubTitleTe : m.hubTitleEn
+    const text = encodeURIComponent(
+      isTelugu
+        ? `నమస్కారం ${m.officer.nameTe} గారు, ${hub} నుంచి సంప్రదిస్తున్నాను.`
+        : `Hello ${m.officer.nameEn}, contacting you from the ${hub}.`,
+    )
+    return `https://wa.me/${m.officer.phone}?text=${text}`
+  }, [isTelugu, m])
+
+  if (!m) return <Navigate to="/mandals" replace />
 
   const breadcrumb = isTelugu
     ? `${m.stateTe} • ${m.districtTe} • ${m.mandalTe}`
     : `${m.stateEn} • ${m.districtEn} • ${m.mandalEn}`
-
-  const whatsappHref = useMemo(() => {
-    const text = encodeURIComponent(
-      isTelugu
-        ? `నమస్కారం ${m.officer.nameTe} గారు, కోదాడ మండల సమాఖ్య కేంద్రం నుంచి సంప్రదిస్తున్నాను.`
-        : `Hello ${m.officer.nameEn}, contacting you from the Kodada Mandal Samakhya Hub.`,
-    )
-    return `https://wa.me/${m.officer.phone}?text=${text}`
-  }, [isTelugu, m.officer.nameEn, m.officer.nameTe, m.officer.phone])
 
   const filteredGps = m.gramPanchayats.filter((gp) => {
     const q = gpQuery.trim().toLowerCase()
@@ -47,6 +52,14 @@ export default function MandalView({ lang = 'te' }) {
     <section className="px-4 pb-20 pt-6">
       <div className="max-w-6xl mx-auto">
         <div className="mb-8">
+          <div className="flex flex-wrap items-center gap-2 mb-4">
+            <Link
+              to="/mandals"
+              className="text-xs text-[#71717A] hover:text-[#18181B] underline-offset-2 hover:underline"
+            >
+              {isTelugu ? '← అన్ని మండలాలు' : '← All mandals'}
+            </Link>
+          </div>
           <span className="inline-flex items-center rounded-full border border-[#EBE8E0] bg-white px-4 py-1.5 text-xs font-medium text-[#71717A] font-telugu tracking-wide">
             {breadcrumb}
           </span>

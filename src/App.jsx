@@ -4,6 +4,7 @@ import Header from './components/Header.jsx'
 import Hero from './components/Hero.jsx'
 import StrategicLoop from './components/StrategicLoop.jsx'
 import Dashboard from './components/Dashboard.jsx'
+import MandalDirectory from './components/MandalDirectory.jsx'
 import MandalView from './components/MandalView.jsx'
 import SurveyWizard from './components/SurveyWizard.jsx'
 
@@ -36,8 +37,12 @@ function AppShell() {
       <main>
         <Routes>
           <Route path="/" element={<HomePage lang={lang} />} />
-          <Route path="/suryapet/kodad" element={<MandalView lang={lang} />} />
-          <Route path="/suryapet/kodad/survey" element={<SurveyWizard lang={lang} />} />
+          <Route path="/mandals" element={<MandalDirectory lang={lang} />} />
+          <Route path="/:district/:mandal" element={<MandalView lang={lang} />} />
+          <Route
+            path="/:district/:mandal/survey"
+            element={<SurveyWizard lang={lang} />}
+          />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </main>

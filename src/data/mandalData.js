@@ -1,21 +1,69 @@
-/** Localized Kodada mandal hub + survey options */
+/** Multi-mandal registry: /{district}/{mandal} hubs + shared survey options */
 
-export const kodadaMandal = {
+const sharedTelegram = 'https://t.me/nayi_samakhya_demo'
+
+function buildMandal(cfg) {
+  const path = `/${cfg.districtSlug}/${cfg.mandalSlug}`
+  const surveyPath = `${path}/survey`
+  return {
+    ...cfg,
+    path,
+    surveyPath,
+    telegramChannel: sharedTelegram,
+    actions: [
+      {
+        id: 'cartel',
+        titleTe: `${cfg.mandalShortTe} సెలూన్ హోల్‌సేల్ కొనుగోలు గ్రూప్`,
+        titleEn: `${cfg.mandalEn} Salon Wholesale Buyer Cartel`,
+        descTe:
+          'కత్తెరలు, క్లిప్పర్లు, క్రీములు — డిస్ట్రిబ్యూటర్ రేట్లకు సమూహ కొనుగోలు.',
+        descEn:
+          'Aggregate bulk orders for scissors, clippers, and creams at wholesale distributor rates.',
+        ctaTe: 'కార్టెల్ వాట్సాప్ గ్రూప్‌లో చేరండి →',
+        ctaEn: 'Join cartel WhatsApp group →',
+        href: cfg.cartelWhatsapp,
+        external: true,
+      },
+      {
+        id: 'power',
+        titleTe: '250 యూనిట్ల ఉచిత విద్యుత్ సహాయ కేంద్రం',
+        titleEn: 'Free Power Grievance & DISCOM Desk',
+        descTe: `${cfg.mandalShortTe} సబ్-స్టేషన్ / MRO కార్యాలయంలో పెండింగ్ దరఖాస్తులు క్లియర్ చేయడానికి స్థానిక సహాయం.`,
+        descEn: `Local assistance to clear pending applications at the ${cfg.mandalEn} Sub-Station / MRO office.`,
+        ctaTe: 'వినతి పత్రం / గ్రీవెన్స్ ఫైల్ చేయండి →',
+        ctaEn: 'File petition / grievance →',
+        href: surveyPath,
+        external: false,
+      },
+      {
+        id: 'census',
+        titleTe: 'మండల సమగ్ర సర్వే నమోదు',
+        titleEn: 'Local Census Enumeration',
+        descTe: 'కుటుంబం, సెలూన్, భజంత్రి — 6 దశల మొబైల్ సర్వే ప్రారంభించండి.',
+        descEn: 'Start the 6-step mobile survey for households, salons, and artistes.',
+        ctaTe: 'సర్వే ప్రారంభించండి →',
+        ctaEn: 'Start survey →',
+        href: surveyPath,
+        external: false,
+        featured: true,
+      },
+    ],
+  }
+}
+
+export const kodadaMandal = buildMandal({
   stateTe: 'తెలంగాణ',
   stateEn: 'Telangana',
   districtSlug: 'suryapet',
   districtTe: 'సూర్యాపేట జిల్లా',
   districtEn: 'Suryapet',
   mandalSlug: 'kodad',
+  mandalShortTe: 'కోదాడ',
   mandalTe: 'కోదాడ మండలం',
   mandalEn: 'Kodada',
   hubTitleTe: 'కోదాడ మండల సమాఖ్య కేంద్రం',
   hubTitleEn: 'Kodada Mandal Samakhya Hub',
-  summary: {
-    salons: 42,
-    bajantri: 14,
-    freePowerPct: 78,
-  },
+  summary: { salons: 42, bajantri: 14, freePowerPct: 78 },
   officer: {
     nameTe: 'ఆర్. సురేష్ కుమార్',
     nameEn: 'R. Suresh Kumar',
@@ -27,48 +75,7 @@ export const kodadaMandal = {
     initials: 'సు',
   },
   whatsappGroup: 'https://chat.whatsapp.com/invite/kodada-nayi-demo',
-  telegramChannel: 'https://t.me/nayi_samakhya_demo',
   cartelWhatsapp: 'https://chat.whatsapp.com/invite/kodada-salon-cartel',
-  actions: [
-    {
-      id: 'cartel',
-      titleTe: 'కోదాడ సెలూన్ హోల్‌సేల్ కొనుగోలు గ్రూప్',
-      titleEn: 'Kodada Salon Wholesale Buyer Cartel',
-      descTe:
-        'కత్తెరలు, క్లిప్పర్లు, క్రీములు — డిస్ట్రిబ్యూటర్ రేట్లకు సమూహ కొనుగోలు.',
-      descEn:
-        'Aggregate bulk orders for scissors, clippers, and creams at wholesale distributor rates.',
-      ctaTe: 'కార్టెల్ వాట్సాప్ గ్రూప్‌లో చేరండి →',
-      ctaEn: 'Join cartel WhatsApp group →',
-      href: 'https://chat.whatsapp.com/invite/kodada-salon-cartel',
-      external: true,
-    },
-    {
-      id: 'power',
-      titleTe: '250 యూనిట్ల ఉచిత విద్యుత్ సహాయ కేంద్రం',
-      titleEn: 'Free Power Grievance & DISCOM Desk',
-      descTe:
-        'కోదాడ సబ్-స్టేషన్ / MRO కార్యాలయంలో పెండింగ్ దరఖాస్తులు క్లియర్ చేయడానికి స్థానిక సహాయం.',
-      descEn:
-        'Local assistance to clear pending applications at the Kodada Sub-Station / MRO office.',
-      ctaTe: 'వినతి పత్రం / గ్రీవెన్స్ ఫైల్ చేయండి →',
-      ctaEn: 'File petition / grievance →',
-      href: '/suryapet/kodad/survey',
-      external: false,
-    },
-    {
-      id: 'census',
-      titleTe: 'మండల సమగ్ర సర్వే నమోదు',
-      titleEn: 'Local Census Enumeration',
-      descTe: 'కుటుంబం, సెలూన్, భజంత్రి — 6 దశల మొబైల్ సర్వే ప్రారంభించండి.',
-      descEn: 'Start the 6-step mobile survey for households, salons, and artistes.',
-      ctaTe: 'సర్వే ప్రారంభించండి →',
-      ctaEn: 'Start survey →',
-      href: '/suryapet/kodad/survey',
-      external: false,
-      featured: true,
-    },
-  ],
   gramPanchayats: [
     { id: 'komarabanda', nameTe: 'కొమరబండ', nameEn: 'Komarabanda', households: 312 },
     { id: 'gudibanda', nameTe: 'గుడిబండ', nameEn: 'Gudibanda', households: 268 },
@@ -79,6 +86,134 @@ export const kodadaMandal = {
     { id: 'kodad-town', nameTe: 'కోదాడ పట్టణం', nameEn: 'Kodad Town', households: 520 },
     { id: 'duddeda', nameTe: 'దుద్దేడ', nameEn: 'Duddeda', households: 143 },
   ],
+})
+
+export const madhiraMandal = buildMandal({
+  stateTe: 'తెలంగాణ',
+  stateEn: 'Telangana',
+  districtSlug: 'khammam',
+  districtTe: 'ఖమ్మం జిల్లా',
+  districtEn: 'Khammam',
+  mandalSlug: 'madhira',
+  mandalShortTe: 'మధిర',
+  mandalTe: 'మధిర మండలం',
+  mandalEn: 'Madhira',
+  hubTitleTe: 'మధిర మండల సమాఖ్య కేంద్రం',
+  hubTitleEn: 'Madhira Mandal Samakhya Hub',
+  summary: { salons: 36, bajantri: 11, freePowerPct: 71 },
+  officer: {
+    nameTe: 'కె. వెంకటేష్',
+    nameEn: 'K. Venkatesh',
+    titleTe: 'మండల సోషల్ మీడియా ఆఫీసర్',
+    titleEn: 'Mandal Social Media Officer',
+    phone: '919876543211',
+    statusTe: 'ఆన్‌లైన్ / క్రియాశీలం',
+    statusEn: 'Online / Active',
+    initials: 'వె',
+  },
+  whatsappGroup: 'https://chat.whatsapp.com/invite/madhira-nayi-demo',
+  cartelWhatsapp: 'https://chat.whatsapp.com/invite/madhira-salon-cartel',
+  gramPanchayats: [
+    { id: 'madhira-town', nameTe: 'మధిర పట్టణం', nameEn: 'Madhira Town', households: 480 },
+    { id: 'dendukuru', nameTe: 'దెందుకూరు', nameEn: 'Dendukuru', households: 265 },
+    { id: 'yerrupalem', nameTe: 'ఎర్రుపాలెం', nameEn: 'Yerrupalem', households: 238 },
+    { id: 'chidukur', nameTe: 'చిడుకూరు', nameEn: 'Chidukur', households: 192 },
+    { id: 'banigandlapadu', nameTe: 'బనిగండ్లపాడు', nameEn: 'Banigandlapadu', households: 174 },
+    { id: 'siripuram', nameTe: 'సిరిపురం', nameEn: 'Siripuram', households: 156 },
+    { id: 'ammapalem', nameTe: 'అమ్మపాలెం', nameEn: 'Ammapalem', households: 141 },
+    { id: 'nagireddigudem', nameTe: 'నాగిరెడ్డిగూడెం', nameEn: 'Nagireddigudem', households: 128 },
+  ],
+})
+
+export const wyraMandal = buildMandal({
+  stateTe: 'తెలంగాణ',
+  stateEn: 'Telangana',
+  districtSlug: 'khammam',
+  districtTe: 'ఖమ్మం జిల్లా',
+  districtEn: 'Khammam',
+  mandalSlug: 'wyra',
+  mandalShortTe: 'వైరా',
+  mandalTe: 'వైరా మండలం',
+  mandalEn: 'Wyra',
+  hubTitleTe: 'వైరా మండల సమాఖ్య కేంద్రం',
+  hubTitleEn: 'Wyra Mandal Samakhya Hub',
+  summary: { salons: 28, bajantri: 9, freePowerPct: 69 },
+  officer: {
+    nameTe: 'ఎం. రాజేష్',
+    nameEn: 'M. Rajesh',
+    titleTe: 'మండల సోషల్ మీడియా ఆఫీసర్',
+    titleEn: 'Mandal Social Media Officer',
+    phone: '919876543212',
+    statusTe: 'ఆన్‌లైన్ / క్రియాశీలం',
+    statusEn: 'Online / Active',
+    initials: 'రా',
+  },
+  whatsappGroup: 'https://chat.whatsapp.com/invite/wyra-nayi-demo',
+  cartelWhatsapp: 'https://chat.whatsapp.com/invite/wyra-salon-cartel',
+  gramPanchayats: [
+    { id: 'wyra-town', nameTe: 'వైరా పట్టణం', nameEn: 'Wyra Town', households: 410 },
+    { id: 'singareni', nameTe: 'సింగరేణి', nameEn: 'Singareni', households: 255 },
+    { id: 'gollapudi', nameTe: 'గొల్లపూడి', nameEn: 'Gollapudi', households: 198 },
+    { id: 'konijerla', nameTe: 'కొనిజెర్ల', nameEn: 'Konijerla', households: 186 },
+    { id: 'lakshmipuram', nameTe: 'లక్ష్మీపురం', nameEn: 'Lakshmipuram', households: 162 },
+    { id: 'peddagopathi', nameTe: 'పెద్దగోపతి', nameEn: 'Peddagopathi', households: 149 },
+    { id: 'chinnagopathi', nameTe: 'చిన్నగోపతి', nameEn: 'Chinnagopathi', households: 133 },
+    { id: 'gattumalla', nameTe: 'గట్టుమల్ల', nameEn: 'Gattumalla', households: 121 },
+  ],
+})
+
+export const talladaMandal = buildMandal({
+  stateTe: 'తెలంగాణ',
+  stateEn: 'Telangana',
+  districtSlug: 'khammam',
+  districtTe: 'ఖమ్మం జిల్లా',
+  districtEn: 'Khammam',
+  mandalSlug: 'tallada',
+  mandalShortTe: 'తల్లాడ',
+  mandalTe: 'తల్లాడ మండలం',
+  mandalEn: 'Tallada',
+  hubTitleTe: 'తల్లాడ మండల సమాఖ్య కేంద్రం',
+  hubTitleEn: 'Tallada Mandal Samakhya Hub',
+  summary: { salons: 31, bajantri: 10, freePowerPct: 74 },
+  officer: {
+    nameTe: 'పి. సునీత',
+    nameEn: 'P. Sunitha',
+    titleTe: 'మండల సోషల్ మీడియా ఆఫీసర్',
+    titleEn: 'Mandal Social Media Officer',
+    phone: '919876543213',
+    statusTe: 'ఆన్‌లైన్ / క్రియాశీలం',
+    statusEn: 'Online / Active',
+    initials: 'సు',
+  },
+  whatsappGroup: 'https://chat.whatsapp.com/invite/tallada-nayi-demo',
+  cartelWhatsapp: 'https://chat.whatsapp.com/invite/tallada-salon-cartel',
+  gramPanchayats: [
+    { id: 'tallada-town', nameTe: 'తల్లాడ పట్టణం', nameEn: 'Tallada Town', households: 395 },
+    { id: 'pinapaka', nameTe: 'పినపాక', nameEn: 'Pinapaka', households: 248 },
+    { id: 'tekulapalli', nameTe: 'తెకులపల్లి', nameEn: 'Tekulapalli', households: 221 },
+    { id: 'chandrugonda', nameTe: 'చంద్రుగొండ', nameEn: 'Chandrugonda', households: 187 },
+    { id: 'mulkalapalli', nameTe: 'ముల్కలపల్లి', nameEn: 'Mulkalapalli', households: 169 },
+    { id: 'ashwaraopeta', nameTe: 'అశ్వారావుపేట', nameEn: 'Ashwaraopeta', households: 158 },
+    { id: 'dammapeta', nameTe: 'దమ్మపేట', nameEn: 'Dammapeta', households: 144 },
+    { id: 'yellandu-road', nameTe: 'ఎల్లండు రోడ్', nameEn: 'Yellandu Road', households: 132 },
+  ],
+})
+
+/** Keyed by `${districtSlug}/${mandalSlug}` */
+export const mandalsByKey = {
+  'suryapet/kodad': kodadaMandal,
+  'khammam/madhira': madhiraMandal,
+  'khammam/wyra': wyraMandal,
+  'khammam/tallada': talladaMandal,
+}
+
+export function getMandal(districtSlug, mandalSlug) {
+  if (!districtSlug || !mandalSlug) return null
+  return mandalsByKey[`${districtSlug}/${mandalSlug}`] || null
+}
+
+export function listMandals() {
+  return Object.values(mandalsByKey)
 }
 
 export const surveyOptions = {

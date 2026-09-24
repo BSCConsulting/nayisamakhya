@@ -28,8 +28,12 @@ Open [http://127.0.0.1:43123](http://127.0.0.1:43123).
 | Path | View |
 |------|------|
 | `/` | Home (Hero, Strategic Loop, Dashboard) |
+| `/mandals` | Mandal directory (all hubs) |
 | `/suryapet/kodad` | Kodada Mandal Samakhya Hub |
-| `/suryapet/kodad/survey` | 6-step enumeration wizard |
+| `/khammam/madhira` | Madhira Mandal Samakhya Hub |
+| `/khammam/wyra` | Wyra Mandal Samakhya Hub |
+| `/khammam/tallada` | Tallada Mandal Samakhya Hub |
+| `/{district}/{mandal}/survey` | 6-step enumeration wizard for that mandal |
 
 ## Deploy on Vercel
 

@@ -10,7 +10,7 @@ export default function Hero({ lang = 'te' }) {
   const support = isTelugu
     ? 'ప్రజల కోసం, ప్రజలతో — సేవ, సమాచారం, సంఘటన ఒకే చోట.'
     : 'For the people, with the people — services, information, and collective action in one place.'
-  const primaryCta = isTelugu ? 'కోదాడ మండలం చూడండి' : 'Open Kodada mandal'
+  const primaryCta = isTelugu ? 'మండలాలు చూడండి' : 'Browse mandals'
   const secondaryCta = isTelugu ? 'సర్వే ప్రారంభించండి' : 'Start survey'
 
   return (
@@ -38,7 +38,7 @@ export default function Hero({ lang = 'te' }) {
 
         <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
           <Link
-            to="/suryapet/kodad"
+            to="/mandals"
             className={`bg-[#18181B] text-white hover:bg-[#27272A] rounded-full px-7 py-3 text-sm font-medium transition-all ${
               isTelugu ? 'font-telugu' : 'font-ui'
             }`}
@@ -46,7 +46,7 @@ export default function Hero({ lang = 'te' }) {
             {primaryCta}
           </Link>
           <Link
-            to="/suryapet/kodad/survey"
+            to="/mandals"
             className={`bg-white border border-[#EBE8E0] text-[#18181B] hover:bg-[#F4F2EB] rounded-full px-7 py-3 text-sm font-medium transition-all ${
               isTelugu ? 'font-telugu' : 'font-ui'
             }`}

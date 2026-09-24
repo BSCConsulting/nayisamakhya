@@ -45,10 +45,10 @@ export function LiveTelemetryBar() {
           aria-label={`${t("liveLabel", lang)}: ${mandal ? loc(mandal.mandal, lang) : "Kodad"}`}
         >
           <span className="relative flex h-2.5 w-2.5 shrink-0" aria-hidden>
-            <span className="absolute inset-0 rounded-full bg-emerald-500/40 animate-live-pulse" />
-            <span className="relative m-auto h-1.5 w-1.5 rounded-full bg-emerald-600" />
+            <span className="absolute inset-0 rounded-full bg-[#C2410C]/100/40 animate-live-pulse" />
+            <span className="relative m-auto h-1.5 w-1.5 rounded-full bg-brand" />
           </span>
-          <span className="shrink-0 text-[10px] font-bold tracking-[0.14em] text-emerald-800">
+          <span className="shrink-0 text-[10px] font-bold tracking-[0.14em] text-brand">
             {t("liveLabel", lang)}
           </span>
           <span className="truncate font-medium">
@@ -66,7 +66,7 @@ export function LiveTelemetryBar() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -4 }}
                 transition={{ duration: 0.25 }}
-                className={`text-[11px] font-medium text-teal-700 animate-sync-blink ${lang === "te" ? "font-telugu" : ""}`}
+                className={`text-[11px] font-medium text-brand animate-sync-blink ${lang === "te" ? "font-telugu" : ""}`}
               >
                 {t("syncing", lang)}
               </motion.span>

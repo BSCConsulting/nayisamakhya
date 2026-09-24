@@ -1,8 +1,10 @@
 import type { Metadata, Viewport } from "next";
 import { Noto_Sans_Telugu, Plus_Jakarta_Sans } from "next/font/google";
-import { BottomNav } from "@/components/layout/BottomNav";
-import { LiveTelemetryBar } from "@/components/home/LiveTelemetryBar";
-import { StickyHeader } from "@/components/layout/StickyHeader";
+import { AccessibilityBar } from "@/components/AccessibilityBar";
+import { CivicChatbot } from "@/components/CivicChatbot";
+import { CivicFooter } from "@/components/CivicFooter";
+import { FloatingNavbar } from "@/components/FloatingNavbar";
+import { NewsMarquee } from "@/components/NewsMarquee";
 import { LanguageProvider } from "@/components/providers/LanguageProvider";
 import "./globals.css";
 
@@ -20,15 +22,15 @@ const notoTelugu = Noto_Sans_Telugu({
 });
 
 export const metadata: Metadata = {
-  title: "Nayi Samakhya | ప్రజా సమాఖ్య",
+  title: "నాయీ సమాఖ్య | Nayi Samakhya",
   description:
-    "Grassroots civic-tech portal for Telangana & Andhra Pradesh — mandal hubs, booth survey, and welfare telemetry.",
+    "Authoritative civic portal for Telangana & Andhra Pradesh — welfare, education, livelihood, and mandal services.",
   applicationName: "Nayi Samakhya",
   manifest: "/manifest.webmanifest",
 };
 
 export const viewport: Viewport = {
-  themeColor: "#047857",
+  themeColor: "#C2410C",
   width: "device-width",
   initialScale: 1,
 };
@@ -44,20 +46,22 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${plusJakarta.variable} ${notoTelugu.variable} h-full`}
     >
-      <body className="flex min-h-dvh flex-col bg-canvas font-sans text-ink antialiased">
+      <body className="flex min-h-dvh flex-col bg-[#FBFBF9] font-sans text-[#18181B] antialiased">
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-emerald-700 focus:px-4 focus:py-2 focus:text-sm focus:text-white"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-xl focus:bg-brand focus:px-4 focus:py-2 focus:text-sm focus:text-white"
         >
           Skip to content
         </a>
         <LanguageProvider>
-          <StickyHeader />
-          <LiveTelemetryBar />
-          <main id="main-content" className="flex-1 pb-24 md:pb-8">
+          <AccessibilityBar />
+          <FloatingNavbar />
+          <NewsMarquee />
+          <main id="main-content" className="flex-1">
             {children}
           </main>
-          <BottomNav />
+          <CivicFooter />
+          <CivicChatbot />
         </LanguageProvider>
       </body>
     </html>

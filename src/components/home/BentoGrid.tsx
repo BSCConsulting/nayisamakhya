@@ -41,7 +41,7 @@ export function BentoGrid() {
               <div className="relative z-[2] flex items-start justify-between gap-3">
                 <div>
                   <p
-                    className={`text-xs font-semibold uppercase tracking-[0.12em] text-teal-700 ${lang === "te" ? "font-telugu normal-case tracking-normal" : ""}`}
+                    className={`text-xs font-semibold uppercase tracking-[0.12em] text-brand ${lang === "te" ? "font-telugu normal-case tracking-normal" : ""}`}
                   >
                     {t("atAGlance", lang)}
                   </p>
@@ -50,7 +50,7 @@ export function BentoGrid() {
                   >
                     {loc(population.label, lang)}
                   </p>
-                  <p className="metric-tnum mt-1 text-4xl font-light tracking-tight text-gradient-primary md:text-5xl">
+                  <p className="metric-tnum mt-1 text-4xl font-light tracking-tight text-brand md:text-5xl">
                     {population.value}
                   </p>
                   <span className="mt-3 inline-flex rounded-full bg-slate-100 px-2.5 py-1 text-[11px] text-slate-600">
@@ -68,12 +68,12 @@ export function BentoGrid() {
                     {loc(salons.label, lang)}
                   </p>
                   <div className="mt-1 flex items-center gap-3">
-                    <p className="metric-tnum text-3xl font-light text-gradient-primary">
+                    <p className="metric-tnum text-3xl font-light text-brand">
                       {salons.value}
                     </p>
                     <Sparkline values={salonSparkline} />
                   </div>
-                  <span className="mt-2 inline-flex rounded-full bg-emerald-50 px-2.5 py-1 text-[11px] font-medium text-emerald-800">
+                  <span className="mt-2 inline-flex rounded-full bg-[#C2410C]/10 px-2.5 py-1 text-[11px] font-medium text-brand">
                     {loc(salons.meta, lang)}
                   </span>
                 </div>
@@ -108,7 +108,7 @@ export function BentoGrid() {
               >
                 <span className="inline-flex items-center gap-1.5">
                   <span
-                    className="h-2 w-6 rounded-full bg-gradient-hero"
+                    className="h-2 w-6 rounded-full bg-brand"
                     aria-hidden
                   />
                   {electricity.completePct}% {t("cleared", lang)}
@@ -141,7 +141,7 @@ export function BentoGrid() {
                   </p>
                 </div>
                 <div className="text-right">
-                  <p className="metric-tnum text-3xl font-light text-gradient-primary">
+                  <p className="metric-tnum text-3xl font-light text-brand">
                     {voters.value}
                   </p>
                   <p className="text-[11px] text-slate-500">{loc(voters.meta, lang)}</p>

@@ -16,7 +16,7 @@ export function StickyHeader() {
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3">
         <Link href="/" className="tap min-w-0 rounded-xl px-1 py-1">
-          <p className="truncate text-sm font-bold tracking-tight text-gradient-primary">
+          <p className="truncate text-sm font-bold tracking-tight text-brand">
             Nayi Samakhya
           </p>
           <p
@@ -37,7 +37,7 @@ export function StickyHeader() {
               onClick={() => setLang("te")}
               className={`tap rounded-full px-3 text-xs font-medium font-telugu ${
                 lang === "te"
-                  ? "bg-gradient-brand text-white"
+                  ? "bg-brand text-white"
                   : "text-slate-600 hover:text-slate-900"
               }`}
             >
@@ -48,7 +48,7 @@ export function StickyHeader() {
               onClick={() => setLang("en")}
               className={`tap rounded-full px-3 text-xs font-medium ${
                 lang === "en"
-                  ? "bg-gradient-brand text-white"
+                  ? "bg-brand text-white"
                   : "text-slate-600 hover:text-slate-900"
               }`}
             >

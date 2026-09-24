@@ -67,12 +67,12 @@ export function SocialInsights() {
                       type="button"
                       aria-pressed={debtActive === seg.id}
                       title={loc(seg.label, lang)}
-                      className="h-full transition-opacity duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700"
+                      className="h-full transition-opacity duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
                       style={{
                         width: `${seg.pct}%`,
                         background:
                           debtActive === seg.id
-                            ? "linear-gradient(90deg,#047857,#0d9488)"
+                            ? "linear-gradient(90deg,#C2410C,#9A3412)"
                             : seg.color,
                         opacity: on ? 1 : 0.35,
                       }}
@@ -94,7 +94,7 @@ export function SocialInsights() {
                       }
                       className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[11px] transition-colors ${
                         debtActive === seg.id
-                          ? "bg-gradient-brand text-white"
+                          ? "bg-brand text-white"
                           : "bg-slate-100 text-slate-600"
                       } ${lang === "te" ? "font-telugu" : ""}`}
                     >
@@ -110,7 +110,7 @@ export function SocialInsights() {
 
               {debtFocus?.description ? (
                 <p
-                  className={`mt-4 rounded-2xl border border-emerald-100 bg-emerald-50/70 px-3 py-2 text-xs leading-relaxed text-emerald-950 ${lang === "te" ? "font-telugu" : ""}`}
+                  className={`mt-4 rounded-2xl border border-line bg-[#C2410C]/10/70 px-3 py-2 text-xs leading-relaxed text-ink ${lang === "te" ? "font-telugu" : ""}`}
                   role="status"
                 >
                   {loc(debtFocus.description, lang)}
@@ -137,7 +137,7 @@ export function SocialInsights() {
                         onClick={() => setYouthActive(item.id)}
                         className={`tap w-full rounded-2xl border px-3 py-2.5 text-left transition-colors ${
                           active
-                            ? "border-emerald-300 bg-emerald-50/80"
+                            ? "border-brand/40 bg-[#C2410C]/10/80"
                             : "border-slate-100 bg-slate-50/60 hover:bg-slate-50"
                         }`}
                       >
@@ -145,7 +145,7 @@ export function SocialInsights() {
                           className={`mb-1.5 flex items-center justify-between gap-3 text-sm ${lang === "te" ? "font-telugu" : ""}`}
                         >
                           <span className="flex items-center gap-2 font-medium text-slate-900">
-                            <Icon className="h-4 w-4 text-teal-700" aria-hidden />
+                            <Icon className="h-4 w-4 text-brand" aria-hidden />
                             {loc(item.label, lang)}
                           </span>
                           <span className="metric-tnum text-xs text-slate-500">
@@ -155,7 +155,7 @@ export function SocialInsights() {
                         <div className="h-1.5 overflow-hidden rounded-full bg-white">
                           <div
                             className={`h-full rounded-full ${
-                              active ? "bg-gradient-hero" : "bg-sky-700"
+                              active ? "bg-brand" : "bg-sky-700"
                             }`}
                             style={{ width: `${item.pct}%` }}
                           />

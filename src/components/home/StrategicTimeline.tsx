@@ -45,7 +45,7 @@ export function StrategicTimeline() {
             </div>
             <div className="h-1.5 overflow-hidden rounded-full bg-slate-200">
               <motion.div
-                className="h-full rounded-full bg-gradient-brand"
+                className="h-full rounded-full bg-brand"
                 initial={false}
                 animate={{ width: `${progress}%` }}
                 transition={{
@@ -80,7 +80,7 @@ export function StrategicTimeline() {
                     onClick={() => setOpenId(step.id)}
                     className={`absolute left-0 top-3 flex h-8 w-8 items-center justify-center rounded-full text-[11px] font-bold transition-colors md:h-9 md:w-9 ${
                       open
-                        ? "bg-gradient-brand text-white shadow-sm"
+                        ? "bg-brand text-white shadow-sm"
                         : "border border-slate-200 bg-white text-slate-500"
                     }`}
                   >
@@ -89,7 +89,7 @@ export function StrategicTimeline() {
 
                   <article
                     className={`bento-card overflow-hidden ${pattern} ${
-                      open ? "ring-1 ring-emerald-200/80" : ""
+                      open ? "ring-1 ring-brand/20" : ""
                     }`}
                   >
                     <button

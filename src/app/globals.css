@@ -2,94 +2,65 @@
 @config "../../tailwind.config.ts";
 
 :root {
-  --brand: #047857;
-  --brand-hover: #065f46;
-  --brand-teal: #0d9488;
-  --accent: #0284c7;
-  --accent-success: #16a34a;
-  --sos: #dc2626;
-  --sos-soft: #f87171;
-  --canvas: #f8fafc;
+  --canvas: #fbfbf9;
   --surface: #ffffff;
-  --ink: #0f172a;
-  --muted: #475569;
-  --line: #e2e8f0;
-  --header-h: 3.75rem;
-  --telemetry-h: 2.75rem;
+  --ink: #18181b;
+  --muted: #71717a;
+  --line: #ebe8e0;
+  --warm: #f4f2eb;
+  --brand: #c2410c;
+  --brand-hover: #9a3412;
+  --brand-soft: rgb(194 65 12 / 0.1);
+  --sos: #dc2626;
+  --header-stack: 0px;
 
-  --gradient-brand: linear-gradient(90deg, #047857 0%, #0d9488 100%);
-  --gradient-hero: linear-gradient(90deg, #0284c7 0%, #16a34a 100%);
-  --gradient-sos: linear-gradient(90deg, #dc2626 0%, #f87171 100%);
-  --gradient-metric: linear-gradient(135deg, #065f46 0%, #059669 100%);
-  --gradient-border: linear-gradient(
-    135deg,
-    rgb(4 120 87 / 0.55),
-    rgb(13 148 136 / 0.45),
-    rgb(2 132 199 / 0.35)
-  );
+  --font-scale: 1;
+}
+
+html.contrast-high {
+  --canvas: #0a0a0a;
+  --surface: #18181b;
+  --ink: #fafafa;
+  --muted: #d4d4d8;
+  --line: #3f3f46;
+  --warm: #27272a;
+  --brand: #fb923c;
+  --brand-hover: #fdba74;
+  --brand-soft: rgb(251 146 60 / 0.15);
 }
 
 @theme inline {
-  --color-brand: var(--brand);
-  --color-brand-hover: var(--brand-hover);
-  --color-brand-teal: var(--brand-teal);
-  --color-accent: var(--accent);
-  --color-accent-success: var(--accent-success);
-  --color-sos: var(--sos);
-  --color-sos-soft: var(--sos-soft);
   --color-canvas: var(--canvas);
   --color-surface: var(--surface);
   --color-ink: var(--ink);
   --color-muted: var(--muted);
   --color-line: var(--line);
+  --color-warm: var(--warm);
+  --color-brand: var(--brand);
+  --color-brand-hover: var(--brand-hover);
+  --color-sos: var(--sos);
   --font-sans: var(--font-plus-jakarta);
   --font-telugu: var(--font-noto-telugu);
-  --animate-fade-up: fade-up 0.45s ease-out both;
-  --animate-live-pulse: live-pulse 1.6s ease-in-out infinite;
-  --animate-sync-blink: sync-blink 1.4s ease-in-out infinite;
-  --animate-sos-pulse: sos-pulse 2s ease-out infinite;
+  --animate-marquee: marquee 38s linear infinite;
+  --animate-chat-pulse: chat-pulse 2s ease-out infinite;
 }
 
-@keyframes fade-up {
+@keyframes marquee {
   0% {
-    opacity: 0;
-    transform: translateY(12px);
+    transform: translateX(0);
   }
   100% {
-    opacity: 1;
-    transform: translateY(0);
+    transform: translateX(-50%);
   }
 }
 
-@keyframes live-pulse {
+@keyframes chat-pulse {
   0%,
   100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(1.35);
-    opacity: 0.55;
-  }
-}
-
-@keyframes sync-blink {
-  0%,
-  100% {
-    opacity: 0.35;
-  }
-  50% {
-    opacity: 1;
-  }
-}
-
-@keyframes sos-pulse {
-  0%,
-  100% {
-    box-shadow: 0 0 0 0 rgb(220 38 38 / 0.45);
+    box-shadow: 0 0 0 0 rgb(194 65 12 / 0.45);
   }
   70% {
-    box-shadow: 0 0 0 12px rgb(220 38 38 / 0);
+    box-shadow: 0 0 0 14px rgb(194 65 12 / 0);
   }
 }
 
@@ -97,6 +68,7 @@ html,
 body {
   background: var(--canvas);
   color: var(--ink);
+  font-size: calc(1rem * var(--font-scale));
 }
 
 body {
@@ -109,11 +81,7 @@ body {
 }
 
 .tap {
-  @apply min-h-[48px] transition-transform active:scale-[0.98];
-}
-
-.sos-pulse {
-  animation: sos-pulse 2s ease-out infinite;
+  @apply min-h-[44px] transition-colors active:scale-[0.98];
 }
 
 .metric-tnum {
@@ -121,103 +89,29 @@ body {
   font-feature-settings: "tnum" 1;
 }
 
-.text-gradient-primary {
-  background-image: var(--gradient-metric);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+.surface-card {
+  @apply rounded-2xl border border-line bg-surface shadow-sm;
 }
 
-.text-gradient-hero {
-  background-image: var(--gradient-hero);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+.btn-brand {
+  @apply inline-flex items-center justify-center rounded-xl bg-brand px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-brand-hover;
 }
 
-.bg-gradient-brand {
-  background-image: var(--gradient-brand);
+.btn-ghost {
+  @apply inline-flex items-center justify-center rounded-xl border border-line bg-surface px-4 py-2.5 text-sm font-medium text-ink transition-colors hover:bg-warm;
 }
 
-.bg-gradient-hero {
-  background-image: var(--gradient-hero);
-}
-
-.bg-gradient-sos {
-  background-image: var(--gradient-sos);
-}
-
-/* Interactive bento: gradient border + lift on hover/focus */
-.bento-card {
-  position: relative;
-  isolation: isolate;
-  border-radius: 1.5rem;
-  background: var(--surface);
-  border: 1px solid var(--line);
-  transition:
-    transform 180ms ease,
-    box-shadow 180ms ease,
-    border-color 180ms ease;
-}
-
-.bento-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  padding: 1px;
-  background: var(--gradient-border);
-  opacity: 0;
-  transition: opacity 180ms ease;
-  -webkit-mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
-  mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  pointer-events: none;
-  z-index: 1;
-}
-
-.bento-card:hover,
-.bento-card:focus-within {
-  transform: scale(1.02);
-  box-shadow: 0 12px 28px -18px rgb(15 23 42 / 0.35);
-  border-color: transparent;
-}
-
-.bento-card:hover::before,
-.bento-card:focus-within::before {
-  opacity: 1;
-}
-
-.bento-card:active {
-  transform: scale(0.98);
-}
-
-.pattern-civic {
-  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23047857' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-}
-
-.pattern-dots {
-  background-image: radial-gradient(circle at 1px 1px, rgb(4 120 87 / 0.08) 1px, transparent 0);
-  background-size: 14px 14px;
+.marquee-track {
+  animation: marquee 38s linear infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .bento-card,
-  .bento-card::before,
-  .tap,
-  .sos-pulse {
-    transition: none !important;
+  .marquee-track,
+  .chat-pulse {
     animation: none !important;
   }
+}
 
-  .bento-card:hover,
-  .bento-card:focus-within,
-  .bento-card:active {
-    transform: none;
-  }
+.chat-pulse {
+  animation: chat-pulse 2s ease-out infinite;
 }

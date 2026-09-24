@@ -39,7 +39,7 @@ export default function SurveyPage() {
         </p>
         <Link
           href={m.path}
-          className={`tap mt-6 inline-flex items-center justify-center rounded-full bg-emerald-700 px-5 text-sm font-semibold text-white ${lang === "te" ? "font-telugu" : ""}`}
+          className={`tap mt-6 inline-flex items-center justify-center rounded-full bg-brand px-5 text-sm font-semibold text-white ${lang === "te" ? "font-telugu" : ""}`}
         >
           {t("allMandals", lang).replace("← ", "")} → {loc(m.mandal, lang)}
         </Link>

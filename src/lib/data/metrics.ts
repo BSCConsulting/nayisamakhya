@@ -58,7 +58,7 @@ export const welfareSlices: WelfareSlice[] = [
     id: "pension-active",
     label: { te: "భజంత్రి పెన్షన్", en: "Bhajantri pension" },
     value: 1280,
-    color: "#0f766e",
+    color: "#9A3412",
     kind: "cleared",
   },
 ];
@@ -68,19 +68,19 @@ export const topBooths: BoothBar[] = [
     id: "b12",
     name: { te: "బూత్ 12 — కోదాడ్", en: "Booth 12 — Kodad" },
     coverage: 94,
-    color: "#047857",
+    color: "#C2410C",
   },
   {
     id: "b07",
     name: { te: "బూత్ 07 — తిమ్మాపురం", en: "Booth 07 — Thimmapuram" },
     coverage: 88,
-    color: "#0d9488",
+    color: "#9A3412",
   },
   {
     id: "b21",
     name: { te: "బూత్ 21 — నడిగూడెం", en: "Booth 21 — Nadigudem" },
     coverage: 81,
-    color: "#0284c7",
+    color: "#C2410C",
   },
   {
     id: "b03",
@@ -121,7 +121,7 @@ export const debtSegments: DistributionSegment[] = [
     id: "free",
     label: { te: "రుణ రహితం", en: "Debt-Free" },
     pct: 20,
-    color: "#047857",
+    color: "#C2410C",
     description: {
       te: "రుణ రహిత కుటుంబాలు — స్థిరత్వ సూచిక.",
       en: "Debt-free households — resilience indicator.",

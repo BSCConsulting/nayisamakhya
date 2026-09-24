@@ -50,7 +50,7 @@ export function BottomNav() {
                 <Link
                   href={tab.href}
                   className={`tap flex flex-col items-center justify-center gap-0.5 px-1 py-2 text-[11px] ${
-                    active ? "text-emerald-700" : "text-slate-500"
+                    active ? "text-brand" : "text-slate-500"
                   } ${lang === "te" ? "font-telugu" : ""}`}
                 >
                   <Icon className="h-5 w-5" aria-hidden />

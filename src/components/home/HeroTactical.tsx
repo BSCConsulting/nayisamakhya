@@ -55,7 +55,7 @@ export function HeroTactical() {
             <div className="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2">
               <Link
                 href={mandal?.surveyPath ?? "/suryapet/kodad/survey"}
-                className={`tap inline-flex items-center justify-center rounded-2xl bg-gradient-brand px-5 text-sm font-semibold text-white shadow-sm hover:opacity-95 ${lang === "te" ? "font-telugu" : ""}`}
+                className={`tap inline-flex items-center justify-center rounded-2xl bg-brand px-5 text-sm font-semibold text-white shadow-sm hover:opacity-95 ${lang === "te" ? "font-telugu" : ""}`}
               >
                 {t("startSurvey", lang)}
               </Link>

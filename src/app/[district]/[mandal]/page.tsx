@@ -78,10 +78,10 @@ export default function MandalHubPage() {
         <article className="mt-6 rounded-3xl border border-slate-200 bg-white p-5 shadow-sm">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
             <div className="relative shrink-0">
-              <div className="flex h-14 w-14 items-center justify-center rounded-full border border-slate-200 bg-emerald-50 text-lg font-semibold text-emerald-800 font-telugu">
+              <div className="flex h-14 w-14 items-center justify-center rounded-full border border-slate-200 bg-[#C2410C]/10 text-lg font-semibold text-brand font-telugu">
                 {m.officer.initials}
               </div>
-              <span className="absolute bottom-0.5 right-0.5 h-3 w-3 rounded-full border-2 border-white bg-emerald-500" />
+              <span className="absolute bottom-0.5 right-0.5 h-3 w-3 rounded-full border-2 border-white bg-[#C2410C]/100" />
             </div>
             <div className="min-w-0 flex-1">
               <p
@@ -101,7 +101,7 @@ export default function MandalHubPage() {
               href={whatsappHref}
               target="_blank"
               rel="noreferrer"
-              className={`tap inline-flex items-center justify-center rounded-full bg-emerald-700 px-5 text-sm font-semibold text-white hover:bg-emerald-800 ${lang === "te" ? "font-telugu" : ""}`}
+              className={`tap inline-flex items-center justify-center rounded-full bg-brand px-5 text-sm font-semibold text-white hover:bg-brand-hover ${lang === "te" ? "font-telugu" : ""}`}
             >
               {t("chatWhatsapp", lang)}
             </a>
@@ -112,7 +112,7 @@ export default function MandalHubPage() {
           {m.actions.map((action) => {
             const className = `tap block h-full rounded-3xl border bg-white p-5 shadow-sm transition-colors hover:bg-slate-50 ${
               action.featured
-                ? "border-emerald-700/30 ring-1 ring-emerald-700/10"
+                ? "border-brand/30 ring-1 ring-brand/10"
                 : "border-slate-200"
             }`;
             const body = (
@@ -129,7 +129,7 @@ export default function MandalHubPage() {
                 </p>
                 <span
                   className={`mt-4 inline-flex text-sm font-semibold ${
-                    action.featured ? "text-emerald-700" : "text-slate-900"
+                    action.featured ? "text-brand" : "text-slate-900"
                   } ${lang === "te" ? "font-telugu" : ""}`}
                 >
                   {loc(action.cta, lang)}
@@ -166,7 +166,7 @@ export default function MandalHubPage() {
               value={gpQuery}
               onChange={(e) => setGpQuery(e.target.value)}
               placeholder={t("searchGp", lang)}
-              className="tap w-full rounded-full border border-slate-200 bg-white px-4 text-sm text-slate-900 placeholder:text-slate-400 focus:border-emerald-700/40 focus:outline-none sm:w-64"
+              className="tap w-full rounded-full border border-slate-200 bg-white px-4 text-sm text-slate-900 placeholder:text-slate-400 focus:border-brand/40 focus:outline-none sm:w-64"
             />
           </div>
           <ul className="mt-4 grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3">

@@ -14,7 +14,7 @@ export default function NotFound() {
         <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-center">
           <Link
             href="/"
-            className="tap inline-flex items-center justify-center rounded-full bg-emerald-700 px-5 text-sm font-semibold text-white"
+            className="tap inline-flex items-center justify-center rounded-full bg-brand px-5 text-sm font-semibold text-white"
           >
             Home
           </Link>

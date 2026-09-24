@@ -29,8 +29,8 @@ export function WelfareDonut({ lang }: { lang: Lang }) {
         <svg viewBox="0 0 140 140" className="h-36 w-36" role="img" aria-label={t("welfareTitle", lang)}>
           <defs>
             <linearGradient id={gradId} x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#0284c7" />
-              <stop offset="100%" stopColor="#16a34a" />
+              <stop offset="0%" stopColor="#C2410C" />
+              <stop offset="100%" stopColor="#9A3412" />
             </linearGradient>
           </defs>
           <g transform="rotate(-90 70 70)">
@@ -105,7 +105,7 @@ export function WelfareDonut({ lang }: { lang: Lang }) {
               onClick={() => setActive((prev) => (prev === slice.id ? null : slice.id))}
               className={`tap flex w-full items-center justify-between gap-3 rounded-xl border px-3 py-2 text-left transition-colors ${
                 active === slice.id
-                  ? "border-emerald-300 bg-emerald-50"
+                  ? "border-brand/40 bg-[#C2410C]/10"
                   : "border-transparent bg-slate-50 hover:bg-slate-100"
               }`}
             >
@@ -115,7 +115,7 @@ export function WelfareDonut({ lang }: { lang: Lang }) {
                   style={{
                     background:
                       slice.id === "power-cleared"
-                        ? "linear-gradient(90deg,#0284c7,#16a34a)"
+                        ? "linear-gradient(90deg,#C2410C,#9A3412)"
                         : slice.color,
                   }}
                   aria-hidden

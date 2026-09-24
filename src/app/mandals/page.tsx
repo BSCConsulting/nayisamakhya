@@ -30,7 +30,7 @@ export default function MandalsPage() {
               <Link
                 href={m.path}
                 onClick={() => setMandal(m.districtSlug, m.mandalSlug)}
-                className="tap block h-full rounded-3xl border border-slate-200 bg-white p-5 shadow-sm hover:border-emerald-700/30 hover:bg-emerald-50/40"
+                className="tap block h-full rounded-3xl border border-slate-200 bg-white p-5 shadow-sm hover:border-brand/30 hover:bg-[#C2410C]/10/40"
               >
                 <p className="font-mono text-[10px] tracking-widest text-slate-400 uppercase">
                   /{m.districtSlug}/{m.mandalSlug}
@@ -55,7 +55,7 @@ export default function MandalsPage() {
                   </span>
                 </div>
                 <span
-                  className={`mt-5 inline-flex text-sm font-semibold text-emerald-700 ${lang === "te" ? "font-telugu" : ""}`}
+                  className={`mt-5 inline-flex text-sm font-semibold text-brand ${lang === "te" ? "font-telugu" : ""}`}
                 >
                   {t("openHub", lang)}
                 </span>

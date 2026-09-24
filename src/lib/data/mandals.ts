@@ -1,6 +1,39 @@
-import type { Mandal } from "@/lib/types";
+import type { Mandal, MandalNotice } from "@/lib/types";
 
 const telegram = "https://t.me/nayi_samakhya_demo";
+
+const defaultNotices = (placeTe: string, placeEn: string): MandalNotice[] => [
+  {
+    id: "n1",
+    title: {
+      te: `${placeTe} సేవా శిబిరం & సంక్షేమ సమావేశం`,
+      en: `${placeEn} service camp & welfare meet`,
+    },
+    date: "2026-09-18",
+    image:
+      "https://images.unsplash.com/photo-1577495508048-b635879837f1?auto=format&fit=crop&q=80&w=800",
+  },
+  {
+    id: "n2",
+    title: {
+      te: "సెలూన్ నైపుణ్య శిక్షణ వర్క్‌షాప్",
+      en: "Salon skills workshop",
+    },
+    date: "2026-09-12",
+    image:
+      "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&q=80&w=800",
+  },
+  {
+    id: "n3",
+    title: {
+      te: "భజంత్రి సాంస్కృతిక సమ్మేళనం",
+      en: "Bajantri cultural gathering",
+    },
+    date: "2026-09-08",
+    image:
+      "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&q=80&w=800",
+  },
+];
 
 function hub(
   m: Omit<Mandal, "path" | "surveyPath" | "actions" | "telegramChannel"> & {
@@ -9,6 +42,7 @@ function hub(
 ): Mandal {
   const path = `/${m.districtSlug}/${m.mandalSlug}`;
   const surveyPath = `${path}/survey`;
+  const shortTe = m.mandal.te.replace(" మండలం", "");
   return {
     ...m,
     path,
@@ -18,40 +52,42 @@ function hub(
       {
         id: "cartel",
         title: {
-          te: `${m.mandal.te.replace(" మండలం", "")} సెలూన్ హోల్‌సేల్ గ్రూప్`,
-          en: `${m.mandal.en} Salon Wholesale Group`,
+          te: `${shortTe} సెలూన్ కొనుగోలు కార్టెల్`,
+          en: `${m.mandal.en} Salon Wholesale Cartel`,
         },
         description: {
-          te: "కత్తెరలు, క్లిప్పర్లు, క్రీములు — డిస్ట్రిబ్యూటర్ రేట్లకు సమూహ కొనుగోలు.",
-          en: "Bulk orders for scissors, clippers, and creams at distributor rates.",
+          te: "కత్తెరలు, క్లిప్పర్లు, సెలూన్ కుర్చీలు, కాస్మెటిక్ కిట్లు — ఫ్యాక్టరీ ధరలకు. మధ్యవర్తులు లేకుండా సూర్యాపేట జిల్లాలో సమూహ కొనుగోలు.",
+          en: "Scissors, clippers, salon chairs, and cosmetic kits at factory prices — eliminating middleman margins across the district.",
         },
-        cta: { te: "కార్టెల్ వాట్సాప్‌లో చేరండి →", en: "Join cartel WhatsApp →" },
+        cta: { te: "కార్టెల్ బల్క్ ఆర్డర్ నమోదు", en: "Register cartel bulk order" },
         href: m.cartelWhatsapp,
         external: true,
       },
       {
         id: "power",
         title: {
-          te: "250 యూనిట్ల ఉచిత విద్యుత్ సహాయం",
-          en: "Free Power Grievance Desk",
+          te: "250 యూనిట్ల ఉచిత విద్యుత్ గ్రీవెన్స్ సెల్",
+          en: "250-Unit Free Power Grievance Cell",
         },
         description: {
-          te: "సబ్-స్టేషన్ / MRO వద్ద పెండింగ్ దరఖాస్తులు క్లియర్ చేయడానికి సహాయం.",
-          en: "Local help clearing pending applications at Sub-Station / MRO.",
+          te: "పట్టణ & గ్రామీణ సబ్-స్టేషన్ల వద్ద పెండింగ్ సబ్సిడీ దరఖాస్తులు క్లియర్ చేయడానికి స్థానిక మార్గదర్శకం.",
+          en: "Local guidance to resolve pending power subsidy applications at town and rural sub-stations.",
         },
-        cta: { te: "వినతి ఫైల్ చేయండి →", en: "File petition →" },
-        href: surveyPath,
+        cta: { te: "వినతి పత్రం కాపీ డౌన్‌లోడ్", en: "Download petition copy" },
+        href: "/discom-petition.txt",
       },
       {
-        id: "census",
-        title: { te: "మండల సమగ్ర సర్వే", en: "Local Census Survey" },
-        description: {
-          te: "కుటుంబం, సెలూన్, భజంత్రి — 6 దశల మొబైల్ సర్వే.",
-          en: "Household, salon, and artiste — 6-step mobile survey.",
+        id: "artisans",
+        title: {
+          te: "స్థానిక భజంత్రి & కళాకారుల రక్షణ విభాగం",
+          en: "Local Bajantri & Artisans Wing",
         },
-        cta: { te: "సర్వే ప్రారంభించండి →", en: "Start survey →" },
-        href: surveyPath,
-        featured: true,
+        description: {
+          te: "దేవాలయ గౌరవాలు, సాంస్కృతిక శాఖ పెన్షన్ డాక్యుమెంటేషన్, పండుగ నమోదు.",
+          en: "Temple honors advocacy, cultural department pension documentation, and festival engagement registry.",
+        },
+        cta: { te: "కళాకారుల జాబితా చూడండి", en: "View artiste registry" },
+        href: "/verticals/bajantri",
       },
     ],
   };
@@ -68,27 +104,51 @@ export const mandals: Mandal[] = [
       te: "కోదాడ మండల సమాఖ్య కేంద్రం",
       en: "Kodada Mandal Samakhya Hub",
     },
-    summary: { salons: 42, bajantri: 14, freePowerPct: 78 },
+    portalHeadline: {
+      te: "కోదాడ మండల నాయీ - భజంత్రి సమాఖ్య అధికారిక వేదిక",
+      en: "Official Kodada Mandal Nayi–Bajantri Samakhya Portal",
+    },
+    portalSub: {
+      te: "మండల స్థాయి సంక్షేమం, సెలూన్ వ్యాపార బలోపేతం, సాంప్రదాయ కళాకారుల రక్షణ మరియు సమగ్ర కుటుంబ సేవలు.",
+      en: "Mandal welfare, salon enterprise support, traditional artiste protection, and comprehensive family services.",
+    },
+    summary: {
+      salons: 42,
+      bajantri: 14,
+      freePowerPct: 78,
+      households: 648,
+      surveyPct: 62,
+      gpCount: 16,
+    },
     officer: {
       name: { te: "ఆర్. సురేష్ కుమార్", en: "R. Suresh Kumar" },
       title: {
-        te: "మండల సోషల్ మీడియా ఆఫీసర్",
-        en: "Mandal Social Media Officer",
+        te: "మండల సోషల్ మీడియా & సమన్వయ అధికారి",
+        en: "Mandal Social Media & Coordination Officer",
       },
       phone: "919876543210",
       status: { te: "ఆన్‌లైన్ / క్రియాశీలం", en: "Online / Active" },
       initials: "సు",
+      jurisdiction: {
+        te: "కోదాడ పట్టణం + 16 గ్రామ పంచాయతీలు",
+        en: "Kodada town + 16 Gram Panchayats",
+      },
+      portrait:
+        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200",
     },
     whatsappGroup: "https://chat.whatsapp.com/invite/kodada-nayi-demo",
     cartelWhatsapp: "https://chat.whatsapp.com/invite/kodada-salon-cartel",
     gramPanchayats: [
-      { id: "komarabanda", name: { te: "కొమరబండ", en: "Komarabanda" }, households: 312 },
-      { id: "gudibanda", name: { te: "గుడిబండ", en: "Gudibanda" }, households: 268 },
-      { id: "thummalapenta", name: { te: "తుమ్మలపెంట", en: "Thummalapenta" }, households: 241 },
-      { id: "kodad-town", name: { te: "కోదాడ పట్టణం", en: "Kodad Town" }, households: 520 },
-      { id: "ananthagiri", name: { te: "అనంతగిరి", en: "Ananthagiri" }, households: 198 },
-      { id: "duddeda", name: { te: "దుద్దేడ", en: "Duddeda" }, households: 143 },
+      { id: "komarabanda", name: { te: "కొమరబండ", en: "Komarabanda" }, households: 312, surveyPct: 85 },
+      { id: "gudibanda", name: { te: "గుడిబండ", en: "Gudibanda" }, households: 268, surveyPct: 64 },
+      { id: "thummalapenta", name: { te: "తుమ్మలపెంట", en: "Thummalapenta" }, households: 194, surveyPct: 58 },
+      { id: "kapugallu", name: { te: "కాపుగల్లు", en: "Kapugallu" }, households: 220, surveyPct: 70 },
+      { id: "dorakunta", name: { te: "దొరకుంట", en: "Dorakunta" }, households: 176, surveyPct: 61 },
+      { id: "reddikunta", name: { te: "రెడ్డికుంట", en: "Reddikunta" }, households: 158, surveyPct: 55 },
+      { id: "kodad-town", name: { te: "కోదాడ పట్టణం", en: "Kodad Town" }, households: 520, surveyPct: 72 },
+      { id: "ananthagiri", name: { te: "అనంతగిరి", en: "Ananthagiri" }, households: 198, surveyPct: 66 },
     ],
+    notices: defaultNotices("కోదాడ", "Kodada"),
   }),
   hub({
     districtSlug: "khammam",
@@ -100,27 +160,49 @@ export const mandals: Mandal[] = [
       te: "మధిర మండల సమాఖ్య కేంద్రం",
       en: "Madhira Mandal Samakhya Hub",
     },
-    summary: { salons: 36, bajantri: 11, freePowerPct: 71 },
+    portalHeadline: {
+      te: "మధిర మండల నాయీ - భజంత్రి సమాఖ్య అధికారిక వేదిక",
+      en: "Official Madhira Mandal Nayi–Bajantri Samakhya Portal",
+    },
+    portalSub: {
+      te: "మండల స్థాయి సంక్షేమం, సెలూన్ వ్యాపార బలోపేతం, సాంప్రదాయ కళాకారుల రక్షణ మరియు సమగ్ర కుటుంబ సేవలు.",
+      en: "Mandal welfare, salon enterprise support, traditional artiste protection, and comprehensive family services.",
+    },
+    summary: {
+      salons: 36,
+      bajantri: 11,
+      freePowerPct: 71,
+      households: 572,
+      surveyPct: 58,
+      gpCount: 14,
+    },
     officer: {
       name: { te: "కె. వెంకటేష్", en: "K. Venkatesh" },
       title: {
-        te: "మండల సోషల్ మీడియా ఆఫీసర్",
-        en: "Mandal Social Media Officer",
+        te: "మండల సోషల్ మీడియా & సమన్వయ అధికారి",
+        en: "Mandal Social Media & Coordination Officer",
       },
       phone: "919876543211",
       status: { te: "ఆన్‌లైన్ / క్రియాశీలం", en: "Online / Active" },
       initials: "వె",
+      jurisdiction: {
+        te: "మధిర పట్టణం + 14 గ్రామ పంచాయతీలు",
+        en: "Madhira town + 14 Gram Panchayats",
+      },
+      portrait:
+        "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=200",
     },
     whatsappGroup: "https://chat.whatsapp.com/invite/madhira-nayi-demo",
     cartelWhatsapp: "https://chat.whatsapp.com/invite/madhira-salon-cartel",
     gramPanchayats: [
-      { id: "madhira-town", name: { te: "మధిర పట్టణం", en: "Madhira Town" }, households: 480 },
-      { id: "dendukuru", name: { te: "దెందుకూరు", en: "Dendukuru" }, households: 265 },
-      { id: "yerrupalem", name: { te: "ఎర్రుపాలెం", en: "Yerrupalem" }, households: 238 },
-      { id: "chidukur", name: { te: "చిడుకూరు", en: "Chidukur" }, households: 192 },
-      { id: "siripuram", name: { te: "సిరిపురం", en: "Siripuram" }, households: 156 },
-      { id: "ammapalem", name: { te: "అమ్మపాలెం", en: "Ammapalem" }, households: 141 },
+      { id: "madhira-town", name: { te: "మధిర పట్టణం", en: "Madhira Town" }, households: 480, surveyPct: 68 },
+      { id: "dendukuru", name: { te: "దెందుకూరు", en: "Dendukuru" }, households: 265, surveyPct: 54 },
+      { id: "yerrupalem", name: { te: "ఎర్రుపాలెం", en: "Yerrupalem" }, households: 238, surveyPct: 61 },
+      { id: "chidukur", name: { te: "చిడుకూరు", en: "Chidukur" }, households: 192, surveyPct: 49 },
+      { id: "siripuram", name: { te: "సిరిపురం", en: "Siripuram" }, households: 156, surveyPct: 57 },
+      { id: "ammapalem", name: { te: "అమ్మపాలెం", en: "Ammapalem" }, households: 141, surveyPct: 52 },
     ],
+    notices: defaultNotices("మధిర", "Madhira"),
   }),
   hub({
     districtSlug: "khammam",
@@ -132,27 +214,49 @@ export const mandals: Mandal[] = [
       te: "వైరా మండల సమాఖ్య కేంద్రం",
       en: "Wyra Mandal Samakhya Hub",
     },
-    summary: { salons: 28, bajantri: 9, freePowerPct: 69 },
+    portalHeadline: {
+      te: "వైరా మండల నాయీ - భజంత్రి సమాఖ్య అధికారిక వేదిక",
+      en: "Official Wyra Mandal Nayi–Bajantri Samakhya Portal",
+    },
+    portalSub: {
+      te: "మండల స్థాయి సంక్షేమం, సెలూన్ వ్యాపార బలోపేతం, సాంప్రదాయ కళాకారుల రక్షణ మరియు సమగ్ర కుటుంబ సేవలు.",
+      en: "Mandal welfare, salon enterprise support, traditional artiste protection, and comprehensive family services.",
+    },
+    summary: {
+      salons: 28,
+      bajantri: 9,
+      freePowerPct: 69,
+      households: 510,
+      surveyPct: 55,
+      gpCount: 12,
+    },
     officer: {
       name: { te: "ఎం. రాజేష్", en: "M. Rajesh" },
       title: {
-        te: "మండల సోషల్ మీడియా ఆఫీసర్",
-        en: "Mandal Social Media Officer",
+        te: "మండల సోషల్ మీడియా & సమన్వయ అధికారి",
+        en: "Mandal Social Media & Coordination Officer",
       },
       phone: "919876543212",
       status: { te: "ఆన్‌లైన్ / క్రియాశీలం", en: "Online / Active" },
       initials: "రా",
+      jurisdiction: {
+        te: "వైరా పట్టణం + 12 గ్రామ పంచాయతీలు",
+        en: "Wyra town + 12 Gram Panchayats",
+      },
+      portrait:
+        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=200",
     },
     whatsappGroup: "https://chat.whatsapp.com/invite/wyra-nayi-demo",
     cartelWhatsapp: "https://chat.whatsapp.com/invite/wyra-salon-cartel",
     gramPanchayats: [
-      { id: "wyra-town", name: { te: "వైరా పట్టణం", en: "Wyra Town" }, households: 410 },
-      { id: "singareni", name: { te: "సింగరేణి", en: "Singareni" }, households: 255 },
-      { id: "gollapudi", name: { te: "గొల్లపూడి", en: "Gollapudi" }, households: 198 },
-      { id: "konijerla", name: { te: "కొనిజెర్ల", en: "Konijerla" }, households: 186 },
-      { id: "lakshmipuram", name: { te: "లక్ష్మీపురం", en: "Lakshmipuram" }, households: 162 },
-      { id: "gattumalla", name: { te: "గట్టుమల్ల", en: "Gattumalla" }, households: 121 },
+      { id: "wyra-town", name: { te: "వైరా పట్టణం", en: "Wyra Town" }, households: 410, surveyPct: 63 },
+      { id: "singareni", name: { te: "సింగరేణి", en: "Singareni" }, households: 255, surveyPct: 51 },
+      { id: "gollapudi", name: { te: "గొల్లపూడి", en: "Gollapudi" }, households: 198, surveyPct: 48 },
+      { id: "konijerla", name: { te: "కొనిజెర్ల", en: "Konijerla" }, households: 186, surveyPct: 59 },
+      { id: "lakshmipuram", name: { te: "లక్ష్మీపురం", en: "Lakshmipuram" }, households: 162, surveyPct: 56 },
+      { id: "gattumalla", name: { te: "గట్టుమల్ల", en: "Gattumalla" }, households: 121, surveyPct: 44 },
     ],
+    notices: defaultNotices("వైరా", "Wyra"),
   }),
   hub({
     districtSlug: "khammam",
@@ -164,27 +268,49 @@ export const mandals: Mandal[] = [
       te: "తల్లాడ మండల సమాఖ్య కేంద్రం",
       en: "Tallada Mandal Samakhya Hub",
     },
-    summary: { salons: 31, bajantri: 10, freePowerPct: 74 },
+    portalHeadline: {
+      te: "తల్లాడ మండల నాయీ - భజంత్రి సమాఖ్య అధికారిక వేదిక",
+      en: "Official Tallada Mandal Nayi–Bajantri Samakhya Portal",
+    },
+    portalSub: {
+      te: "మండల స్థాయి సంక్షేమం, సెలూన్ వ్యాపార బలోపేతం, సాంప్రదాయ కళాకారుల రక్షణ మరియు సమగ్ర కుటుంబ సేవలు.",
+      en: "Mandal welfare, salon enterprise support, traditional artiste protection, and comprehensive family services.",
+    },
+    summary: {
+      salons: 31,
+      bajantri: 10,
+      freePowerPct: 74,
+      households: 534,
+      surveyPct: 60,
+      gpCount: 13,
+    },
     officer: {
       name: { te: "పి. సునీత", en: "P. Sunitha" },
       title: {
-        te: "మండల సోషల్ మీడియా ఆఫీసర్",
-        en: "Mandal Social Media Officer",
+        te: "మండల సోషల్ మీడియా & సమన్వయ అధికారి",
+        en: "Mandal Social Media & Coordination Officer",
       },
       phone: "919876543213",
       status: { te: "ఆన్‌లైన్ / క్రియాశీలం", en: "Online / Active" },
       initials: "సు",
+      jurisdiction: {
+        te: "తల్లాడ పట్టణం + 13 గ్రామ పంచాయతీలు",
+        en: "Tallada town + 13 Gram Panchayats",
+      },
+      portrait:
+        "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=200",
     },
     whatsappGroup: "https://chat.whatsapp.com/invite/tallada-nayi-demo",
     cartelWhatsapp: "https://chat.whatsapp.com/invite/tallada-salon-cartel",
     gramPanchayats: [
-      { id: "tallada-town", name: { te: "తల్లాడ పట్టణం", en: "Tallada Town" }, households: 395 },
-      { id: "pinapaka", name: { te: "పినపాక", en: "Pinapaka" }, households: 248 },
-      { id: "tekulapalli", name: { te: "తెకులపల్లి", en: "Tekulapalli" }, households: 221 },
-      { id: "chandrugonda", name: { te: "చంద్రుగొండ", en: "Chandrugonda" }, households: 187 },
-      { id: "mulkalapalli", name: { te: "ముల్కలపల్లి", en: "Mulkalapalli" }, households: 169 },
-      { id: "dammapeta", name: { te: "దమ్మపేట", en: "Dammapeta" }, households: 144 },
+      { id: "tallada-town", name: { te: "తల్లాడ పట్టణం", en: "Tallada Town" }, households: 395, surveyPct: 67 },
+      { id: "pinapaka", name: { te: "పినపాక", en: "Pinapaka" }, households: 248, surveyPct: 53 },
+      { id: "tekulapalli", name: { te: "తెకులపల్లి", en: "Tekulapalli" }, households: 221, surveyPct: 58 },
+      { id: "chandrugonda", name: { te: "చంద్రుగొండ", en: "Chandrugonda" }, households: 187, surveyPct: 50 },
+      { id: "mulkalapalli", name: { te: "ముల్కలపల్లి", en: "Mulkalapalli" }, households: 169, surveyPct: 62 },
+      { id: "dammapeta", name: { te: "దమ్మపేట", en: "Dammapeta" }, households: 144, surveyPct: 47 },
     ],
+    notices: defaultNotices("తల్లాడ", "Tallada"),
   }),
 ];
 

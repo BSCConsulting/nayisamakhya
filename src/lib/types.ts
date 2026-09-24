@@ -62,6 +62,9 @@ export type MandalSummary = {
   salons: number;
   bajantri: number;
   freePowerPct: number;
+  households: number;
+  surveyPct: number;
+  gpCount: number;
 };
 
 export type Officer = {
@@ -70,12 +73,22 @@ export type Officer = {
   phone: string;
   status: Localized;
   initials: string;
+  jurisdiction: Localized;
+  portrait?: string;
 };
 
 export type GramPanchayat = {
   id: string;
   name: Localized;
   households: number;
+  surveyPct: number;
+};
+
+export type MandalNotice = {
+  id: string;
+  title: Localized;
+  date: string;
+  image: string;
 };
 
 export type MandalAction = {
@@ -97,6 +110,8 @@ export type Mandal = {
   district: Localized;
   mandal: Localized;
   hubTitle: Localized;
+  portalHeadline: Localized;
+  portalSub: Localized;
   summary: MandalSummary;
   officer: Officer;
   whatsappGroup: string;
@@ -104,4 +119,5 @@ export type Mandal = {
   cartelWhatsapp: string;
   gramPanchayats: GramPanchayat[];
   actions: MandalAction[];
+  notices: MandalNotice[];
 };

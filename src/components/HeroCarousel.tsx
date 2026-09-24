@@ -12,7 +12,7 @@ const slides = [
       "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&q=80&w=1920",
     te: {
       kicker: "సమాజ శక్తి",
-      title: "Community Empowerment",
+      title: "సమాజ బలోపేతం",
       body: "మండల స్థాయి సేవ, సంక్షేమం, సామూహిక స్వరం — ఒకే పోర్టల్‌లో.",
     },
     en: {
@@ -27,7 +27,7 @@ const slides = [
       "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&q=80&w=1600",
     te: {
       kicker: "సాంప్రదాయం",
-      title: "Bajantri Heritage",
+      title: "భజంత్రి వారసత్వం",
       body: "కళాకారుల గౌరవం, పెన్షన్, సాంస్కృతిక రక్షణ — తరాల వారసత్వం.",
     },
     en: {
@@ -42,7 +42,7 @@ const slides = [
       "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=1600",
     te: {
       kicker: "తరం తరువాత",
-      title: "Next-Gen Scholars",
+      title: "తరం తరువాత విద్యార్థులు",
       body: "బీసీ స్టడీ సర్కిల్, స్కాలర్‌షిప్‌లు, కోచింగ్ — యువతకు మార్గం.",
     },
     en: {

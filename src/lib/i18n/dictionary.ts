@@ -1,7 +1,7 @@
 import type { Lang, Localized } from "@/lib/types";
 
 export const dictionary = {
-  brand: { te: "నయి సమాఖ్య", en: "Nayi Samakhya" },
+  brand: { te: "నాయీ సమాఖ్య", en: "Nayi Samakhya" },
   brandSub: { te: "ప్రజా సమాఖ్య", en: "Praja Samakhya" },
   home: { te: "హోమ్", en: "Home" },
   mandal: { te: "మండలం", en: "Mandal" },
@@ -95,8 +95,17 @@ export const dictionary = {
   sosCall: { te: "కాల్ చేయండి", en: "Call now" },
   sosClose: { te: "మూసివేయి", en: "Close" },
   surveySoon: {
-    te: "సర్వే విజార్డ్ త్వరలో పూర్తి మొబైల్ PWAగా అందుబాటులో ఉంటుంది. మండల కేంద్రం నుంచి ప్రారంభించండి.",
-    en: "The full mobile survey wizard is available from each mandal hub.",
+    te: "సర్వే విజార్డ్ మండల కేంద్రం నుంచి అందుబాటులో ఉంది.",
+    en: "The survey wizard is available from each mandal hub.",
+  },
+  surveyTitle: {
+    te: "కుటుంబ సర్వే నమోదు",
+    en: "Family Survey Registration",
+  },
+  surveySubmit: { te: "సమర్పించండి", en: "Submit survey" },
+  surveySuccess: {
+    te: "సర్వే విజయవంతంగా నమోదైంది",
+    en: "Survey submitted successfully",
   },
 } as const satisfies Record<string, Localized>;
 

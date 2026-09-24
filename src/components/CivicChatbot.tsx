@@ -11,7 +11,7 @@ import {
   Send,
   X,
 } from "lucide-react";
-import { useLanguageStore } from "@/lib/store/preferences";
+import { useLanguageStore, useMandalPrefStore } from "@/lib/store/preferences";
 import type { Lang } from "@/lib/types";
 import { cn } from "@/lib/utils";
 
@@ -91,7 +91,12 @@ function SealWatermark() {
 }
 
 export function CivicChatbot() {
+  const siteLang = useLanguageStore((s) => s.lang);
   const setSiteLang = useLanguageStore((s) => s.setLang);
+  const districtSlug = useMandalPrefStore((s) => s.districtSlug);
+  const mandalSlug = useMandalPrefStore((s) => s.mandalSlug);
+  const activeHub = `/${districtSlug}/${mandalSlug}`;
+  const surveyHref = `${activeHub}/survey`;
   const reduce = useReducedMotion();
   const [open, setOpen] = useState(false);
   const [minimized, setMinimized] = useState(false);
@@ -175,7 +180,7 @@ export function CivicChatbot() {
         botLang === "te"
           ? "కుటుంబ సర్వే ప్రారంభించడానికి క్రింది బటన్ నొక్కండి."
           : "Tap the button below to start the family survey.",
-      linkHref: "/suryapet/kodad/survey",
+      linkHref: surveyHref,
       linkLabel: botLang === "te" ? "సర్వే ప్రారంభించండి →" : "Start survey →",
     });
   }
@@ -211,20 +216,21 @@ export function CivicChatbot() {
         linkEn: "Open Bajantri →",
       },
       officer: {
-        te: "మీ మండల హబ్ పేజీలో అధికారి ఫోన్ & WhatsApp వివరాలు ఉన్నాయి. కోదాడ హబ్‌కు వెళ్లండి.",
-        en: "Officer phone & WhatsApp are on each mandal hub. Open the Kodad hub to continue.",
-        href: "/suryapet/kodad",
-        linkTe: "కోదాడ హబ్ →",
-        linkEn: "Kodad hub →",
+        te: "మీ మండల హబ్ పేజీలో అధికారి ఫోన్ & WhatsApp వివరాలు ఉన్నాయి.",
+        en: "Officer phone & WhatsApp are on each mandal hub page.",
+        href: activeHub,
+        linkTe: "మండల హబ్ తెరవండి →",
+        linkEn: "Open mandal hub →",
       },
     } as const;
 
     const lang = botLang ?? "te";
+    const href = kind === "officer" ? activeHub : replies[kind].href;
     setShowActions(false);
     setFlow("none");
     push(labels[kind][lang], {
       text: replies[kind][lang],
-      linkHref: replies[kind].href,
+      linkHref: href,
       linkLabel: lang === "te" ? replies[kind].linkTe : replies[kind].linkEn,
     });
   }
@@ -238,8 +244,8 @@ export function CivicChatbot() {
       push(text, {
         text: ok
           ? botLang === "te"
-            ? `USC ${text}: పరిశీలనలో ఉంది (Under Verification at Sub-Station). రిఫరెన్స్ #NS-PWR-${text.slice(-4)}.`
-            : `USC ${text}: Under Verification at Sub-Station. Reference #NS-PWR-${text.slice(-4)}.`
+            ? `USC ${text}: డెమో స్థితి — పరిశీలనలో (mock). రిఫరెన్స్ #NS-PWR-${text.slice(-4)}. నిజమైన DISCOM స్థితికి మండల అధికారిని సంప్రదించండి.`
+            : `USC ${text}: Demo status — Under Verification (mock). Reference #NS-PWR-${text.slice(-4)}. Contact your mandal officer for live DISCOM status.`
           : botLang === "te"
             ? "దయచేసి సరిగ్గా 9 అంకెల USC/మీటర్ నంబర్ ఇవ్వండి."
             : "Please enter a valid 9-digit USC/Meter number.",
@@ -279,12 +285,12 @@ export function CivicChatbot() {
     }
 
     if (flow === "grievance-text") {
-      const ref = "#NS-GR-9021";
+      const ref = `#NS-GR-${Date.now().toString(36).toUpperCase().slice(-6)}`;
       push(text, {
         text:
           botLang === "te"
-            ? `ధన్యవాదాలు ${draft.name || ""}. ${draft.mandal || "మీ"} మండలం వినతి నమోదైంది. ట్రాకింగ్ ID: ${ref}. స్థితి తెలుసుకోవాలంటే ఈ IDని సేవ్ చేసుకోండి.`
-            : `Thank you ${draft.name || ""}. Grievance for ${draft.mandal || "your"} mandal registered. Tracking ID: ${ref}. Please save this ID.`,
+            ? `ధన్యవాదాలు ${draft.name || ""}. ${draft.mandal || "మీ"} మండలం వినతి డెమోగా నమోదైంది. ట్రాకింగ్ ID: ${ref}. (లైవ్ సర్వర్ లింక్ తర్వాత వస్తుంది — ఈ IDని సేవ్ చేసుకోండి.)`
+            : `Thank you ${draft.name || ""}. Demo grievance logged for ${draft.mandal || "your"} mandal. Tracking ID: ${ref}. (Live server sync coming soon — please save this ID.)`,
       });
       setFlow("none");
       setShowActions(true);
@@ -330,7 +336,11 @@ export function CivicChatbot() {
           <motion.div
             key="panel"
             role="dialog"
-            aria-label="సమాఖ్య సేవ మిత్ర"
+            aria-label={
+              botLang === "en"
+                ? "Samakhya Seva Mitra helpdesk"
+                : "సమాఖ్య సేవ మిత్ర"
+            }
             className="flex h-[600px] max-h-[85vh] w-[380px] max-w-[95vw] flex-col overflow-hidden rounded-3xl border border-[#EBE8E0] bg-[#FAF8F2] shadow-2xl"
             {...panelMotion}
           >
@@ -342,10 +352,14 @@ export function CivicChatbot() {
                 </span>
                 <span className="min-w-0">
                   <span className="block font-telugu text-sm font-bold leading-tight">
-                    సమాఖ్య సేవ మిత్ర (Samakhya Seva Bot)
+                    {botLang === "en"
+                      ? "Samakhya Seva Mitra"
+                      : "సమాఖ్య సేవ మిత్ర"}
                   </span>
-                  <span className="mt-0.5 block font-telugu text-[11px] text-white/90">
-                    నాయీ - భజంత్రి సమాఖ్య ప్రజా వేదిక
+                  <span className="mt-0.5 block text-[11px] text-white/90">
+                    {botLang === "en"
+                      ? "Nayi–Bajantri civic helpdesk"
+                      : "నాయీ - భజంత్రి సమాఖ్య ప్రజా వేదిక"}
                   </span>
                 </span>
               </div>
@@ -466,39 +480,64 @@ export function CivicChatbot() {
                           <button
                             type="button"
                             onClick={startPower}
-                            className="rounded-2xl bg-[#EE8939] px-2 py-3 text-center font-telugu text-xs font-semibold text-white shadow-sm transition-all hover:bg-[#DE7725]"
+                            className={cn(
+                              "rounded-2xl bg-[#EE8939] px-2 py-3 text-center text-xs font-semibold text-white shadow-sm transition-all hover:bg-[#DE7725]",
+                              botLang === "te" && "font-telugu",
+                            )}
                           >
-                            🔍 250 యూనిట్ల ఉచిత విద్యుత్ స్టేటస్
+                            {botLang === "te"
+                              ? "🔍 250 యూనిట్ల ఉచిత విద్యుత్ స్టేటస్"
+                              : "🔍 250-Unit Free Power Status"}
                           </button>
                           <button
                             type="button"
                             onClick={startSurvey}
-                            className="rounded-2xl bg-[#EE8939] px-2 py-3 text-center font-telugu text-xs font-semibold text-white shadow-sm transition-all hover:bg-[#DE7725]"
+                            className={cn(
+                              "rounded-2xl bg-[#EE8939] px-2 py-3 text-center text-xs font-semibold text-white shadow-sm transition-all hover:bg-[#DE7725]",
+                              botLang === "te" && "font-telugu",
+                            )}
                           >
-                            📋 కుటుంబ సర్వే నమోదు
+                            {botLang === "te"
+                              ? "📋 కుటుంబ సర్వే నమోదు"
+                              : "📋 Family Survey Entry"}
                           </button>
                         </div>
                         <div className="flex flex-wrap gap-2 pt-1">
                           <button
                             type="button"
                             onClick={() => quickChip("scholarship")}
-                            className="rounded-full border border-[#E8732A]/35 bg-white px-3 py-1.5 font-telugu text-[11px] font-semibold text-[#781B0E] hover:bg-[#FFF4E6]"
+                            className={cn(
+                              "rounded-full border border-[#E8732A]/35 bg-white px-3 py-1.5 text-[11px] font-semibold text-[#781B0E] hover:bg-[#FFF4E6]",
+                              botLang === "te" && "font-telugu",
+                            )}
                           >
-                            🎓 BC-A స్కాలర్‌షిప్ & హాస్టల్
+                            {botLang === "te"
+                              ? "🎓 BC-A స్కాలర్‌షిప్ & హాస్టల్"
+                              : "🎓 BC-A Scholarship & Hostel"}
                           </button>
                           <button
                             type="button"
                             onClick={() => quickChip("bajantri")}
-                            className="rounded-full border border-[#E8732A]/35 bg-white px-3 py-1.5 font-telugu text-[11px] font-semibold text-[#781B0E] hover:bg-[#FFF4E6]"
+                            className={cn(
+                              "rounded-full border border-[#E8732A]/35 bg-white px-3 py-1.5 text-[11px] font-semibold text-[#781B0E] hover:bg-[#FFF4E6]",
+                              botLang === "te" && "font-telugu",
+                            )}
                           >
-                            🎵 భజంత్రి పెన్షన్ సహాయం
+                            {botLang === "te"
+                              ? "🎵 భజంత్రి పెన్షన్ సహాయం"
+                              : "🎵 Bajantri Pension Help"}
                           </button>
                           <button
                             type="button"
                             onClick={() => quickChip("officer")}
-                            className="rounded-full border border-[#E8732A]/35 bg-white px-3 py-1.5 font-telugu text-[11px] font-semibold text-[#781B0E] hover:bg-[#FFF4E6]"
+                            className={cn(
+                              "rounded-full border border-[#E8732A]/35 bg-white px-3 py-1.5 text-[11px] font-semibold text-[#781B0E] hover:bg-[#FFF4E6]",
+                              botLang === "te" && "font-telugu",
+                            )}
                           >
-                            👥 మండల ఆఫీసర్ వివరాలు
+                            {botLang === "te"
+                              ? "👥 మండల ఆఫీసర్ వివరాలు"
+                              : "👥 Mandal Officer Details"}
                           </button>
                         </div>
                         <button
@@ -538,8 +577,15 @@ export function CivicChatbot() {
                       <input
                         value={input}
                         onChange={(e) => setInput(e.target.value)}
-                        placeholder="పైనున్న బటన్లను ఉపయోగించండి / Use buttons above"
-                        className="flex-1 rounded-full border border-[#EBE8E0] bg-[#F4F2EB]/60 px-4 py-2 text-xs text-[#18181B] focus:border-[#E8732A] focus:outline-none"
+                        placeholder={
+                          botLang === "en"
+                            ? "Use the buttons above, or type here…"
+                            : "పైనున్న బటన్లను ఉపయోగించండి…"
+                        }
+                        className={cn(
+                          "flex-1 rounded-full border border-[#EBE8E0] bg-[#F4F2EB]/60 px-4 py-2 text-xs text-[#18181B] focus:border-[#E8732A] focus:outline-none",
+                          botLang === "te" && "font-telugu",
+                        )}
                       />
                       <button
                         type="submit"
@@ -550,7 +596,9 @@ export function CivicChatbot() {
                       </button>
                     </form>
                     <span className="mt-1 block text-center text-[10px] text-[#A1A1AA]">
-                      Press the mic to speak in Telugu or English • సురక్షిత ప్రజా సేవ
+                      {botLang === "en"
+                        ? "Demo helpdesk • Call 1800-NAYI-SEVA for live seva"
+                        : "డెమో హెల్ప్‌డెస్క్ • లైవ్ సేవకు 1800-NAYI-SEVA"}
                     </span>
                   </div>
                 </motion.div>
@@ -574,7 +622,9 @@ export function CivicChatbot() {
         aria-expanded={open && !minimized}
       >
         <MessageCircle className="h-5 w-5" aria-hidden />
-        <span className="font-telugu">సమాఖ్య సేవ మిత్ర</span>
+        <span className={siteLang === "te" ? "font-telugu" : ""}>
+          {siteLang === "en" ? "Seva Mitra" : "సమాఖ్య సేవ మిత్ర"}
+        </span>
       </button>
     </div>
   );

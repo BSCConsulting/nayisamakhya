@@ -43,10 +43,10 @@ export function CivicFooter() {
   ];
 
   const policies = [
-    { href: "#", label: t("footerHyperlink") },
-    { href: "#", label: t("footerPrivacy") },
-    { href: "#", label: t("footerTerms") },
-    { href: "#", label: t("footerSitemap") },
+    { href: "/policies/hyperlinking", label: t("footerHyperlink") },
+    { href: "/policies/privacy", label: t("footerPrivacy") },
+    { href: "/policies/terms", label: t("footerTerms") },
+    { href: "/sitemap", label: t("footerSitemap") },
   ];
 
   return (

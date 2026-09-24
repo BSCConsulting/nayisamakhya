@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { ChevronDown, Menu, X, Landmark } from "lucide-react";
 import { mandals } from "@/lib/data/mandals";
 import { useLanguage } from "@/context/LanguageContext";
@@ -22,9 +22,16 @@ const navKeys = [
 export function FloatingNavbar() {
   const { language, t } = useLanguage();
   const setMandal = useMandalPrefStore((s) => s.setMandal);
+  const prefDistrict = useMandalPrefStore((s) => s.districtSlug);
+  const prefMandal = useMandalPrefStore((s) => s.mandalSlug);
   const [open, setOpen] = useState(false);
-  const [district, setDistrict] = useState("suryapet");
-  const [mandalSlug, setMandalSlug] = useState("kodad");
+  const [district, setDistrict] = useState(prefDistrict);
+  const [mandalSlug, setMandalSlug] = useState(prefMandal);
+
+  useEffect(() => {
+    setDistrict(prefDistrict);
+    setMandalSlug(prefMandal);
+  }, [prefDistrict, prefMandal]);
 
   const districts = useMemo(() => {
     const map = new Map<string, { te: string; en: string }>();

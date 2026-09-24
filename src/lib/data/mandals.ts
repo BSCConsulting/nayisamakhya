@@ -56,8 +56,8 @@ function hub(
           en: `${m.mandal.en} Salon Wholesale Cartel`,
         },
         description: {
-          te: "కత్తెరలు, క్లిప్పర్లు, సెలూన్ కుర్చీలు, కాస్మెటిక్ కిట్లు — ఫ్యాక్టరీ ధరలకు. మధ్యవర్తులు లేకుండా సూర్యాపేట జిల్లాలో సమూహ కొనుగోలు.",
-          en: "Scissors, clippers, salon chairs, and cosmetic kits at factory prices — eliminating middleman margins across the district.",
+          te: `కత్తెరలు, క్లిప్పర్లు, సెలూన్ కుర్చీలు, కాస్మెటిక్ కిట్లు — ఫ్యాక్టరీ ధరలకు. మధ్యవర్తులు లేకుండా ${m.district.te}లో సమూహ కొనుగోలు.`,
+          en: `Scissors, clippers, salon chairs, and cosmetic kits at factory prices — eliminating middleman margins across ${m.district.en} district.`,
         },
         cta: { te: "కార్టెల్ బల్క్ ఆర్డర్ నమోదు", en: "Register cartel bulk order" },
         href: m.cartelWhatsapp,

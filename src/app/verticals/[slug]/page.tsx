@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ChevronRight, Home } from "lucide-react";
@@ -8,23 +10,46 @@ import {
   fetchVerticalBySlug,
 } from "@/lib/data/verticals";
 import { loc } from "@/lib/i18n/dictionary";
+import { useLanguage } from "@/context/LanguageContext";
+import { use, useEffect, useState } from "react";
+import type { DirectoryResource, Vertical } from "@/lib/data/verticals";
 
 type Props = { params: Promise<{ slug: string }> };
 
-export async function generateStaticParams() {
-  const rows = await fetchAllVerticals();
-  return rows.map((v) => ({ slug: v.slug }));
-}
+export default function VerticalPage({ params }: Props) {
+  const { slug } = use(params);
+  const { language } = useLanguage();
+  const te = language === "te";
+  const [vertical, setVertical] = useState<Vertical | null | undefined>(undefined);
+  const [resources, setResources] = useState<DirectoryResource[]>([]);
+  const [allVerticals, setAllVerticals] = useState<Vertical[]>([]);
 
-export default async function VerticalPage({ params }: Props) {
-  const { slug } = await params;
-  const vertical = await fetchVerticalBySlug(slug);
-  if (!vertical) notFound();
+  useEffect(() => {
+    let cancelled = false;
+    (async () => {
+      const [v, res, all] = await Promise.all([
+        fetchVerticalBySlug(slug),
+        fetchDirectoryResources(slug),
+        fetchAllVerticals(),
+      ]);
+      if (cancelled) return;
+      setVertical(v ?? null);
+      setResources(res);
+      setAllVerticals(all);
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [slug]);
 
-  const [resources, allVerticals] = await Promise.all([
-    fetchDirectoryResources(slug),
-    fetchAllVerticals(),
-  ]);
+  if (vertical === null) notFound();
+  if (vertical === undefined) {
+    return (
+      <div className="mx-auto max-w-7xl px-3 py-16 text-center text-sm text-[#71717A]">
+        {te ? "లోడ్ అవుతోంది…" : "Loading…"}
+      </div>
+    );
+  }
 
   return (
     <div className="mx-auto max-w-7xl px-3 py-8 sm:px-4">
@@ -34,12 +59,12 @@ export default async function VerticalPage({ params }: Props) {
       >
         <Link href="/" className="inline-flex items-center gap-1 hover:text-ink">
           <Home className="h-3.5 w-3.5" aria-hidden />
-          Home
+          {te ? "హోమ్" : "Home"}
         </Link>
         <ChevronRight className="h-3.5 w-3.5" aria-hidden />
-        <span className="font-telugu text-ink">{loc(vertical.title, "te")}</span>
-        <span className="text-line">/</span>
-        <span>{loc(vertical.title, "en")}</span>
+        <span className={te ? "font-telugu text-ink" : "text-ink"}>
+          {loc(vertical.title, language)}
+        </span>
       </nav>
 
       <div className="grid gap-6 lg:grid-cols-12">
@@ -47,9 +72,8 @@ export default async function VerticalPage({ params }: Props) {
           <div className="surface-card sticky top-24 overflow-hidden">
             <div className="border-b border-line bg-white px-4 py-3">
               <p className="text-xs font-semibold uppercase tracking-[0.14em] text-muted">
-                Verticals
+                {te ? "విభాగాలు" : "Verticals"}
               </p>
-              <p className="mt-1 font-telugu text-sm font-bold text-ink">విభాగాలు</p>
             </div>
             <ul className="p-2">
               {allVerticals.map((v) => {
@@ -62,12 +86,9 @@ export default async function VerticalPage({ params }: Props) {
                         active
                           ? "bg-[#C2410C] font-semibold text-white"
                           : "text-ink hover:bg-[#F4F2EB]"
-                      }`}
+                      } ${te ? "font-telugu" : ""}`}
                     >
-                      <span className="font-telugu">{loc(v.title, "te")}</span>
-                      <span className="mt-0.5 block text-[11px] opacity-80">
-                        {loc(v.title, "en")}
-                      </span>
+                      {loc(v.title, language)}
                     </Link>
                   </li>
                 );
@@ -81,19 +102,21 @@ export default async function VerticalPage({ params }: Props) {
             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand">
               Nayi Samakhya · Directory
             </p>
-            <h1 className="mt-2 font-telugu text-3xl font-bold tracking-tight text-[#18181B]">
-              {loc(vertical.title, "te")}
+            <h1
+              className={`mt-2 text-3xl font-bold tracking-tight text-[#18181B] ${te ? "font-telugu" : ""}`}
+            >
+              {loc(vertical.title, language)}
             </h1>
-            <p className="mt-1 text-lg font-medium text-ink">{loc(vertical.title, "en")}</p>
-            <p className="mt-3 max-w-2xl font-telugu text-sm leading-relaxed text-[#71717A]">
-              {loc(vertical.summary, "te")}
+            <p
+              className={`mt-3 max-w-2xl text-sm leading-relaxed text-[#71717A] ${te ? "font-telugu" : ""}`}
+            >
+              {loc(vertical.summary, language)}
             </p>
-            <p className="mt-1 max-w-2xl text-sm text-muted">{loc(vertical.summary, "en")}</p>
             <p
               id={slug === "welfare" ? "power-250" : undefined}
-              className="mt-4 inline-flex rounded-full border border-line bg-[#F4F2EB] px-3 py-1 font-telugu text-xs font-medium text-ink"
+              className={`mt-4 inline-flex rounded-full border border-line bg-[#F4F2EB] px-3 py-1 text-xs font-medium text-ink ${te ? "font-telugu" : ""}`}
             >
-              {loc(vertical.heroNote, "te")}
+              {loc(vertical.heroNote, language)}
             </p>
           </header>
 

@@ -30,7 +30,6 @@ export const viewport: Viewport = {
   themeColor: "#047857",
   width: "device-width",
   initialScale: 1,
-  maximumScale: 1,
 };
 
 export default function RootLayout({
@@ -41,12 +40,21 @@ export default function RootLayout({
   return (
     <html
       lang="te"
+      suppressHydrationWarning
       className={`${plusJakarta.variable} ${notoTelugu.variable} h-full`}
     >
-      <body className="min-h-full bg-canvas font-sans text-ink antialiased">
+      <body className="flex min-h-dvh flex-col bg-canvas font-sans text-ink antialiased">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-emerald-700 focus:px-4 focus:py-2 focus:text-sm focus:text-white"
+        >
+          Skip to content
+        </a>
         <LanguageProvider>
           <StickyHeader />
-          <main className="flex-1 pb-24 md:pb-8">{children}</main>
+          <main id="main-content" className="flex-1 pb-24 md:pb-8">
+            {children}
+          </main>
           <BottomNav />
         </LanguageProvider>
       </body>

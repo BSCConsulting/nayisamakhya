@@ -17,7 +17,9 @@ export default function SurveyPage() {
     if (m) setMandal(m.districtSlug, m.mandalSlug);
   }, [m, setMandal]);
 
-  if (!m) notFound();
+  if (!m) {
+    notFound();
+  }
 
   return (
     <section className="px-4 py-10">

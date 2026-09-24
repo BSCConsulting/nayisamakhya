@@ -28,7 +28,9 @@ export default function MandalHubPage() {
     return `https://wa.me/${m.officer.phone}?text=${text}`;
   }, [lang, m]);
 
-  if (!m) notFound();
+  if (!m) {
+    notFound();
+  }
 
   const filtered = m.gramPanchayats.filter((gp) => {
     const q = gpQuery.trim().toLowerCase();

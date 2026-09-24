@@ -79,7 +79,8 @@ export function MetricsGrid() {
             </span>
           </div>
           <a
-            href="#"
+            href="/discom-petition.txt"
+            download="nayi-discom-petition-template.txt"
             className={`tap mt-4 inline-flex items-center justify-center rounded-full border border-slate-200 px-4 text-xs font-medium text-slate-900 hover:bg-slate-50 ${lang === "te" ? "font-telugu" : ""}`}
           >
             {t("downloadDiscom", lang)}

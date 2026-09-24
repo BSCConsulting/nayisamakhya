@@ -3,11 +3,13 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import { useLanguageStore } from "@/lib/store/preferences";
+import { useLanguage } from "@/context/LanguageContext";
 
 const slides = [
   {
-    id: "empower",
+    id: "salon",
+    image:
+      "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&q=80&w=1600",
     te: {
       kicker: "సమాజ శక్తి",
       title: "Community Empowerment",
@@ -18,10 +20,11 @@ const slides = [
       title: "Community Empowerment",
       body: "Mandal services, welfare, and collective voice — one authoritative portal.",
     },
-    tone: "from-[#3f2a1d]/70 via-[#121417]/40 to-transparent",
   },
   {
     id: "heritage",
+    image:
+      "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&q=80&w=1600",
     te: {
       kicker: "సాంప్రదాయం",
       title: "Bajantri Heritage",
@@ -32,10 +35,11 @@ const slides = [
       title: "Bajantri Heritage",
       body: "Dignity, pensions, and cultural protection for artisan lineages.",
     },
-    tone: "from-[#4a1c0a]/70 via-[#121417]/40 to-transparent",
   },
   {
     id: "scholars",
+    image:
+      "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=1600",
     te: {
       kicker: "తరం తరువాత",
       title: "Next-Gen Scholars",
@@ -46,33 +50,14 @@ const slides = [
       title: "Next-Gen Scholars",
       body: "BC study circles, scholarships, and coaching pathways for youth.",
     },
-    tone: "from-[#1c1917]/75 via-[#121417]/35 to-transparent",
   },
 ] as const;
 
-const stalwarts = [
-  {
-    name: "Karpoori Thakur",
-    role: { te: "సామాజిక న్యాయం", en: "Social Justice" },
-    portrait:
-      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=200",
-  },
-  {
-    name: "Sant Sena Maharaj",
-    role: { te: "ఆధ్యాత్మిక సేవ", en: "Spiritual Service" },
-    portrait:
-      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=200",
-  },
-  {
-    name: "Dr. Sheik Chinna Moulana",
-    role: { te: "నాదస్వర విద్వాంసుడు", en: "Nadaswaram Maestro" },
-    portrait:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200",
-  },
-] as const;
+const AMBEDKAR =
+  "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Dr._B._R._Ambedkar_ca._1950.jpg/440px-Dr._B._R._Ambedkar_ca._1950.jpg";
 
 export function HeroCarousel() {
-  const lang = useLanguageStore((s) => s.lang);
+  const { language, t } = useLanguage();
   const reduce = useReducedMotion();
   const [index, setIndex] = useState(0);
 
@@ -80,102 +65,106 @@ export function HeroCarousel() {
     if (reduce) return;
     const id = window.setInterval(() => {
       setIndex((i) => (i + 1) % slides.length);
-    }, 5600);
+    }, 6000);
     return () => window.clearInterval(id);
   }, [reduce]);
 
   const slide = slides[index];
-  const copy = slide[lang];
+  const copy = slide[language];
 
   return (
-    <section className="relative overflow-hidden border-b border-white/5 bg-gradient-to-b from-[#18181B] to-[#121417]">
-      <div
-        className="pointer-events-none absolute inset-0 opacity-40"
-        style={{
-          background:
-            "radial-gradient(ellipse 60% 50% at 20% 40%, rgb(194 65 12 / 0.18), transparent), radial-gradient(ellipse 40% 40% at 85% 20%, rgb(255 255 255 / 0.06), transparent)",
-        }}
-        aria-hidden
-      />
-
-      <div className="relative mx-auto grid min-h-[22rem] max-w-7xl lg:min-h-[28rem] lg:grid-cols-[1.4fr_0.9fr]">
-        <div className="relative px-4 py-10 sm:px-6 sm:py-14 lg:py-16">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={slide.id}
-              initial={reduce ? false : { opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={reduce ? undefined : { opacity: 0 }}
-              transition={{ duration: 0.55 }}
-              className={`absolute inset-0 bg-gradient-to-r ${slide.tone}`}
-              aria-hidden
+    <section className="relative overflow-hidden border-b border-white/5 bg-[#121417]">
+      <div className="absolute inset-0">
+        <AnimatePresence mode="sync" initial={false}>
+          <motion.div
+            key={slide.id}
+            className="absolute inset-0"
+            initial={reduce ? false : { opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={reduce ? undefined : { opacity: 0 }}
+            transition={{ duration: 0.9 }}
+          >
+            <Image
+              src={slide.image}
+              alt=""
+              fill
+              priority={index === 0}
+              sizes="100vw"
+              className="object-cover"
             />
-          </AnimatePresence>
+          </motion.div>
+        </AnimatePresence>
+        <div
+          className="absolute inset-0 bg-gradient-to-r from-[#121417]/95 via-[#121417]/80 to-transparent"
+          aria-hidden
+        />
+      </div>
 
-          <div className="relative z-[1] max-w-xl">
-            <p
-              className={`text-xs font-semibold uppercase tracking-[0.18em] text-[#fdba74] ${lang === "te" ? "font-telugu normal-case tracking-normal" : ""}`}
-            >
-              {copy.kicker}
-            </p>
-            <h1
-              className={`mt-3 text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl ${lang === "te" ? "font-telugu leading-snug" : ""}`}
-            >
-              {copy.title}
-            </h1>
-            <p
-              className={`mt-4 max-w-lg text-sm leading-relaxed text-zinc-200 sm:text-base ${lang === "te" ? "font-telugu" : ""}`}
-            >
-              {copy.body}
-            </p>
-            <div className="mt-6 flex gap-2" role="tablist" aria-label="Hero slides">
-              {slides.map((s, i) => (
-                <button
-                  key={s.id}
-                  type="button"
-                  role="tab"
-                  aria-selected={i === index}
-                  onClick={() => setIndex(i)}
-                  className={`h-1.5 w-8 rounded-full transition-colors ${
-                    i === index ? "bg-brand" : "bg-white/30 hover:bg-white/50"
-                  }`}
-                />
-              ))}
-            </div>
+      <div className="relative mx-auto grid min-h-[24rem] max-w-7xl items-center gap-8 px-4 py-12 sm:px-6 lg:min-h-[30rem] lg:grid-cols-[1.35fr_0.85fr] lg:py-16">
+        <div className="relative z-[1] max-w-xl">
+          <p
+            className={`text-xs font-semibold uppercase tracking-[0.18em] text-[#fdba74] ${language === "te" ? "font-telugu normal-case tracking-normal" : ""}`}
+          >
+            {copy.kicker}
+          </p>
+          <h1
+            className={`mt-3 text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl ${language === "te" ? "font-telugu leading-snug" : ""}`}
+          >
+            {copy.title}
+          </h1>
+          <p
+            className={`mt-4 max-w-lg text-sm leading-relaxed text-zinc-200 sm:text-base ${language === "te" ? "font-telugu" : ""}`}
+          >
+            {copy.body}
+          </p>
+          <div className="mt-6 flex gap-2" role="tablist" aria-label="Hero slides">
+            {slides.map((s, i) => (
+              <button
+                key={s.id}
+                type="button"
+                role="tab"
+                aria-selected={i === index}
+                onClick={() => setIndex(i)}
+                className={`h-1.5 w-8 rounded-full transition-colors ${
+                  i === index ? "bg-[#F5A623]" : "bg-white/30 hover:bg-white/50"
+                }`}
+              />
+            ))}
           </div>
         </div>
 
-        <aside className="relative z-[1] border-t border-white/10 bg-white/[0.03] px-4 py-8 backdrop-blur-sm sm:px-6 lg:border-l lg:border-t-0 lg:py-14">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#fdba74]">
-            {lang === "te" ? "స్ఫూర్తి స్థంభాలు" : "Guiding Stalwarts"}
-          </p>
-          <ul className="mt-5 space-y-2">
-            {stalwarts.map((person) => (
-              <li key={person.name}>
-                <div className="flex items-center gap-3 rounded-xl p-3 transition-colors hover:bg-white/10">
-                  <span className="relative h-12 w-12 shrink-0 overflow-hidden rounded-full border border-white/20 shadow-md">
-                    <Image
-                      src={person.portrait}
-                      alt={person.name}
-                      fill
-                      sizes="48px"
-                      className="object-cover"
-                    />
-                  </span>
-                  <span className="min-w-0">
-                    <span className="block truncate text-sm font-semibold text-white">
-                      {person.name}
-                    </span>
-                    <span
-                      className={`block text-xs text-zinc-300 ${lang === "te" ? "font-telugu" : ""}`}
-                    >
-                      {person.role[lang]}
-                    </span>
-                  </span>
-                </div>
-              </li>
-            ))}
-          </ul>
+        <aside className="relative z-[1] flex flex-col items-center justify-center lg:items-end">
+          <div className="relative w-full max-w-[280px]">
+            <div
+              className="relative mx-auto aspect-[3/4] w-[220px] overflow-hidden sm:w-[240px]"
+              style={{
+                maskImage: "radial-gradient(circle, black 65%, transparent 100%)",
+                WebkitMaskImage:
+                  "radial-gradient(circle, black 65%, transparent 100%)",
+              }}
+            >
+              <Image
+                src={AMBEDKAR}
+                alt={t("ambedkarTitle")}
+                fill
+                sizes="240px"
+                className="object-cover object-top"
+              />
+            </div>
+            <div className="mx-auto mt-3 max-w-[260px] rounded-xl border border-[#F5A623]/40 bg-[#121417]/75 px-4 py-3 text-center shadow-lg backdrop-blur-sm">
+              <p className="font-telugu text-sm font-bold leading-snug text-[#F5A623]">
+                {t("ambedkarTitle")}
+              </p>
+              <p
+                className={`mt-1 text-[11px] leading-relaxed text-zinc-200 ${language === "te" ? "font-telugu" : ""}`}
+              >
+                {t("ambedkarSub")}
+              </p>
+              <p className="mt-2 text-[10px] font-medium tracking-wide text-[#fdba74]/90">
+                {t("ambedkarRole")}
+              </p>
+            </div>
+          </div>
         </aside>
       </div>
     </section>

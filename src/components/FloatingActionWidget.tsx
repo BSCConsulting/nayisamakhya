@@ -3,42 +3,39 @@
 import Link from "next/link";
 import { useState } from "react";
 import { BookOpen, ClipboardList, Package, Zap } from "lucide-react";
-import { useLanguageStore, useMandalPrefStore } from "@/lib/store/preferences";
+import { useLanguage } from "@/context/LanguageContext";
+import { useMandalPrefStore } from "@/lib/store/preferences";
 import { cn } from "@/lib/utils";
 
 const tabs = [
   {
     id: "power",
     icon: Zap,
-    te: "250 యూనిట్ల స్థితి",
-    en: "Check 250 Units Status",
+    key: "actionPower" as const,
     href: "/verticals/welfare#power-250",
   },
   {
     id: "survey",
     icon: ClipboardList,
-    te: "కుటుంబ సర్వే",
-    en: "Start Family Survey",
+    key: "actionSurvey" as const,
     href: null as string | null,
   },
   {
     id: "scholarship",
     icon: BookOpen,
-    te: "BC-A స్కాలర్‌షిప్",
-    en: "BC-A Scholarship Guide",
+    key: "actionScholarship" as const,
     href: "/verticals/education",
   },
   {
     id: "cartel",
     icon: Package,
-    te: "కార్టెల్ బల్క్ ఆర్డర్",
-    en: "Cartel Bulk Order",
+    key: "actionCartel" as const,
     href: "/verticals/livelihood",
   },
 ] as const;
 
 export function FloatingActionWidget() {
-  const lang = useLanguageStore((s) => s.lang);
+  const { language, t } = useLanguage();
   const districtSlug = useMandalPrefStore((s) => s.districtSlug);
   const mandalSlug = useMandalPrefStore((s) => s.mandalSlug);
   const [active, setActive] = useState<(typeof tabs)[number]["id"]>("power");
@@ -65,7 +62,7 @@ export function FloatingActionWidget() {
                   isActive
                     ? "bg-[#C2410C] text-white shadow-sm"
                     : "text-[#18181B] hover:bg-[#F4F2EB]",
-                  lang === "te" ? "font-telugu" : "",
+                  language === "te" ? "font-telugu" : "",
                 )}
               >
                 <span
@@ -79,7 +76,7 @@ export function FloatingActionWidget() {
                   <Icon className="h-4 w-4" aria-hidden />
                 </span>
                 <span className="text-sm font-semibold leading-snug">
-                  {lang === "te" ? tab.te : tab.en}
+                  {t(tab.key)}
                 </span>
               </Link>
             );

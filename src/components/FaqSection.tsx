@@ -6,7 +6,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { useLanguageStore } from "@/lib/store/preferences";
+import { useLanguage } from "@/context/LanguageContext";
 
 const faqs = [
   {
@@ -109,7 +109,7 @@ const faqs = [
 ] as const;
 
 export function FaqSection() {
-  const lang = useLanguageStore((s) => s.lang);
+  const { language: lang, t } = useLanguage();
 
   return (
     <section
@@ -118,13 +118,13 @@ export function FaqSection() {
     >
       <div className="mb-6">
         <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand">
-          FAQ
+          {t("faqEyebrow")}
         </p>
         <h2
           id="faq-heading"
           className={`mt-1 text-2xl font-bold text-ink ${lang === "te" ? "font-telugu" : ""}`}
         >
-          {lang === "te" ? "తరచుగా అడిగే ప్రశ్నలు" : "Frequently asked questions"}
+          {t("faqTitle")}
         </h2>
       </div>
 

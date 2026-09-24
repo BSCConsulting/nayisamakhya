@@ -4,22 +4,23 @@ import Link from "next/link";
 import { useMemo, useState } from "react";
 import { ChevronDown, Menu, X, Landmark } from "lucide-react";
 import { mandals } from "@/lib/data/mandals";
-import { useLanguageStore, useMandalPrefStore } from "@/lib/store/preferences";
+import { useLanguage } from "@/context/LanguageContext";
+import { useMandalPrefStore } from "@/lib/store/preferences";
 import { loc } from "@/lib/i18n/dictionary";
 import { cn } from "@/lib/utils";
 
-const navLinks = [
-  { href: "/verticals/welfare", te: "సంక్షేమం", en: "Welfare" },
-  { href: "/verticals/education", te: "విద్య", en: "Education" },
-  { href: "/verticals/livelihood", te: "జీవనోపాధి", en: "Livelihood" },
-  { href: "/verticals/bajantri", te: "భజంత్రి", en: "Bajantri" },
-  { href: "/verticals/matrimonial", te: "వివాహ సేవ", en: "Matrimonial" },
-  { href: "/verticals/gallery", te: "గ్యాలరీ", en: "Gallery" },
-  { href: "/verticals/go-library", te: "G.O. లైబ్రరీ", en: "G.O. Library" },
-] as const;
+const navKeys = [
+  { href: "/verticals/welfare", key: "navWelfare" as const },
+  { href: "/verticals/education", key: "navEducation" as const },
+  { href: "/verticals/livelihood", key: "navLivelihood" as const },
+  { href: "/verticals/bajantri", key: "navBajantri" as const },
+  { href: "/verticals/matrimonial", key: "navMatrimonial" as const },
+  { href: "/verticals/gallery", key: "navGallery" as const },
+  { href: "/verticals/go-library", key: "navGoLibrary" as const },
+];
 
 export function FloatingNavbar() {
-  const lang = useLanguageStore((s) => s.lang);
+  const { language, t } = useLanguage();
   const setMandal = useMandalPrefStore((s) => s.setMandal);
   const [open, setOpen] = useState(false);
   const [district, setDistrict] = useState("suryapet");
@@ -55,26 +56,28 @@ export function FloatingNavbar() {
             <Landmark className="h-5 w-5" aria-hidden />
           </span>
           <span className="min-w-0">
-            <span className="block truncate font-telugu text-sm font-bold tracking-tight text-ink sm:text-base">
-              నాయీ సమాఖ్య
+            <span
+              className={`block truncate text-sm font-bold tracking-tight text-ink sm:text-base ${language === "te" ? "font-telugu" : ""}`}
+            >
+              {t("brandName")}
             </span>
             <span className="hidden text-[10px] uppercase tracking-[0.14em] text-muted sm:block">
-              Nayi Samakhya
+              {t("brandSub")}
             </span>
           </span>
         </Link>
 
         <nav className="hidden items-center gap-0.5 lg:flex" aria-label="Primary">
-          {navLinks.map((link) => (
+          {navKeys.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               className={cn(
                 "rounded-lg px-2.5 py-2 text-[12px] font-medium text-ink transition-colors hover:bg-[#F4F2EB]",
-                lang === "te" ? "font-telugu" : "",
+                language === "te" ? "font-telugu" : "",
               )}
             >
-              {lang === "te" ? link.te : link.en}
+              {t(link.key)}
             </Link>
           ))}
         </nav>
@@ -97,7 +100,7 @@ export function FloatingNavbar() {
             >
               {districts.map((d) => (
                 <option key={d.slug} value={d.slug}>
-                  {loc(d.label, lang)}
+                  {loc(d.label, language)}
                 </option>
               ))}
             </select>
@@ -112,12 +115,12 @@ export function FloatingNavbar() {
             >
               {mandalOptions.map((m) => (
                 <option key={m.mandalSlug} value={m.mandalSlug}>
-                  {loc(m.mandal, lang)}
+                  {loc(m.mandal, language)}
                 </option>
               ))}
             </select>
             <button type="button" onClick={goMandal} className="btn-brand h-9 px-3 text-[11px]">
-              Go
+              {t("go")}
             </button>
           </div>
 
@@ -126,7 +129,7 @@ export function FloatingNavbar() {
             className="tap inline-flex h-10 w-10 items-center justify-center rounded-xl border border-line bg-white text-ink hover:bg-warm lg:hidden"
             onClick={() => setOpen((v) => !v)}
             aria-expanded={open}
-            aria-label="Menu"
+            aria-label={t("menu")}
           >
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
@@ -136,17 +139,17 @@ export function FloatingNavbar() {
       {open ? (
         <div className="border-t border-line bg-white/95 px-3 py-3 backdrop-blur-md lg:hidden">
           <ul className="space-y-1">
-            {navLinks.map((link) => (
+            {navKeys.map((link) => (
               <li key={link.href}>
                 <Link
                   href={link.href}
                   onClick={() => setOpen(false)}
                   className={cn(
                     "tap flex items-center justify-between rounded-xl px-3 py-2.5 text-sm font-medium text-ink hover:bg-warm",
-                    lang === "te" ? "font-telugu" : "",
+                    language === "te" ? "font-telugu" : "",
                   )}
                 >
-                  {lang === "te" ? link.te : link.en}
+                  {t(link.key)}
                   <ChevronDown className="h-4 w-4 -rotate-90 text-muted" aria-hidden />
                 </Link>
               </li>
@@ -165,7 +168,7 @@ export function FloatingNavbar() {
             >
               {districts.map((d) => (
                 <option key={d.slug} value={d.slug}>
-                  {loc(d.label, lang)}
+                  {loc(d.label, language)}
                 </option>
               ))}
             </select>
@@ -176,12 +179,12 @@ export function FloatingNavbar() {
             >
               {mandalOptions.map((m) => (
                 <option key={m.mandalSlug} value={m.mandalSlug}>
-                  {loc(m.mandal, lang)}
+                  {loc(m.mandal, language)}
                 </option>
               ))}
             </select>
             <button type="button" onClick={goMandal} className="btn-brand col-span-2">
-              {lang === "te" ? "మండలానికి వెళ్ళండి" : "Go to mandal"}
+              {t("goMandal")}
             </button>
           </div>
         </div>

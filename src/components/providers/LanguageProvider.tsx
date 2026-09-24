@@ -1,12 +1,13 @@
 "use client";
 
 import { useEffect, type ReactNode } from "react";
+import { LanguageContextProvider } from "@/context/LanguageContext";
 import { useLanguageStore } from "@/lib/store/preferences";
 import { useAccessibilityStore } from "@/lib/store/accessibility";
 
 /**
  * Syncs <html lang>, font scale, and high-contrast class with stores.
- * Renders children immediately (no hydrate gate).
+ * Also mounts LanguageContext for bilingual UI consumers.
  */
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const lang = useLanguageStore((s) => s.lang);
@@ -25,5 +26,5 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     document.documentElement.classList.toggle("contrast-high", highContrast);
   }, [highContrast]);
 
-  return <>{children}</>;
+  return <LanguageContextProvider>{children}</LanguageContextProvider>;
 }

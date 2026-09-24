@@ -1,13 +1,12 @@
 "use client";
 
 import { Contrast } from "lucide-react";
-import { useLanguageStore } from "@/lib/store/preferences";
+import { useLanguage } from "@/context/LanguageContext";
 import { useAccessibilityStore } from "@/lib/store/accessibility";
 import { cn } from "@/lib/utils";
 
 export function AccessibilityBar() {
-  const lang = useLanguageStore((s) => s.lang);
-  const setLang = useLanguageStore((s) => s.setLang);
+  const { language, setLanguage, t } = useLanguage();
   const bumpFont = useAccessibilityStore((s) => s.bumpFont);
   const setFontScale = useAccessibilityStore((s) => s.setFontScale);
   const highContrast = useAccessibilityStore((s) => s.highContrast);
@@ -47,16 +46,19 @@ export function AccessibilityBar() {
             className={cn(
               "tap ml-1 inline-flex items-center gap-1 rounded px-2 py-1 text-[11px] hover:bg-zinc-700",
               highContrast ? "bg-brand text-white" : "text-zinc-300",
+              language === "te" ? "font-telugu" : "",
             )}
             aria-pressed={highContrast}
           >
             <Contrast className="h-3.5 w-3.5" aria-hidden />
-            {lang === "te" ? "కాంట్రాస్ట్" : "Contrast"}
+            {t("contrast")}
           </button>
         </div>
 
-        <p className="text-center font-telugu text-[11px] leading-snug text-zinc-300 sm:flex-1">
-          హెల్ప్‌లైన్: 1800-NAYI-SEVA | టెలిగ్రామ్ అలర్ట్స్
+        <p
+          className={`text-center text-[11px] leading-snug text-zinc-300 sm:flex-1 ${language === "te" ? "font-telugu" : ""}`}
+        >
+          {t("helpline")}
         </p>
 
         <div
@@ -66,10 +68,10 @@ export function AccessibilityBar() {
         >
           <button
             type="button"
-            onClick={() => setLang("te")}
+            onClick={() => setLanguage("te")}
             className={cn(
               "tap rounded px-2.5 py-1 font-telugu text-[11px]",
-              lang === "te" ? "bg-brand text-white" : "text-zinc-300 hover:bg-zinc-700",
+              language === "te" ? "bg-brand text-white" : "text-zinc-300 hover:bg-zinc-700",
             )}
           >
             తెలుగు
@@ -79,10 +81,10 @@ export function AccessibilityBar() {
           </span>
           <button
             type="button"
-            onClick={() => setLang("en")}
+            onClick={() => setLanguage("en")}
             className={cn(
               "tap rounded px-2.5 py-1 text-[11px]",
-              lang === "en" ? "bg-brand text-white" : "text-zinc-300 hover:bg-zinc-700",
+              language === "en" ? "bg-brand text-white" : "text-zinc-300 hover:bg-zinc-700",
             )}
           >
             English

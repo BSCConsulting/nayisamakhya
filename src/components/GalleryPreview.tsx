@@ -3,37 +3,37 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Images } from "lucide-react";
-import { useLanguageStore } from "@/lib/store/preferences";
+import { useLanguage } from "@/context/LanguageContext";
 
 const gallery = [
   {
-    title: "Kodad Service Camp",
-    te: "కోదాడ సేవా శిబిరం",
+    key: "galleryKodad" as const,
+    titleEn: "Kodad Service Camp",
     image:
       "https://images.unsplash.com/photo-1577495508048-b635879837f1?auto=format&fit=crop&q=80&w=600",
   },
   {
-    title: "Bajantri Heritage Meet",
-    te: "భజంత్రి సమ్మేళనం",
+    key: "galleryBajantri" as const,
+    titleEn: "Bajantri Heritage Meet",
     image:
       "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&q=80&w=600",
   },
   {
-    title: "Study Circle Launch",
-    te: "స్టడీ సర్కిల్ ప్రారంభం",
+    key: "galleryStudy" as const,
+    titleEn: "Study Circle Launch",
     image:
       "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=600",
   },
   {
-    title: "Women Livelihood Fair",
-    te: "మహిళా ఉపాధి మేళా",
+    key: "galleryWomen" as const,
+    titleEn: "Women Livelihood Fair",
     image:
       "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=600",
   },
 ] as const;
 
 export function GalleryPreview() {
-  const lang = useLanguageStore((s) => s.lang);
+  const { language, t } = useLanguage();
 
   return (
     <section
@@ -45,29 +45,29 @@ export function GalleryPreview() {
           <Images className="h-5 w-5 text-brand" aria-hidden />
           <h2
             id="gallery-heading"
-            className={`text-2xl font-bold text-ink ${lang === "te" ? "font-telugu" : ""}`}
+            className={`text-2xl font-bold text-ink ${language === "te" ? "font-telugu" : ""}`}
           >
-            {lang === "te" ? "మల్టీమీడియా గ్యాలరీ" : "Multimedia gallery"}
+            {t("galleryTitle")}
           </h2>
         </div>
         <Link
           href="/verticals/gallery"
           className="text-sm font-semibold text-brand hover:text-brand-hover"
         >
-          {lang === "te" ? "అన్నీ చూడండి →" : "View all →"}
+          {t("viewAll")}
         </Link>
       </div>
 
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4">
         {gallery.map((item) => (
           <Link
-            key={item.title}
+            key={item.key}
             href="/verticals/gallery"
             className="group relative aspect-[4/3] overflow-hidden rounded-2xl border border-[#EBE8E0] shadow-sm"
           >
             <Image
               src={item.image}
-              alt={item.title}
+              alt={t(item.key)}
               fill
               sizes="(max-width:768px) 100vw, 25vw"
               className="object-cover transition-transform duration-300 group-hover:scale-105"
@@ -77,10 +77,14 @@ export function GalleryPreview() {
               aria-hidden
             />
             <div className="absolute bottom-4 left-4 right-4 text-white">
-              <p className="font-telugu text-sm font-semibold leading-snug">
-                {item.te}
+              <p
+                className={`text-sm font-semibold leading-snug ${language === "te" ? "font-telugu" : ""}`}
+              >
+                {t(item.key)}
               </p>
-              <p className="mt-0.5 text-[11px] text-white/80">{item.title}</p>
+              {language === "te" ? (
+                <p className="mt-0.5 text-[11px] text-white/80">{item.titleEn}</p>
+              ) : null}
             </div>
           </Link>
         ))}

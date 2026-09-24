@@ -51,21 +51,28 @@ function RangoliBorder({ position }: { position: "top" | "bottom" }) {
 function NamaskaramArt() {
   return (
     <svg
-      viewBox="0 0 120 120"
-      className="mx-auto h-24 w-24 text-[#D94F2B]"
+      className="mx-auto h-16 w-16 text-[#D94F2B]"
+      viewBox="0 0 64 64"
       fill="none"
       stroke="currentColor"
-      strokeWidth="2.5"
+      strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
       aria-hidden
     >
-      <circle cx="60" cy="28" r="12" />
-      <path d="M48 48c0 0 6 8 12 8s12-8 12-8" />
-      <path d="M38 72c8-14 14-20 22-20s14 6 22 20" />
-      <path d="M44 78c6-8 10-12 16-12s10 4 16 12" />
-      <path d="M52 88h16" />
-      <path d="M56 70v22M64 70v22" />
+      {/* Left prayer hand */}
+      <path d="M28 18c-1.2-4.5-3.8-7-6.5-7-3.2 0-5.5 3.2-5.5 7.5V34c0 2.2 1.5 3.5 3.2 3.5 1.4 0 2.6-.8 3.3-2.1" />
+      <path d="M22 16.5c-.2-2.8-1.6-4.8-3.4-4.8-2.2 0-3.8 2.4-3.8 5.6V31" />
+      <path d="M19 15c-.1-2.2-1.2-3.8-2.7-3.8-1.8 0-3.1 2-3.1 4.6v13.2" />
+      <path d="M28 34.5c0 6.5-2.8 12.5-6.5 16.2" />
+      {/* Right prayer hand (mirrored) */}
+      <path d="M36 18c1.2-4.5 3.8-7 6.5-7 3.2 0 5.5 3.2 5.5 7.5V34c0 2.2-1.5 3.5-3.2 3.5-1.4 0-2.6-.8-3.3-2.1" />
+      <path d="M42 16.5c.2-2.8 1.6-4.8 3.4-4.8 2.2 0 3.8 2.4 3.8 5.6V31" />
+      <path d="M45 15c.1-2.2 1.2-3.8 2.7-3.8 1.8 0 3.1 2 3.1 4.6v13.2" />
+      <path d="M36 34.5c0 6.5 2.8 12.5 6.5 16.2" />
+      {/* Palms meeting */}
+      <path d="M28 22v16c0 2.5 1.8 4 4 4s4-1.5 4-4V22" />
+      <path d="M30 52h4" />
     </svg>
   );
 }

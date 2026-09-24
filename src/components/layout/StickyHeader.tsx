@@ -10,10 +10,13 @@ export function StickyHeader() {
   const setLang = useLanguageStore((s) => s.setLang);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur-md">
+    <header
+      className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur-md"
+      style={{ minHeight: "var(--header-h)" }}
+    >
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3">
         <Link href="/" className="tap min-w-0 rounded-xl px-1 py-1">
-          <p className="truncate text-sm font-bold tracking-tight text-slate-900">
+          <p className="truncate text-sm font-bold tracking-tight text-gradient-primary">
             Nayi Samakhya
           </p>
           <p
@@ -34,7 +37,7 @@ export function StickyHeader() {
               onClick={() => setLang("te")}
               className={`tap rounded-full px-3 text-xs font-medium font-telugu ${
                 lang === "te"
-                  ? "bg-emerald-700 text-white"
+                  ? "bg-gradient-brand text-white"
                   : "text-slate-600 hover:text-slate-900"
               }`}
             >
@@ -45,7 +48,7 @@ export function StickyHeader() {
               onClick={() => setLang("en")}
               className={`tap rounded-full px-3 text-xs font-medium ${
                 lang === "en"
-                  ? "bg-emerald-700 text-white"
+                  ? "bg-gradient-brand text-white"
                   : "text-slate-600 hover:text-slate-900"
               }`}
             >

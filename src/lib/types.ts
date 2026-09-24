@@ -24,12 +24,15 @@ export type DistributionSegment = {
   label: Localized;
   pct: number;
   color: string;
+  description?: Localized;
 };
 
 export type AspirationItem = {
   id: string;
   label: Localized;
   pct: number;
+  icon?: "shield" | "monitor" | "scissors" | "graduation";
+  description?: Localized;
 };
 
 export type StrategicStep = {
@@ -37,6 +40,22 @@ export type StrategicStep = {
   number: string;
   title: Localized;
   body: Localized;
+  pattern?: "dots" | "civic";
+};
+
+export type WelfareSlice = {
+  id: string;
+  label: Localized;
+  value: number;
+  color: string;
+  kind: "cleared" | "pending";
+};
+
+export type BoothBar = {
+  id: string;
+  name: Localized;
+  coverage: number;
+  color: string;
 };
 
 export type MandalSummary = {

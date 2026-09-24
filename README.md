@@ -5,10 +5,15 @@ Grassroots civic-tech PWA for Telangana & Andhra Pradesh — Next.js App Router,
 ## Stack
 
 - Next.js (App Router) + React 19
-- Tailwind CSS v4
+- Tailwind CSS v4 (`@theme` + `tailwind.config.ts`)
+- Framer Motion (stagger / accordion; CSS for hover)
 - Lucide icons
 - Zustand (language + active mandal, persisted)
 - Plus Jakarta Sans + Noto Sans Telugu (`next/font`)
+
+## Design notes
+
+Semantic gradients (brand emerald→teal, hero sky→emerald, SOS pulse) and bento interactions are documented in `docs/motion-performance.md`.
 
 ## Run locally
 

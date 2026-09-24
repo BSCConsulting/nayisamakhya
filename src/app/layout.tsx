@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Noto_Sans_Telugu, Plus_Jakarta_Sans } from "next/font/google";
 import { BottomNav } from "@/components/layout/BottomNav";
+import { LiveTelemetryBar } from "@/components/home/LiveTelemetryBar";
 import { StickyHeader } from "@/components/layout/StickyHeader";
 import { LanguageProvider } from "@/components/providers/LanguageProvider";
 import "./globals.css";
@@ -52,6 +53,7 @@ export default function RootLayout({
         </a>
         <LanguageProvider>
           <StickyHeader />
+          <LiveTelemetryBar />
           <main id="main-content" className="flex-1 pb-24 md:pb-8">
             {children}
           </main>

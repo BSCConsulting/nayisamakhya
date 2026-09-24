@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+:root {
+  --brand: #047857;
+  --brand-hover: #065f46;
+  --accent: #0369a1;
+  --sos: #dc2626;
+  --canvas: #f8fafc;
+  --surface: #ffffff;
+  --ink: #0f172a;
+  --muted: #475569;
+  --line: #e2e8f0;
+}
+
+@theme inline {
+  --color-brand: var(--brand);
+  --color-brand-hover: var(--brand-hover);
+  --color-accent: var(--accent);
+  --color-sos: var(--sos);
+  --color-canvas: var(--canvas);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --font-sans: var(--font-plus-jakarta);
+  --font-telugu: var(--font-noto-telugu);
+}
+
+html,
+body {
+  background: var(--canvas);
+  color: var(--ink);
+}
+
+body {
+  @apply antialiased;
+}
+
+.font-telugu {
+  font-family: var(--font-noto-telugu), var(--font-plus-jakarta), system-ui, sans-serif;
+  line-height: 1.7;
+}
+
+.tap {
+  @apply min-h-[48px] active:scale-[0.98] transition-transform;
+}
+
+@keyframes sos-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgb(220 38 38 / 0.45);
+  }
+  70% {
+    box-shadow: 0 0 0 12px rgb(220 38 38 / 0);
+  }
+}
+
+.sos-pulse {
+  animation: sos-pulse 2s ease-out infinite;
+}
+
+.metric-tnum {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+}

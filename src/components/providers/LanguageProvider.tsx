@@ -9,15 +9,18 @@ import { useLanguageStore } from "@/lib/store/preferences";
  */
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const lang = useLanguageStore((s) => s.lang);
-  const [ready, setReady] = useState(false);
+  const [ready, setReady] = useState(() =>
+    typeof window === "undefined" ? false : useLanguageStore.persist.hasHydrated(),
+  );
 
   useEffect(() => {
+    if (useLanguageStore.persist.hasHydrated()) {
+      queueMicrotask(() => setReady(true));
+      return;
+    }
     const unsub = useLanguageStore.persist.onFinishHydration(() => {
       setReady(true);
     });
-    if (useLanguageStore.persist.hasHydrated()) {
-      setReady(true);
-    }
     return unsub;
   }, []);
 

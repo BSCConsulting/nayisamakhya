@@ -33,4 +33,8 @@ Open [http://127.0.0.1:43123](http://127.0.0.1:43123).
 
 ## Deploy (Vercel)
 
-Import the GitHub repo. Framework: **Next.js**. Custom domain: `nayisamakhya.org`.
+Connected to [BSCConsulting/nayisamakhya](https://github.com/BSCConsulting/nayisamakhya) (`main`).
+
+`vercel.json` forces **Next.js** (overrides any leftover Vite/`dist` project settings from the previous SPA). Custom domain: `nayisamakhya.org`.
+
+If a deploy still fails looking for `dist`, open the Vercel project → Settings → General → clear **Output Directory** and set Framework Preset to **Next.js**, then Redeploy.

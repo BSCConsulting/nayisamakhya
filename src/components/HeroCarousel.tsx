@@ -9,7 +9,7 @@ const slides = [
   {
     id: "salon",
     image:
-      "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&q=80&w=1600",
+      "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&q=80&w=1920",
     te: {
       kicker: "సమాజ శక్తి",
       title: "Community Empowerment",
@@ -95,7 +95,7 @@ export function HeroCarousel() {
           </motion.div>
         </AnimatePresence>
         <div
-          className="absolute inset-0 bg-gradient-to-r from-[#121417]/95 via-[#121417]/80 to-transparent"
+          className="absolute inset-0 bg-gradient-to-r from-[#121417]/90 via-[#121417]/65 to-black/30"
           aria-hidden
         />
       </div>

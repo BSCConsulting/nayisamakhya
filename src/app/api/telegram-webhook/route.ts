@@ -33,7 +33,8 @@ function siteOrigin() {
   if (explicit) return explicit.replace(/\/$/, "");
   const vercel = process.env.VERCEL_URL?.trim();
   if (vercel) return `https://${vercel.replace(/^https?:\/\//, "")}`;
-  return "https://nayisamakhya.org";
+  // Apex redirects → www with 308; prefer www for Telegram review links.
+  return "https://www.nayisamakhya.org";
 }
 
 async function telegramApi(method: string, body: Record<string, unknown>) {
@@ -248,7 +249,7 @@ export async function POST(req: Request) {
     const reviewUrl = `${siteOrigin().replace(/\/$/, "")}/admin/moderation?id=${inserted?.id || ""}`;
     await replyText(
       chatId,
-      "✅ ఫోటో స్వీకరించబడింది. ధృవీకరణ పెండింగ్‌లో ఉంది (Submission received. Pending moderation review).",
+      "✅ ఫోటో విజయవంతంగా స్వీకరించబడింది!\nస్థితి: పరిశీలనలో ఉంది (Pending Review)",
       {
         inline_keyboard: [
           [

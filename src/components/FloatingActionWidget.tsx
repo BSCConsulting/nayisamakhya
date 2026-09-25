@@ -5,6 +5,7 @@ import { useState } from "react";
 import { BookOpen, ClipboardList, Package, Zap } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 import { useMandalPrefStore } from "@/lib/store/preferences";
+import { MandalSelector } from "@/components/MandalSelector";
 import { cn } from "@/lib/utils";
 
 const tabs = [
@@ -46,35 +47,54 @@ export function FloatingActionWidget() {
         <div className="grid grid-cols-2 gap-2 lg:grid-cols-4">
           {tabs.map((tab) => {
             const Icon = tab.icon;
-            const href =
-              tab.id === "survey"
-                ? `/${districtSlug}/${mandalSlug}/survey`
-                : tab.href!;
             const isActive = active === tab.id;
+            const commonClass = cn(
+              "tap flex flex-col items-start gap-2 rounded-xl p-3.5 transition-colors sm:p-4",
+              isActive
+                ? "bg-[#C2410C] text-white shadow-sm"
+                : "text-[#18181B] hover:bg-[#F4F2EB]",
+              language === "te" ? "font-telugu" : "",
+            );
+            const iconWrap = (
+              <span
+                className={cn(
+                  "inline-flex h-9 w-9 items-center justify-center rounded-xl border",
+                  isActive
+                    ? "border-white/25 bg-white/15 text-white"
+                    : "border-[#EBE8E0] bg-[#F4F2EB] text-[#C2410C]",
+                )}
+              >
+                <Icon className="h-4 w-4" aria-hidden />
+              </span>
+            );
+
+            if (tab.id === "survey") {
+              return (
+                <button
+                  key={tab.id}
+                  type="button"
+                  onClick={() => setActive("survey")}
+                  onMouseEnter={() => setActive("survey")}
+                  onFocus={() => setActive("survey")}
+                  className={cn(commonClass, "text-left")}
+                >
+                  {iconWrap}
+                  <span className="text-sm font-semibold leading-snug">
+                    {t(tab.key)}
+                  </span>
+                </button>
+              );
+            }
+
             return (
               <Link
                 key={tab.id}
-                href={href}
+                href={tab.href!}
                 onMouseEnter={() => setActive(tab.id)}
                 onFocus={() => setActive(tab.id)}
-                className={cn(
-                  "tap flex flex-col items-start gap-2 rounded-xl p-3.5 transition-colors sm:p-4",
-                  isActive
-                    ? "bg-[#C2410C] text-white shadow-sm"
-                    : "text-[#18181B] hover:bg-[#F4F2EB]",
-                  language === "te" ? "font-telugu" : "",
-                )}
+                className={commonClass}
               >
-                <span
-                  className={cn(
-                    "inline-flex h-9 w-9 items-center justify-center rounded-xl border",
-                    isActive
-                      ? "border-white/25 bg-white/15 text-white"
-                      : "border-[#EBE8E0] bg-[#F4F2EB] text-[#C2410C]",
-                  )}
-                >
-                  <Icon className="h-4 w-4" aria-hidden />
-                </span>
+                {iconWrap}
                 <span className="text-sm font-semibold leading-snug">
                   {t(tab.key)}
                 </span>
@@ -82,6 +102,17 @@ export function FloatingActionWidget() {
             );
           })}
         </div>
+
+        {active === "survey" ? (
+          <div className="mt-3 border-t border-[#EBE8E0] pt-3">
+            <MandalSelector variant="hero" target="survey" />
+            <p className="mt-2 text-center text-[11px] text-[#A1A1AA]">
+              {language === "te"
+                ? `ప్రస్తుతం: ${districtSlug} / ${mandalSlug}`
+                : `Current: ${districtSlug} / ${mandalSlug}`}
+            </p>
+          </div>
+        ) : null}
       </div>
     </div>
   );

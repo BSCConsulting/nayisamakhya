@@ -1,12 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useMemo, useState } from "react";
+import { useState } from "react";
 import { ChevronDown, Menu, X, Landmark } from "lucide-react";
-import { mandals } from "@/lib/data/mandals";
 import { useLanguage } from "@/context/LanguageContext";
-import { useMandalPrefStore } from "@/lib/store/preferences";
-import { loc } from "@/lib/i18n/dictionary";
+import { MandalSelector } from "@/components/MandalSelector";
 import { cn } from "@/lib/utils";
 
 const navKeys = [
@@ -21,39 +19,7 @@ const navKeys = [
 
 export function FloatingNavbar() {
   const { language, t } = useLanguage();
-  const setMandal = useMandalPrefStore((s) => s.setMandal);
-  const prefDistrict = useMandalPrefStore((s) => s.districtSlug);
-  const prefMandal = useMandalPrefStore((s) => s.mandalSlug);
   const [open, setOpen] = useState(false);
-  const [district, setDistrict] = useState(prefDistrict);
-  const [mandalSlug, setMandalSlug] = useState(prefMandal);
-
-  useEffect(() => {
-    setDistrict(prefDistrict);
-    setMandalSlug(prefMandal);
-  }, [prefDistrict, prefMandal]);
-
-  const districts = useMemo(() => {
-    const map = new Map<string, { te: string; en: string }>();
-    for (const m of mandals) {
-      if (!map.has(m.districtSlug)) map.set(m.districtSlug, m.district);
-    }
-    return [...map.entries()].map(([slug, label]) => ({ slug, label }));
-  }, []);
-
-  const mandalOptions = useMemo(
-    () => mandals.filter((m) => m.districtSlug === district),
-    [district],
-  );
-
-  function goMandal() {
-    const hit = mandals.find(
-      (m) => m.districtSlug === district && m.mandalSlug === mandalSlug,
-    );
-    if (!hit) return;
-    setMandal(hit.districtSlug, hit.mandalSlug);
-    window.location.href = hit.path;
-  }
 
   return (
     <header className="sticky top-0 z-50 border-b border-[#EBE8E0] bg-[#FBFBF9]/90 backdrop-blur-md">
@@ -90,45 +56,8 @@ export function FloatingNavbar() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <div className="hidden items-center gap-1.5 md:flex">
-            <label className="sr-only" htmlFor="nav-district">
-              District
-            </label>
-            <select
-              id="nav-district"
-              value={district}
-              onChange={(e) => {
-                const next = e.target.value;
-                setDistrict(next);
-                const first = mandals.find((m) => m.districtSlug === next);
-                if (first) setMandalSlug(first.mandalSlug);
-              }}
-              className="h-9 max-w-[7.5rem] rounded-lg border border-line bg-white px-2 text-[11px] text-ink"
-            >
-              {districts.map((d) => (
-                <option key={d.slug} value={d.slug}>
-                  {loc(d.label, language)}
-                </option>
-              ))}
-            </select>
-            <label className="sr-only" htmlFor="nav-mandal">
-              Mandal
-            </label>
-            <select
-              id="nav-mandal"
-              value={mandalSlug}
-              onChange={(e) => setMandalSlug(e.target.value)}
-              className="h-9 max-w-[8rem] rounded-lg border border-line bg-white px-2 text-[11px] text-ink"
-            >
-              {mandalOptions.map((m) => (
-                <option key={m.mandalSlug} value={m.mandalSlug}>
-                  {loc(m.mandal, language)}
-                </option>
-              ))}
-            </select>
-            <button type="button" onClick={goMandal} className="btn-brand h-9 px-3 text-[11px]">
-              {t("go")}
-            </button>
+          <div className="hidden md:block">
+            <MandalSelector variant="compact" target="portal" />
           </div>
 
           <button
@@ -162,40 +91,14 @@ export function FloatingNavbar() {
               </li>
             ))}
           </ul>
-          <div className="mt-3 grid grid-cols-2 gap-2">
-            <select
-              value={district}
-              onChange={(e) => {
-                const next = e.target.value;
-                setDistrict(next);
-                const first = mandals.find((m) => m.districtSlug === next);
-                if (first) setMandalSlug(first.mandalSlug);
-              }}
-              className="h-11 rounded-xl border border-line bg-white px-2 text-sm"
-            >
-              {districts.map((d) => (
-                <option key={d.slug} value={d.slug}>
-                  {loc(d.label, language)}
-                </option>
-              ))}
-            </select>
-            <select
-              value={mandalSlug}
-              onChange={(e) => setMandalSlug(e.target.value)}
-              className="h-11 rounded-xl border border-line bg-white px-2 text-sm"
-            >
-              {mandalOptions.map((m) => (
-                <option key={m.mandalSlug} value={m.mandalSlug}>
-                  {loc(m.mandal, language)}
-                </option>
-              ))}
-            </select>
-            <button type="button" onClick={goMandal} className="btn-brand col-span-2">
-              {t("goMandal")}
-            </button>
+          <div className="mt-3 md:hidden">
+            <MandalSelector variant="compact" target="portal" className="w-full [&_select]:max-w-none [&_select]:flex-1" />
           </div>
         </div>
       ) : null}
     </header>
   );
 }
+
+/** Alias for callers expecting `Navbar` naming. */
+export { FloatingNavbar as Navbar };

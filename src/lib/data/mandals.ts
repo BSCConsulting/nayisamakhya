@@ -312,6 +312,59 @@ export const mandals: Mandal[] = [
     ],
     notices: defaultNotices("తల్లాడ", "Tallada"),
   }),
+  hub({
+    districtSlug: "adilabad",
+    mandalSlug: "ichoda",
+    state: { te: "తెలంగాణ", en: "Telangana" },
+    district: { te: "ఆదిలాబాద్ జిల్లా", en: "Adilabad" },
+    mandal: { te: "ఇచ్చోడ మండలం", en: "Ichoda" },
+    hubTitle: {
+      te: "ఇచ్చోడ మండల సమాఖ్య కేంద్రం",
+      en: "Ichoda Mandal Samakhya Hub",
+    },
+    portalHeadline: {
+      te: "ఇచ్చోడ మండల నాయీ - భజంత్రి సమాఖ్య అధికారిక వేదిక",
+      en: "Official Ichoda Mandal Nayi–Bajantri Samakhya Portal",
+    },
+    portalSub: {
+      te: "మండల స్థాయి సంక్షేమం, సెలూన్ వ్యాపార బలోపేతం, సాంప్రదాయ కళాకారుల రక్షణ మరియు సమగ్ర కుటుంబ సేవలు.",
+      en: "Mandal welfare, salon enterprise support, traditional artiste protection, and comprehensive family services.",
+    },
+    summary: {
+      salons: 24,
+      bajantri: 8,
+      freePowerPct: 66,
+      households: 418,
+      surveyPct: 49,
+      gpCount: 11,
+    },
+    officer: {
+      name: { te: "బి. రవీందర్", en: "B. Ravinder" },
+      title: {
+        te: "మండల సోషల్ మీడియా & సమన్వయ అధికారి",
+        en: "Mandal Social Media & Coordination Officer",
+      },
+      phone: "919876543214",
+      status: { te: "ఆన్‌లైన్ / క్రియాశీలం", en: "Online / Active" },
+      initials: "ర",
+      jurisdiction: {
+        te: "ఇచ్చోడ పట్టణం + 11 గ్రామ పంచాయతీలు",
+        en: "Ichoda town + 11 Gram Panchayats",
+      },
+      portrait:
+        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=200",
+    },
+    whatsappGroup: "https://chat.whatsapp.com/invite/ichoda-nayi-demo",
+    cartelWhatsapp: "https://chat.whatsapp.com/invite/ichoda-salon-cartel",
+    gramPanchayats: [
+      { id: "ichoda-town", name: { te: "ఇచ్చోడ పట్టణం", en: "Ichoda Town" }, households: 340, surveyPct: 55 },
+      { id: "bheempur", name: { te: "భీంపూర్", en: "Bheempur" }, households: 198, surveyPct: 46 },
+      { id: "gudihathnoor", name: { te: "గుడిహత్నూర్", en: "Gudihathnoor" }, households: 176, surveyPct: 51 },
+      { id: "naregaon", name: { te: "నారేగావ్", en: "Naregaon" }, households: 152, surveyPct: 43 },
+      { id: "sonala", name: { te: "సోనాల", en: "Sonala" }, households: 134, surveyPct: 48 },
+    ],
+    notices: defaultNotices("ఇచ్చోడ", "Ichoda"),
+  }),
 ];
 
 export function getMandal(district: string, mandal: string): Mandal | undefined {

@@ -3,12 +3,13 @@
 INSERT INTO districts (slug, name_en, name_te, zone)
 VALUES
   ('suryapet', 'Suryapet', 'సూర్యాపేట జిల్లా', 'telangana'),
-  ('khammam', 'Khammam', 'ఖమ్మం జిల్లా', 'telangana')
+  ('khammam', 'Khammam', 'ఖమ్మం జిల్లా', 'telangana'),
+  ('adilabad', 'Adilabad', 'ఆదిలాబాద్ జిల్లా', 'telangana')
 ON CONFLICT (slug) DO UPDATE SET
   name_en = EXCLUDED.name_en,
   name_te = EXCLUDED.name_te;
 
-WITH d AS (SELECT id, slug FROM districts WHERE slug IN ('suryapet', 'khammam'))
+WITH d AS (SELECT id, slug FROM districts WHERE slug IN ('suryapet', 'khammam', 'adilabad'))
 INSERT INTO mandals (
   district_id, slug, name_en, name_te,
   total_households, salons_count, artistes_count, free_power_pct, survey_completion_pct,
@@ -53,6 +54,16 @@ JOIN (
       'Mandal welfare, salon enterprise support, traditional artiste protection, and comprehensive family services.',
       'https://chat.whatsapp.com/invite/madhira-nayi-demo',
       'https://chat.whatsapp.com/invite/madhira-salon-cartel'
+    ),
+    (
+      'adilabad', 'ichoda', 'Ichoda', 'ఇచ్చోడ మండలం',
+      418, 24, 8, 66, 49,
+      'ఇచ్చోడ మండల నాయీ - భజంత్రి సమాఖ్య అధికారిక వేదిక',
+      'Official Ichoda Mandal Nayi–Bajantri Samakhya Portal',
+      'మండల స్థాయి సంక్షేమం, సెలూన్ వ్యాపార బలోపేతం, సాంప్రదాయ కళాకారుల రక్షణ మరియు సమగ్ర కుటుంబ సేవలు.',
+      'Mandal welfare, salon enterprise support, traditional artiste protection, and comprehensive family services.',
+      'https://chat.whatsapp.com/invite/ichoda-nayi-demo',
+      'https://chat.whatsapp.com/invite/ichoda-salon-cartel'
     )
 ) AS v(
   district_slug, slug, name_en, name_te, hh, salons, artistes, power, survey,

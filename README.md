@@ -40,9 +40,17 @@ Open [http://127.0.0.1:43123](http://127.0.0.1:43123).
 Mandal hubs read from Postgres when env is set; otherwise they use `src/lib/data/mandals.ts`.
 
 1. Create a Supabase project and copy URL + anon key into `.env.local` (see `.env.example`).
-2. Run `supabase/migrations/001_civic_schema.sql` in the SQL editor.
-3. Optionally run `supabase/seed.sql` for Kodada / Madhira sample rows.
-4. Publish `local_updates` rows (`is_published = true`) for the photo feed.
+2. Run migrations in order:
+   - `supabase/migrations/001_civic_schema.sql`
+   - `supabase/migrations/002_surveys.sql`
+   - `supabase/migrations/create_mandal_officers.sql`
+3. Seed districts + mandals: `seed_phase1_districts.sql`, then `seed_phase2_mandals.sql` (or `seed.sql`).
+4. Seed nodal officers roster:
+   ```bash
+   npm run seed:officers
+   ```
+   (needs `SUPABASE_SERVICE_ROLE_KEY` or anon key with insert rights; contact line `+91 9032654111`)
+5. Publish `local_updates` rows (`is_published = true`) for the photo feed.
 
 ```bash
 cp .env.example .env.local
@@ -50,7 +58,7 @@ cp .env.example .env.local
 npm run dev -- --port 43123
 ```
 
-RLS: public `SELECT` on districts, mandals, officers, gram_panchayats; published-only on `local_updates`.
+RLS: public `SELECT` on districts, mandals, officers, mandal_officers, gram_panchayats; published-only on `local_updates`.
 
 ## Deploy
 

@@ -31,7 +31,26 @@ Open [http://127.0.0.1:43123](http://127.0.0.1:43123).
 | `/` | Civic homepage (hero, actions, FAQ, gallery, press) |
 | `/verticals/[slug]` | Welfare, Education, Livelihood, Bajantri, … |
 | `/mandals` | Mandal directory |
-| `/{district}/{mandal}` | Mandal hub |
+| `/{district}/{mandal}` | Mandal civic portal (Supabase when configured, else static) |
+| `/{district}/{mandal}/survey` | Family survey wizard |
+| `/policies/*` · `/sitemap` | Legal pages |
+
+## Supabase (optional)
+
+Mandal hubs read from Postgres when env is set; otherwise they use `src/lib/data/mandals.ts`.
+
+1. Create a Supabase project and copy URL + anon key into `.env.local` (see `.env.example`).
+2. Run `supabase/migrations/001_civic_schema.sql` in the SQL editor.
+3. Optionally run `supabase/seed.sql` for Kodada / Madhira sample rows.
+4. Publish `local_updates` rows (`is_published = true`) for the photo feed.
+
+```bash
+cp .env.example .env.local
+# edit NEXT_PUBLIC_SUPABASE_URL + NEXT_PUBLIC_SUPABASE_ANON_KEY
+npm run dev -- --port 43123
+```
+
+RLS: public `SELECT` on districts, mandals, officers, gram_panchayats; published-only on `local_updates`.
 
 ## Deploy
 

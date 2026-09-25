@@ -1,23 +1,27 @@
-"use client";
+import { notFound } from "next/navigation";
+import {
+  fetchMandalPortal,
+  listMandalPortalParams,
+} from "@/lib/data/mandalRepository";
+import { MandalPortalClient } from "@/components/MandalPortalClient";
 
-import { useEffect } from "react";
-import { useParams, notFound } from "next/navigation";
-import { getMandal } from "@/lib/data/mandals";
-import { useMandalPrefStore } from "@/lib/store/preferences";
-import { MandalPortalView } from "@/components/MandalPortalView";
+export const revalidate = 60;
 
-export default function MandalHubPage() {
-  const params = useParams<{ district: string; mandal: string }>();
-  const setMandal = useMandalPrefStore((s) => s.setMandal);
-  const m = getMandal(params.district, params.mandal);
+type Props = {
+  params: Promise<{ district: string; mandal: string }>;
+};
 
-  useEffect(() => {
-    if (m) setMandal(m.districtSlug, m.mandalSlug);
-  }, [m, setMandal]);
+export async function generateStaticParams() {
+  return listMandalPortalParams();
+}
 
-  if (!m) {
+export default async function MandalHubPage({ params }: Props) {
+  const { district, mandal } = await params;
+  const data = await fetchMandalPortal(district, mandal);
+
+  if (!data) {
     notFound();
   }
 
-  return <MandalPortalView mandal={m} />;
+  return <MandalPortalClient mandal={data} />;
 }

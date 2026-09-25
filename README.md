@@ -60,6 +60,19 @@ npm run dev -- --port 43123
 
 RLS: public `SELECT` on districts, mandals, officers, mandal_officers, gram_panchayats; published-only on `local_updates`.
 
+## Method 3 — Telegram Moderation Desk
+
+1. Run `supabase/migrations/create_moderation_desk.sql` (creates `survey_submissions` + `survey-photos` bucket).
+2. Set `TELEGRAM_BOT_TOKEN`, `TELEGRAM_WEBHOOK_SECRET`, `SUPABASE_SERVICE_ROLE_KEY`, `NEXT_PUBLIC_SITE_URL` in Vercel / `.env.local`.
+3. Point the bot webhook:
+   ```bash
+   curl "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/setWebhook" \
+     -d "url=https://YOUR_DOMAIN/api/telegram-webhook" \
+     -d "secret_token=$TELEGRAM_WEBHOOK_SECRET"
+   ```
+4. Open `/admin/moderation` to review Pending / Approved / Rejected queues.
+   External tools can POST `/api/admin/moderate` with header `x-moderation-secret: $MODERATION_DESK_SECRET`.
+
 ## Deploy
 
 GitHub `BSCConsulting/nayisamakhya` → Vercel (Next.js). Domain: `nayisamakhya.org`.

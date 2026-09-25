@@ -13,60 +13,19 @@ type Props = {
 
 type GpOption = { id: string; nameTe: string; nameEn: string };
 
-async function resolveSurveyContext(district: string, mandal: string) {
-  const supabase = getSupabase();
-  if (supabase) {
-    try {
-      const { data: row } = await supabase
-        .from("mandals")
-        .select(
-          `
-          slug,
-          name_en,
-          name_te,
-          districts!inner(slug, name_en, name_te),
-          gram_panchayats(id, name_en, name_te)
-        `,
-        )
-        .eq("slug", mandal)
-        .eq("districts.slug", district)
-        .maybeSingle();
+type SurveyContext = {
+  districtSlug: string;
+  mandalSlug: string;
+  districtNameTe: string;
+  districtNameEn: string;
+  mandalNameTe: string;
+  mandalNameEn: string;
+  gramPanchayats: GpOption[];
+};
 
-      if (row) {
-        const d = row.districts as
-          | { slug: string; name_en: string; name_te: string }
-          | { slug: string; name_en: string; name_te: string }[]
-          | null;
-        const districtRow = Array.isArray(d) ? d[0] : d;
-        const gpsRaw = (row.gram_panchayats || []) as {
-          id: string;
-          name_en: string;
-          name_te: string;
-        }[];
-        const gps: GpOption[] = gpsRaw.map((g) => ({
-          id: g.id,
-          nameTe: g.name_te || g.name_en,
-          nameEn: g.name_en || g.name_te,
-        }));
-
-        return {
-          districtSlug: districtRow?.slug || district,
-          mandalSlug: row.slug as string,
-          districtNameTe: districtRow?.name_te || district,
-          districtNameEn: districtRow?.name_en || district,
-          mandalNameTe: (row.name_te as string) || mandal,
-          mandalNameEn: (row.name_en as string) || mandal,
-          gramPanchayats: gps,
-        };
-      }
-    } catch {
-      // fall through to static
-    }
-  }
-
+function fromStatic(district: string, mandal: string): SurveyContext | null {
   const staticMandal = getMandal(district, mandal);
   if (!staticMandal) return null;
-
   return {
     districtSlug: staticMandal.districtSlug,
     mandalSlug: staticMandal.mandalSlug,
@@ -82,9 +41,77 @@ async function resolveSurveyContext(district: string, mandal: string) {
   };
 }
 
+async function resolveSurveyContext(
+  district: string,
+  mandal: string,
+): Promise<SurveyContext | null> {
+  const fallback = fromStatic(district, mandal);
+  const supabase = getSupabase();
+  if (!supabase) return fallback;
+
+  try {
+    const { data: row, error } = await supabase
+      .from("mandals")
+      .select(
+        `
+        id,
+        slug,
+        name_en,
+        name_te,
+        districts!inner(slug, name_en, name_te)
+      `,
+      )
+      .eq("slug", mandal)
+      .eq("districts.slug", district)
+      .maybeSingle();
+
+    if (error || !row) return fallback;
+
+    const d = row.districts as
+      | { slug: string; name_en: string; name_te: string }
+      | { slug: string; name_en: string; name_te: string }[]
+      | null;
+    const districtRow = Array.isArray(d) ? d[0] : d;
+
+    let gps: GpOption[] = fallback?.gramPanchayats ?? [];
+    if (row.id) {
+      const { data: gpRows } = await supabase
+        .from("gram_panchayats")
+        .select("id, name_en, name_te")
+        .eq("mandal_id", row.id)
+        .order("name_en", { ascending: true });
+      if (gpRows?.length) {
+        gps = gpRows.map((g) => ({
+          id: String(g.id),
+          nameTe: String(g.name_te || g.name_en || "GP"),
+          nameEn: String(g.name_en || g.name_te || "GP"),
+        }));
+      }
+    }
+
+    return {
+      districtSlug: districtRow?.slug || district,
+      mandalSlug: String(row.slug || mandal),
+      districtNameTe: districtRow?.name_te || district,
+      districtNameEn: districtRow?.name_en || district,
+      mandalNameTe: String(row.name_te || mandal),
+      mandalNameEn: String(row.name_en || mandal),
+      gramPanchayats: gps,
+    };
+  } catch {
+    return fallback;
+  }
+}
+
 export default async function SurveyPage({ params }: Props) {
   const { district, mandal } = await params;
-  const ctx = await resolveSurveyContext(district, mandal);
+
+  let ctx: SurveyContext | null = null;
+  try {
+    ctx = await resolveSurveyContext(district, mandal);
+  } catch {
+    ctx = fromStatic(district, mandal);
+  }
   if (!ctx) notFound();
 
   const portalHref = `/${ctx.districtSlug}/${ctx.mandalSlug}`;

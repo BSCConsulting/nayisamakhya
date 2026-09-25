@@ -306,40 +306,12 @@ export async function fetchMandalPortal(
   }
 }
 
+/** Static path list for build-time SSG — avoids hanging Vercel builds on network. */
 export async function listMandalPortalParams(): Promise<
   { district: string; mandal: string }[]
 > {
-  const supabase = getSupabase();
-  if (!supabase) {
-    return listMandals().map((m) => ({
-      district: m.districtSlug,
-      mandal: m.mandalSlug,
-    }));
-  }
-
-  try {
-    const { data } = await supabase.from("mandals").select(`
-      slug,
-      districts!inner(slug)
-    `);
-    if (!data?.length) {
-      return listMandals().map((m) => ({
-        district: m.districtSlug,
-        mandal: m.mandalSlug,
-      }));
-    }
-    return data.map((row) => {
-      const d = row.districts as DistrictRow | DistrictRow[] | null;
-      const district = Array.isArray(d) ? d[0]?.slug : d?.slug;
-      return {
-        district: district || "unknown",
-        mandal: row.slug as string,
-      };
-    });
-  } catch {
-    return listMandals().map((m) => ({
-      district: m.districtSlug,
-      mandal: m.mandalSlug,
-    }));
-  }
+  return listMandals().map((m) => ({
+    district: m.districtSlug,
+    mandal: m.mandalSlug,
+  }));
 }

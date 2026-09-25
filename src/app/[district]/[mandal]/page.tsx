@@ -5,6 +5,8 @@ import {
 } from "@/lib/data/mandalRepository";
 import { MandalPortalClient } from "@/components/MandalPortalClient";
 
+/** Always resolve at request time so Supabase env is used without blocking builds. */
+export const dynamic = "force-dynamic";
 export const revalidate = 60;
 
 type Props = {

@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { getSupabase } from "@/lib/supabase/client";
 
 export const runtime = "nodejs";
+export const dynamic = "force-dynamic";
 
 type MemberPayload = {
   name?: string;
@@ -37,89 +38,94 @@ function buildReferenceId(districtSlug: string, mandalSlug: string) {
 }
 
 export async function POST(req: Request) {
-  let body: SurveyBody;
   try {
-    body = (await req.json()) as SurveyBody;
-  } catch {
-    return NextResponse.json(
-      { success: false, error: "Invalid JSON body" },
-      { status: 400 },
-    );
-  }
+    let body: SurveyBody;
+    try {
+      body = (await req.json()) as SurveyBody;
+    } catch {
+      return NextResponse.json(
+        { success: false, error: "Invalid JSON body" },
+        { status: 400 },
+      );
+    }
 
-  const districtSlug = String(body.districtSlug || "").trim();
-  const mandalSlug = String(body.mandalSlug || "").trim();
-  const headName = String(body.headName || "").trim();
-  const whatsapp = String(body.whatsapp || "").replace(/\D/g, "");
-  const gramPanchayat = String(body.gramPanchayat || "").trim();
-  const communityWing = String(body.communityWing || "").trim();
-  const occupation = String(body.occupation || "").trim();
+    const districtSlug = String(body.districtSlug || "").trim();
+    const mandalSlug = String(body.mandalSlug || "").trim();
+    const headName = String(body.headName || "").trim();
+    const whatsapp = String(body.whatsapp || "").replace(/\D/g, "");
+    const gramPanchayat = String(body.gramPanchayat || "").trim();
+    const communityWing = String(body.communityWing || "").trim();
+    const occupation = String(body.occupation || "").trim();
 
-  if (!districtSlug || !mandalSlug) {
-    return NextResponse.json(
-      { success: false, error: "Missing district or mandal" },
-      { status: 400 },
-    );
-  }
-  if (!headName || whatsapp.length !== 10) {
-    return NextResponse.json(
-      { success: false, error: "Head name and 10-digit WhatsApp are required" },
-      { status: 400 },
-    );
-  }
-  if (!gramPanchayat || !communityWing || !occupation) {
-    return NextResponse.json(
-      { success: false, error: "GP, community wing, and occupation are required" },
-      { status: 400 },
-    );
-  }
+    if (!districtSlug || !mandalSlug) {
+      return NextResponse.json(
+        { success: false, error: "Missing district or mandal" },
+        { status: 400 },
+      );
+    }
+    if (!headName || whatsapp.length !== 10) {
+      return NextResponse.json(
+        {
+          success: false,
+          error: "Head name and 10-digit WhatsApp are required",
+        },
+        { status: 400 },
+      );
+    }
+    if (!gramPanchayat || !communityWing || !occupation) {
+      return NextResponse.json(
+        {
+          success: false,
+          error: "GP, community wing, and occupation are required",
+        },
+        { status: 400 },
+      );
+    }
 
-  const referenceId = buildReferenceId(districtSlug, mandalSlug);
-  const payload = {
-    ...body,
-    headName,
-    whatsapp,
-    gramPanchayat,
-    communityWing,
-    occupation,
-    submittedAt: new Date().toISOString(),
-  };
-
-  const supabase = getSupabase();
-  if (supabase) {
-    const { error } = await supabase.from("surveys").insert({
-      reference_id: referenceId,
-      district_slug: districtSlug,
-      mandal_slug: mandalSlug,
-      gram_panchayat: gramPanchayat,
-      head_name: headName,
+    const referenceId = buildReferenceId(districtSlug, mandalSlug);
+    const payload = {
+      ...body,
+      headName,
       whatsapp,
-      community_wing: communityWing,
+      gramPanchayat,
+      communityWing,
       occupation,
-      payload,
-    });
+      submittedAt: new Date().toISOString(),
+    };
 
-    if (error) {
-      // Fall through to accepted local ref if table missing / RLS not ready
-      console.error("survey insert failed", error.message);
-      return NextResponse.json({
-        success: true,
-        referenceId,
-        persisted: false,
-        warning: "Saved locally; Supabase insert pending schema/policy",
-      });
+    let persisted = false;
+    try {
+      const supabase = getSupabase();
+      if (supabase) {
+        const { error } = await supabase.from("surveys").insert({
+          reference_id: referenceId,
+          district_slug: districtSlug,
+          mandal_slug: mandalSlug,
+          gram_panchayat: gramPanchayat,
+          head_name: headName,
+          whatsapp,
+          community_wing: communityWing,
+          occupation,
+          payload,
+        });
+        persisted = !error;
+      }
+    } catch {
+      persisted = false;
     }
 
     return NextResponse.json({
       success: true,
       referenceId,
-      persisted: true,
+      persisted,
     });
+  } catch (e) {
+    return NextResponse.json(
+      {
+        success: false,
+        error: e instanceof Error ? e.message : "Unexpected server error",
+      },
+      { status: 500 },
+    );
   }
-
-  return NextResponse.json({
-    success: true,
-    referenceId,
-    persisted: false,
-  });
 }

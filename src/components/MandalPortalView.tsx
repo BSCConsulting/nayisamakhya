@@ -1,22 +1,21 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
   ClipboardList,
   MessageCircle,
-  Phone,
   Search,
   ShoppingCart,
   Zap,
   Music2,
-  MapPin,
   Camera,
 } from "lucide-react";
 import type { Mandal } from "@/lib/types";
 import { loc } from "@/lib/i18n/dictionary";
 import { useLanguageStore } from "@/lib/store/preferences";
+import { NodalOfficersRoster } from "@/components/officers/NodalOfficersRoster";
 
 const actionIcons = {
   cartel: ShoppingCart,
@@ -32,17 +31,6 @@ export function MandalPortalView({ mandal: m }: Props) {
   const lang = useLanguageStore((s) => s.lang);
   const [gpQuery, setGpQuery] = useState("");
   const te = lang === "te";
-
-  const officerWa = useMemo(() => {
-    const text = encodeURIComponent(
-      te
-        ? `నమస్కారం ${loc(m.officer.name, "te")} గారు, ${loc(m.hubTitle, "te")} నుంచి.`
-        : `Hello ${loc(m.officer.name, "en")}, contacting from ${loc(m.hubTitle, "en")}.`,
-    );
-    return `https://wa.me/${m.officer.phone}?text=${text}`;
-  }, [m, te]);
-
-  const phoneHref = `tel:+${m.officer.phone}`;
 
   const metrics = [
     {
@@ -178,84 +166,12 @@ export function MandalPortalView({ mandal: m }: Props) {
       </section>
 
       <div className="mx-auto max-w-6xl space-y-10 px-4 py-10 sm:px-6">
-        {/* Nodal officer desk */}
-        <section aria-labelledby="officer-heading">
-          <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[#C2410C]">
-            {te ? "నోడల్ అధికారి డెస్క్" : "Nodal Officer Desk"}
-          </p>
-          <h2
-            id="officer-heading"
-            className={`mt-1 text-xl font-bold text-[#18181B] ${te ? "font-telugu" : ""}`}
-          >
-            {te ? "స్థానిక నాయకత్వం & సమన్వయం" : "Local leadership & coordination"}
-          </h2>
-
-          <article className="mt-4 overflow-hidden rounded-2xl border border-[#EBE8E0] bg-white shadow-sm">
-            <div className="flex flex-col gap-5 p-5 sm:flex-row sm:items-center sm:p-6">
-              <div className="relative mx-auto shrink-0 sm:mx-0">
-                <div className="relative h-24 w-24 overflow-hidden rounded-full border-2 border-[#EBE8E0] bg-[#F4F2EB] sm:h-28 sm:w-28">
-                  {m.officer.portrait ? (
-                    <Image
-                      src={m.officer.portrait}
-                      alt={loc(m.officer.name, lang)}
-                      fill
-                      sizes="112px"
-                      className="object-cover"
-                    />
-                  ) : (
-                    <span className="flex h-full w-full items-center justify-center font-telugu text-2xl font-semibold text-[#C2410C]">
-                      {m.officer.initials}
-                    </span>
-                  )}
-                </div>
-                <span className="absolute bottom-1 right-1 flex items-center gap-1 rounded-full border border-white bg-[#C2410C] px-1.5 py-0.5 text-[9px] font-semibold text-white shadow-sm">
-                  <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-white" />
-                  {te ? "క్రియాశీలం" : "Active"}
-                </span>
-              </div>
-
-              <div className="min-w-0 flex-1 text-center sm:text-left">
-                <p
-                  className={`text-lg font-bold text-[#18181B] ${te ? "font-telugu" : ""}`}
-                >
-                  {loc(m.officer.name, "te")}
-                  <span className="font-medium text-[#71717A]">
-                    {" "}
-                    ({loc(m.officer.name, "en")})
-                  </span>
-                </p>
-                <p className={`mt-1 text-sm text-[#71717A] ${te ? "font-telugu" : ""}`}>
-                  {loc(m.officer.title, lang)}
-                </p>
-                <p
-                  className={`mt-2 inline-flex items-center gap-1.5 text-xs text-[#18181B] ${te ? "font-telugu" : ""}`}
-                >
-                  <MapPin className="h-3.5 w-3.5 shrink-0 text-[#C2410C]" aria-hidden />
-                  {loc(m.officer.jurisdiction, lang)}
-                </p>
-              </div>
-
-              <div className="flex flex-col gap-2 sm:shrink-0">
-                <a
-                  href={officerWa}
-                  target="_blank"
-                  rel="noreferrer"
-                  className={`tap inline-flex items-center justify-center gap-2 rounded-full bg-[#C2410C] px-4 py-2.5 text-sm font-semibold text-white hover:bg-[#9A3412] ${te ? "font-telugu" : ""}`}
-                >
-                  <MessageCircle className="h-4 w-4" aria-hidden />
-                  {te ? "వాట్సాప్ మెసేజ్" : "WhatsApp message"}
-                </a>
-                <a
-                  href={phoneHref}
-                  className={`tap inline-flex items-center justify-center gap-2 rounded-full border border-[#EBE8E0] bg-[#FBFBF9] px-4 py-2.5 text-sm font-semibold text-[#18181B] hover:border-[#C2410C]/30 ${te ? "font-telugu" : ""}`}
-                >
-                  <Phone className="h-4 w-4 text-[#C2410C]" aria-hidden />
-                  {te ? "ఫోన్ కాల్" : "Phone call"}
-                </a>
-              </div>
-            </div>
-          </article>
-        </section>
+        <NodalOfficersRoster
+          officers={m.officers ?? []}
+          surveyPath={m.surveyPath}
+          mandalNameTe={loc(m.mandal, "te")}
+          mandalNameEn={loc(m.mandal, "en")}
+        />
 
         {/* Three action modules */}
         <section aria-labelledby="modules-heading">

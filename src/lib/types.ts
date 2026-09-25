@@ -77,6 +77,18 @@ export type Officer = {
   portrait?: string;
 };
 
+/** Verified nodal roster card (SMO / Community Coordinator / etc.). */
+export type MandalOfficer = {
+  id: string;
+  name: Localized;
+  role: Localized;
+  phone: string;
+  email?: string;
+  status: string;
+  isVerified: boolean;
+  photoUrl?: string;
+};
+
 export type GramPanchayat = {
   id: string;
   name: Localized;
@@ -114,6 +126,8 @@ export type Mandal = {
   portalSub: Localized;
   summary: MandalSummary;
   officer: Officer;
+  /** Verified nodal roster (SMO, Community Coordinator, …). */
+  officers: MandalOfficer[];
   whatsappGroup: string;
   telegramChannel: string;
   cartelWhatsapp: string;

@@ -36,15 +36,46 @@ const defaultNotices = (placeTe: string, placeEn: string): MandalNotice[] => [
 ];
 
 function hub(
-  m: Omit<Mandal, "path" | "surveyPath" | "actions" | "telegramChannel"> & {
+  m: Omit<Mandal, "path" | "surveyPath" | "actions" | "telegramChannel" | "officers"> & {
     cartelWhatsapp: string;
   },
 ): Mandal {
   const path = `/${m.districtSlug}/${m.mandalSlug}`;
   const surveyPath = `${path}/survey`;
   const shortTe = m.mandal.te.replace(" మండలం", "");
+  const phone = String(m.officer.phone || "").replace(/\D/g, "") || "919032654111";
+  const officers = [
+    {
+      id: `${m.districtSlug}-${m.mandalSlug}-smo`,
+      name: m.officer.name,
+      role: {
+        te: "మండల సోషల్ మీడియా అధికారి",
+        en: "Mandal Social Media Officer",
+      },
+      phone,
+      status: "active",
+      isVerified: true,
+      photoUrl: m.officer.portrait,
+    },
+    {
+      id: `${m.districtSlug}-${m.mandalSlug}-cc`,
+      name: {
+        te: `${shortTe} కమ్యూనిటీ డెస్క్`,
+        en: `${m.mandal.en} Community Desk`,
+      },
+      role: {
+        te: "కమ్యూనిటీ సమన్వయకర్త",
+        en: "Community Coordinator",
+      },
+      phone: "919032654111",
+      status: "active",
+      isVerified: true,
+    },
+  ];
   return {
     ...m,
+    officer: { ...m.officer, phone },
+    officers,
     path,
     surveyPath,
     telegramChannel: telegram,
@@ -126,7 +157,7 @@ export const mandals: Mandal[] = [
         te: "మండల సోషల్ మీడియా & సమన్వయ అధికారి",
         en: "Mandal Social Media & Coordination Officer",
       },
-      phone: "919876543210",
+      phone: "919032654111",
       status: { te: "ఆన్‌లైన్ / క్రియాశీలం", en: "Online / Active" },
       initials: "సు",
       jurisdiction: {
@@ -182,7 +213,7 @@ export const mandals: Mandal[] = [
         te: "మండల సోషల్ మీడియా & సమన్వయ అధికారి",
         en: "Mandal Social Media & Coordination Officer",
       },
-      phone: "919876543211",
+      phone: "919032654111",
       status: { te: "ఆన్‌లైన్ / క్రియాశీలం", en: "Online / Active" },
       initials: "వె",
       jurisdiction: {
@@ -236,7 +267,7 @@ export const mandals: Mandal[] = [
         te: "మండల సోషల్ మీడియా & సమన్వయ అధికారి",
         en: "Mandal Social Media & Coordination Officer",
       },
-      phone: "919876543212",
+      phone: "919032654111",
       status: { te: "ఆన్‌లైన్ / క్రియాశీలం", en: "Online / Active" },
       initials: "రా",
       jurisdiction: {
@@ -290,7 +321,7 @@ export const mandals: Mandal[] = [
         te: "మండల సోషల్ మీడియా & సమన్వయ అధికారి",
         en: "Mandal Social Media & Coordination Officer",
       },
-      phone: "919876543213",
+      phone: "919032654111",
       status: { te: "ఆన్‌లైన్ / క్రియాశీలం", en: "Online / Active" },
       initials: "సు",
       jurisdiction: {
@@ -344,7 +375,7 @@ export const mandals: Mandal[] = [
         te: "మండల సోషల్ మీడియా & సమన్వయ అధికారి",
         en: "Mandal Social Media & Coordination Officer",
       },
-      phone: "919876543214",
+      phone: "919032654111",
       status: { te: "ఆన్‌లైన్ / క్రియాశీలం", en: "Online / Active" },
       initials: "ర",
       jurisdiction: {

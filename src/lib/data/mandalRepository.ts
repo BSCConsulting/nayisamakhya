@@ -3,10 +3,13 @@ import type {
   Mandal,
   MandalAction,
   MandalNotice,
+  MandalOfficer,
   Officer,
 } from "@/lib/types";
 import { getMandal, listMandals } from "@/lib/data/mandals";
 import { getSupabase } from "@/lib/supabase/client";
+
+const HELPLINE = "919032654111";
 
 type DistrictRow = {
   slug: string;
@@ -43,6 +46,19 @@ type OfficerRow = {
   photo_url: string | null;
   jurisdiction_en: string | null;
   jurisdiction_te: string | null;
+};
+
+type MandalOfficerRow = {
+  id: string;
+  name_en: string;
+  name_te: string;
+  role: string;
+  role_te: string;
+  phone: string;
+  email: string | null;
+  status: string;
+  is_verified: boolean;
+  photo_url: string | null;
 };
 
 type GpRow = {
@@ -127,7 +143,7 @@ function mapOfficer(row: OfficerRow | null, mandalTe: string, mandalEn: string):
         te: "మండల నోడల్ అధికారి",
         en: "Mandal Nodal Officer",
       },
-      phone: "919876543210",
+      phone: HELPLINE,
       status: { te: "నియామకం పెండింగ్", en: "Pending appointment" },
       initials: "—",
       jurisdiction: {
@@ -150,7 +166,7 @@ function mapOfficer(row: OfficerRow | null, mandalTe: string, mandalEn: string):
   return {
     name: { te: nameTe, en: nameEn },
     title: { te: titleTe, en: titleEn },
-    phone: String(row.phone_number || "").replace(/^\+/, "") || "919876543210",
+    phone: String(row.phone_number || "").replace(/\D/g, "") || HELPLINE,
     status: { te: "ఆన్‌లైన్ / క్రియాశీలం", en: "Online / Active" },
     initials,
     jurisdiction: {
@@ -158,6 +174,54 @@ function mapOfficer(row: OfficerRow | null, mandalTe: string, mandalEn: string):
       en: row.jurisdiction_en || `${mandalEn} & affiliated villages`,
     },
     portrait: row.photo_url || undefined,
+  };
+}
+
+function mapRoster(rows: MandalOfficerRow[]): MandalOfficer[] {
+  return rows
+    .filter((r) => r && r.id)
+    .map((r) => ({
+      id: String(r.id),
+      name: {
+        te: r.name_te || r.name_en || "Officer",
+        en: r.name_en || r.name_te || "Officer",
+      },
+      role: {
+        te: r.role_te || r.role || "నోడల్ అధికారి",
+        en: r.role || r.role_te || "Nodal Officer",
+      },
+      phone: String(r.phone || "").replace(/\D/g, "") || HELPLINE,
+      email: r.email || undefined,
+      status: r.status || "active",
+      isVerified: r.is_verified !== false,
+      photoUrl: r.photo_url || undefined,
+    }));
+}
+
+function officerFromRoster(
+  roster: MandalOfficer[],
+  mandalTe: string,
+  mandalEn: string,
+): Officer {
+  const primary =
+    roster.find((o) => /social media/i.test(o.role.en)) || roster[0];
+  if (!primary) {
+    return mapOfficer(null, mandalTe, mandalEn);
+  }
+  return {
+    name: primary.name,
+    title: primary.role,
+    phone: primary.phone,
+    status: { te: "ఆన్‌లైన్ / క్రియాశీలం", en: "Online / Active" },
+    initials:
+      primary.name.te.trim().charAt(0) ||
+      primary.name.en.trim().charAt(0) ||
+      "O",
+    jurisdiction: {
+      te: `${mandalTe} & అనుబంధ గ్రామాలు`,
+      en: `${mandalEn} & affiliated villages`,
+    },
+    portrait: primary.photoUrl,
   };
 }
 
@@ -194,6 +258,7 @@ function mapNotices(rows: UpdateRow[]): MandalNotice[] {
 function mapRowToMandal(
   row: MandalRow,
   officer: OfficerRow | null,
+  rosterRows: MandalOfficerRow[],
   gps: GpRow[],
   updates: UpdateRow[],
 ): Mandal {
@@ -206,6 +271,12 @@ function mapRowToMandal(
   const cartel =
     row.cartel_whatsapp ||
     "https://chat.whatsapp.com/invite/salon-cartel-demo";
+
+  const officers = mapRoster(rosterRows);
+  const primaryOfficer =
+    officers.length > 0
+      ? officerFromRoster(officers, row.name_te, row.name_en)
+      : mapOfficer(officer, row.name_te, row.name_en);
 
   return {
     districtSlug,
@@ -243,7 +314,8 @@ function mapRowToMandal(
       surveyPct: row.survey_completion_pct,
       gpCount: gps.length,
     },
-    officer: mapOfficer(officer, row.name_te, row.name_en),
+    officer: primaryOfficer,
+    officers,
     whatsappGroup:
       row.whatsapp_group ||
       officer?.whatsapp_link ||
@@ -289,13 +361,22 @@ export async function fetchMandalPortal(
 
     const row = mandalData as MandalRow;
 
-    const [officerRes, gpsRes, updatesRes] = await Promise.all([
+    const [officerRes, rosterRes, gpsRes, updatesRes] = await Promise.all([
       supabase
         .from("officers")
         .select("*")
         .eq("mandal_id", row.id)
         .eq("is_active", true)
+        .limit(1)
         .maybeSingle(),
+      supabase
+        .from("mandal_officers")
+        .select(
+          "id, name_en, name_te, role, role_te, phone, email, status, is_verified, photo_url",
+        )
+        .eq("mandal_id", row.id)
+        .eq("status", "active")
+        .order("role", { ascending: true }),
       supabase
         .from("gram_panchayats")
         .select("*")
@@ -311,9 +392,16 @@ export async function fetchMandalPortal(
         .limit(6),
     ]);
 
+    // If mandal_officers table is missing, rosterRes.error is non-null — treat as [].
+    const roster =
+      !rosterRes.error && rosterRes.data
+        ? (rosterRes.data as MandalOfficerRow[])
+        : [];
+
     return mapRowToMandal(
       row,
       (officerRes.data as OfficerRow | null) ?? null,
+      roster,
       (gpsRes.data as GpRow[] | null) ?? [],
       (updatesRes.data as UpdateRow[] | null) ?? [],
     );

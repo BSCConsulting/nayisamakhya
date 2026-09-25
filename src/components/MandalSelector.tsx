@@ -50,40 +50,37 @@ export function MandalSelector({
   const [mandalSlug, setMandalSlug] = useState("");
 
   useEffect(() => {
-    let cancelled = false;
+    const ac = new AbortController();
     (async () => {
       try {
-        const res = await fetch("/api/locations");
+        const res = await fetch("/api/locations", { signal: ac.signal });
+        if (!res.ok) throw new Error(`locations ${res.status}`);
         const data = (await res.json()) as {
           districts?: District[];
           mandals?: MandalRow[];
         };
-        if (cancelled) return;
+        if (ac.signal.aborted) return;
         const d = data.districts || [];
         const m = data.mandals || [];
         setDistricts(d);
         setMandals(m);
 
-        // Prefer persisted preference when it still exists in the payload
-        const prefD =
-          d.find((x) => x.slug === prefDistrict) ||
-          d[0];
+        // Restore persisted preference when it still exists in the payload
+        const prefD = d.find((x) => x.slug === prefDistrict);
         if (prefD) {
           setDistrictId(prefD.id);
           const inDistrict = m.filter((x) => x.district_id === prefD.id);
-          const prefM =
-            inDistrict.find((x) => x.slug === prefMandal) || inDistrict[0];
+          const prefM = inDistrict.find((x) => x.slug === prefMandal);
           setMandalSlug(prefM?.slug || "");
         }
-      } catch {
+      } catch (err) {
+        if (ac.signal.aborted) return;
         // leave empty — UI stays disabled
       } finally {
-        if (!cancelled) setLoading(false);
+        if (!ac.signal.aborted) setLoading(false);
       }
     })();
-    return () => {
-      cancelled = true;
-    };
+    return () => ac.abort();
   }, [prefDistrict, prefMandal]);
 
   const selectedDistrict = useMemo(

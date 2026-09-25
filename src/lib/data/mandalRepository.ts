@@ -136,12 +136,21 @@ function mapOfficer(row: OfficerRow | null, mandalTe: string, mandalEn: string):
       },
     };
   }
-  const initials =
-    row.name_te.trim().charAt(0) || row.name_en.trim().charAt(0) || "O";
+  const nameTe = row.name_te || row.name_en || "Officer";
+  const nameEn = row.name_en || row.name_te || "Officer";
+  const titleTe =
+    row.role_title_te ||
+    (row as OfficerRow & { role_title?: string }).role_title ||
+    "మండల నోడల్ అధికారి";
+  const titleEn =
+    row.role_title_en ||
+    (row as OfficerRow & { role_title?: string }).role_title ||
+    "Mandal Nodal Officer";
+  const initials = nameTe.trim().charAt(0) || nameEn.trim().charAt(0) || "O";
   return {
-    name: { te: row.name_te, en: row.name_en },
-    title: { te: row.role_title_te, en: row.role_title_en },
-    phone: row.phone_number.replace(/^\+/, ""),
+    name: { te: nameTe, en: nameEn },
+    title: { te: titleTe, en: titleEn },
+    phone: String(row.phone_number || "").replace(/^\+/, "") || "919876543210",
     status: { te: "ఆన్‌లైన్ / క్రియాశీలం", en: "Online / Active" },
     initials,
     jurisdiction: {
@@ -153,26 +162,33 @@ function mapOfficer(row: OfficerRow | null, mandalTe: string, mandalEn: string):
 }
 
 function mapGps(rows: GpRow[]): GramPanchayat[] {
-  return rows.map((gp) => ({
-    id: gp.id,
-    name: { te: gp.name_te, en: gp.name_en },
-    households: gp.households_count,
-    surveyPct: gp.survey_pct,
-  }));
+  return rows
+    .filter((gp) => gp && (gp.name_en || gp.name_te))
+    .map((gp) => ({
+      id: String(gp.id),
+      name: {
+        te: gp.name_te || gp.name_en || "GP",
+        en: gp.name_en || gp.name_te || "GP",
+      },
+      households: Number(gp.households_count) || 0,
+      surveyPct: Number(gp.survey_pct) || 0,
+    }));
 }
 
 function mapNotices(rows: UpdateRow[]): MandalNotice[] {
-  return rows.map((u) => ({
-    id: u.id,
-    title: {
-      te: u.caption_te || u.category,
-      en: u.caption_en || u.category,
-    },
-    date: (u.published_at || new Date().toISOString()).slice(0, 10),
-    image:
-      u.image_urls?.[0] ||
-      "https://images.unsplash.com/photo-1577495508048-b635879837f1?auto=format&fit=crop&q=80&w=800",
-  }));
+  return rows
+    .filter((u) => u && u.id)
+    .map((u) => ({
+      id: String(u.id),
+      title: {
+        te: u.caption_te || u.category || "Update",
+        en: u.caption_en || u.category || "Update",
+      },
+      date: (u.published_at || new Date().toISOString()).slice(0, 10),
+      image:
+        (Array.isArray(u.image_urls) && u.image_urls[0]) ||
+        "https://images.unsplash.com/photo-1577495508048-b635879837f1?auto=format&fit=crop&q=80&w=800",
+    }));
 }
 
 function mapRowToMandal(

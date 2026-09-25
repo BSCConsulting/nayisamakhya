@@ -1,26 +1,28 @@
 import { notFound } from "next/navigation";
-import {
-  fetchMandalPortal,
-  listMandalPortalParams,
-} from "@/lib/data/mandalRepository";
+import { fetchMandalPortal } from "@/lib/data/mandalRepository";
+import { getMandal } from "@/lib/data/mandals";
 import { MandalPortalClient } from "@/components/MandalPortalClient";
 
-/** Always resolve at request time so Supabase env is used without blocking builds. */
+/** Request-time resolution so Supabase env is used without blocking builds. */
 export const dynamic = "force-dynamic";
-export const revalidate = 60;
 
 type Props = {
   params: Promise<{ district: string; mandal: string }>;
 };
 
-export async function generateStaticParams() {
-  return listMandalPortalParams();
-}
-
 export default async function MandalHubPage({ params }: Props) {
   const { district, mandal } = await params;
-  const data = await fetchMandalPortal(district, mandal);
 
+  let data;
+  try {
+    data = await fetchMandalPortal(district, mandal);
+  } catch {
+    data = getMandal(district, mandal);
+  }
+
+  if (!data) {
+    data = getMandal(district, mandal);
+  }
   if (!data) {
     notFound();
   }

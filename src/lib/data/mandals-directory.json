@@ -1,0 +1,4125 @@
+[
+  {
+    "district_slug": "adilabad",
+    "slug": "adilabad-urban",
+    "name_en": "Adilabad Urban",
+    "name_te": "ఆదిలాబాద్ (అర్బన్)",
+    "lgd_code": "4306"
+  },
+  {
+    "district_slug": "adilabad",
+    "slug": "aidilabad-rural",
+    "name_en": "Aidilabad Rural",
+    "name_te": "ఆదిలాబాద్ (రూరల్)",
+    "lgd_code": "6221"
+  },
+  {
+    "district_slug": "adilabad",
+    "slug": "bazarhatnoor",
+    "name_en": "Bazarhatnoor",
+    "name_te": "బజార్ హత్నూర్",
+    "lgd_code": "4323"
+  },
+  {
+    "district_slug": "adilabad",
+    "slug": "bela",
+    "name_en": "Bela",
+    "name_te": "బేల",
+    "lgd_code": "4308"
+  },
+  {
+    "district_slug": "adilabad",
+    "slug": "bheempur",
+    "name_en": "Bheempur",
+    "name_te": "భీంపూర్",
+    "lgd_code": "6223"
+  },
+  {
+    "district_slug": "adilabad",
+    "slug": "boath",
+    "name_en": "Boath",
+    "name_te": "బోథ్",
+    "lgd_code": "4324"
+  },
+  {
+    "district_slug": "adilabad",
+    "slug": "gadiguda",
+    "name_en": "Gadiguda",
+    "name_te": "గాదిగూడ",
+    "lgd_code": "6225"
+  },
+  {
+    "district_slug": "adilabad",
+    "slug": "gudihatnoor",
+    "name_en": "Gudihatnoor",
+    "name_te": "గుడిహత్నూర్",
+    "lgd_code": "4310"
+  },
+  {
+    "district_slug": "adilabad",
+    "slug": "ichoda",
+    "name_en": "Ichoda",
+    "name_te": "ఇచ్చోడ",
+    "lgd_code": "4322"
+  },
+  {
+    "district_slug": "adilabad",
+    "slug": "inderavelly",
+    "name_en": "Inderavelly",
+    "name_te": "ఇందర్ వెల్లి",
+    "lgd_code": "4311"
+  },
+  {
+    "district_slug": "adilabad",
+    "slug": "jainath",
+    "name_en": "Jainath",
+    "name_te": "జైనధ్",
+    "lgd_code": "4307"
+  },
+  {
+    "district_slug": "adilabad",
+    "slug": "mavala",
+    "name_en": "Mavala",
+    "name_te": "మావల",
+    "lgd_code": "6222"
+  },
+  {
+    "district_slug": "adilabad",
+    "slug": "narnoor",
+    "name_en": "Narnoor",
+    "name_te": "నార్నూర్",
+    "lgd_code": "4312"
+  },
+  {
+    "district_slug": "adilabad",
+    "slug": "neradigonda",
+    "name_en": "Neradigonda",
+    "name_te": "నేరడిగొండ",
+    "lgd_code": "4325"
+  },
+  {
+    "district_slug": "adilabad",
+    "slug": "sirikonda",
+    "name_en": "Sirikonda",
+    "name_te": "సిరికొండ",
+    "lgd_code": "6224"
+  },
+  {
+    "district_slug": "adilabad",
+    "slug": "talamadugu",
+    "name_en": "Talamadugu",
+    "name_te": "తలమడుగు",
+    "lgd_code": "4309"
+  },
+  {
+    "district_slug": "adilabad",
+    "slug": "tamsi",
+    "name_en": "Tamsi",
+    "name_te": "తాంసి",
+    "lgd_code": "4305"
+  },
+  {
+    "district_slug": "adilabad",
+    "slug": "utnoor",
+    "name_en": "Utnoor",
+    "name_te": "ఉట్నూర్",
+    "lgd_code": "4321"
+  },
+  {
+    "district_slug": "bhadradri-kothagudem",
+    "slug": "allapalli",
+    "name_en": "Allapalli",
+    "name_te": "ఆళ్ళపల్లి",
+    "lgd_code": "6267"
+  },
+  {
+    "district_slug": "bhadradri-kothagudem",
+    "slug": "annapureddypalli",
+    "name_en": "Annapureddypalli",
+    "name_te": "అన్నపురెడ్డిపల్లి",
+    "lgd_code": "6268"
+  },
+  {
+    "district_slug": "bhadradri-kothagudem",
+    "slug": "aswapuram",
+    "name_en": "Aswapuram",
+    "name_te": "అశ్వాపురం",
+    "lgd_code": "4728"
+  },
+  {
+    "district_slug": "bhadradri-kothagudem",
+    "slug": "aswaraopeta",
+    "name_en": "Aswaraopeta",
+    "name_te": "అశ్వారావుపేట",
+    "lgd_code": "4749"
+  },
+  {
+    "district_slug": "bhadradri-kothagudem",
+    "slug": "bhadrachalam",
+    "name_en": "Bhadrachalam",
+    "name_te": "భద్రాచలం",
+    "lgd_code": "4730"
+  },
+  {
+    "district_slug": "bhadradri-kothagudem",
+    "slug": "burgampahad",
+    "name_en": "Burgampahad",
+    "name_te": "బూర్గంపాడు",
+    "lgd_code": "4736"
+  },
+  {
+    "district_slug": "bhadradri-kothagudem",
+    "slug": "chandrugonda",
+    "name_en": "Chandrugonda",
+    "name_te": "చండ్రుగొండ",
+    "lgd_code": "4747"
+  },
+  {
+    "district_slug": "bhadradri-kothagudem",
+    "slug": "cherla",
+    "name_en": "Cherla",
+    "name_te": "చర్ల",
+    "lgd_code": "4726"
+  },
+  {
+    "district_slug": "bhadradri-kothagudem",
+    "slug": "chunchupalli",
+    "name_en": "Chunchupalli",
+    "name_te": "చుంచుపల్లి",
+    "lgd_code": "6376"
+  },
+  {
+    "district_slug": "bhadradri-kothagudem",
+    "slug": "dammapeta",
+    "name_en": "Dammapeta",
+    "name_te": "దమ్మపేట",
+    "lgd_code": "4750"
+  },
+  {
+    "district_slug": "bhadradri-kothagudem",
+    "slug": "dummugudem",
+    "name_en": "Dummugudem",
+    "name_te": "దుమ్ముగూడెం",
+    "lgd_code": "4729"
+  },
+  {
+    "district_slug": "bhadradri-kothagudem",
+    "slug": "gundala",
+    "name_en": "Gundala",
+    "name_te": "గుండాల",
+    "lgd_code": "4741"
+  },
+  {
+    "district_slug": "bhadradri-kothagudem",
+    "slug": "julurpadu",
+    "name_en": "Julurpadu",
+    "name_te": "జూలురుపాడు",
+    "lgd_code": "4746"
+  },
+  {
+    "district_slug": "bhadradri-kothagudem",
+    "slug": "karakagudem",
+    "name_en": "Karakagudem",
+    "name_te": "కరకగూడెం",
+    "lgd_code": "6269"
+  },
+  {
+    "district_slug": "bhadradri-kothagudem",
+    "slug": "kothagudem",
+    "name_en": "Kothagudem",
+    "name_te": "కొత్తగూడెం",
+    "lgd_code": "4738"
+  },
+  {
+    "district_slug": "bhadradri-kothagudem",
+    "slug": "laxmidevipalli",
+    "name_en": "Laxmidevipalli",
+    "name_te": "లక్ష్మీదేవిపల్లి",
+    "lgd_code": "6266"
+  },
+  {
+    "district_slug": "bhadradri-kothagudem",
+    "slug": "manuguru",
+    "name_en": "Manuguru",
+    "name_te": "మణుగూరు",
+    "lgd_code": "4727"
+  },
+  {
+    "district_slug": "bhadradri-kothagudem",
+    "slug": "mulkalapally",
+    "name_en": "Mulkalapally",
+    "name_te": "ములకలపల్లి",
+    "lgd_code": "4748"
+  },
+  {
+    "district_slug": "bhadradri-kothagudem",
+    "slug": "palvoncha",
+    "name_en": "Palvoncha",
+    "name_te": "పాల్వంచ",
+    "lgd_code": "4737"
+  },
+  {
+    "district_slug": "bhadradri-kothagudem",
+    "slug": "pinapaka",
+    "name_en": "Pinapaka",
+    "name_te": "పినపాక",
+    "lgd_code": "4725"
+  },
+  {
+    "district_slug": "bhadradri-kothagudem",
+    "slug": "sujathanagar",
+    "name_en": "Sujathanagar",
+    "name_te": "సుజాతనగర్",
+    "lgd_code": "6265"
+  },
+  {
+    "district_slug": "bhadradri-kothagudem",
+    "slug": "tekulapalli",
+    "name_en": "Tekulapalli",
+    "name_te": "టేకులపల్లి",
+    "lgd_code": "4739"
+  },
+  {
+    "district_slug": "bhadradri-kothagudem",
+    "slug": "yellandu",
+    "name_en": "Yellandu",
+    "name_te": "ఎల్లందు",
+    "lgd_code": "4740"
+  },
+  {
+    "district_slug": "hanumakonda",
+    "slug": "bheemadevarpalli",
+    "name_en": "Bheemadevarpalli",
+    "name_te": "భీందేవరపల్లి",
+    "lgd_code": "4448"
+  },
+  {
+    "district_slug": "hanumakonda",
+    "slug": "dharmasagar",
+    "name_en": "Dharmasagar",
+    "name_te": "ధర్మసాగర్",
+    "lgd_code": "4677"
+  },
+  {
+    "district_slug": "hanumakonda",
+    "slug": "elkathurthy",
+    "name_en": "Elkathurthy",
+    "name_te": "ఎల్కతుర్తి",
+    "lgd_code": "4449"
+  },
+  {
+    "district_slug": "hanumakonda",
+    "slug": "hanamkonda",
+    "name_en": "Hanamkonda",
+    "name_te": "హన్మకొండ",
+    "lgd_code": "4695"
+  },
+  {
+    "district_slug": "hanumakonda",
+    "slug": "hasanparthy",
+    "name_en": "Hasanparthy",
+    "name_te": "హసన్ పర్తి",
+    "lgd_code": "4678"
+  },
+  {
+    "district_slug": "hanumakonda",
+    "slug": "inavole",
+    "name_en": "Inavole",
+    "name_te": "ఐనవోలు",
+    "lgd_code": "6249"
+  },
+  {
+    "district_slug": "hanumakonda",
+    "slug": "kamalapur",
+    "name_en": "Kamalapur",
+    "name_te": "కమలాపూర్",
+    "lgd_code": "4447"
+  },
+  {
+    "district_slug": "hanumakonda",
+    "slug": "khazipet",
+    "name_en": "Khazipet",
+    "name_te": "కాజిపేట",
+    "lgd_code": "6247"
+  },
+  {
+    "district_slug": "hanumakonda",
+    "slug": "khila-warangal",
+    "name_en": "Khila Warangal",
+    "name_te": "ఖిలా వరంగల్",
+    "lgd_code": "6246"
+  },
+  {
+    "district_slug": "hanumakonda",
+    "slug": "velair",
+    "name_en": "Velair",
+    "name_te": "వేలేరు",
+    "lgd_code": "6252"
+  },
+  {
+    "district_slug": "hanumakonda",
+    "slug": "warangal",
+    "name_en": "Warangal",
+    "name_te": "వరంగల్",
+    "lgd_code": "4706"
+  },
+  {
+    "district_slug": "hyderabad",
+    "slug": "amberpet",
+    "name_en": "Amberpet",
+    "name_te": "అంబర్ పేట్",
+    "lgd_code": "4502"
+  },
+  {
+    "district_slug": "hyderabad",
+    "slug": "ameerpet",
+    "name_en": "Ameerpet",
+    "name_te": "అమీర్ పేట్",
+    "lgd_code": "4497"
+  },
+  {
+    "district_slug": "hyderabad",
+    "slug": "asif-nagar",
+    "name_en": "Asif Nagar",
+    "name_te": "ఆసిఫ్ నగర్",
+    "lgd_code": "4506"
+  },
+  {
+    "district_slug": "hyderabad",
+    "slug": "bahadurpura",
+    "name_en": "Bahadurpura",
+    "name_te": "బహదూర్ పుర",
+    "lgd_code": "4508"
+  },
+  {
+    "district_slug": "hyderabad",
+    "slug": "bandlaguda",
+    "name_en": "Bandlaguda",
+    "name_te": "బండ్లగూడ",
+    "lgd_code": "4509"
+  },
+  {
+    "district_slug": "hyderabad",
+    "slug": "charminar",
+    "name_en": "Charminar",
+    "name_te": "చార్మినార్",
+    "lgd_code": "4510"
+  },
+  {
+    "district_slug": "hyderabad",
+    "slug": "golconda",
+    "name_en": "Golconda",
+    "name_te": "గోల్కొండ",
+    "lgd_code": "4507"
+  },
+  {
+    "district_slug": "hyderabad",
+    "slug": "himayatnagar",
+    "name_en": "Himayatnagar",
+    "name_te": "హిమాయత్ నగర్",
+    "lgd_code": "4503"
+  },
+  {
+    "district_slug": "hyderabad",
+    "slug": "khairatabad",
+    "name_en": "Khairatabad",
+    "name_te": "ఖైరతాబాద్",
+    "lgd_code": "4505"
+  },
+  {
+    "district_slug": "hyderabad",
+    "slug": "marredpally",
+    "name_en": "Marredpally",
+    "name_te": "మారెడ్ పల్లి",
+    "lgd_code": "4500"
+  },
+  {
+    "district_slug": "hyderabad",
+    "slug": "musheerabad",
+    "name_en": "Musheerabad",
+    "name_te": "ముషీరాబాద్",
+    "lgd_code": "4501"
+  },
+  {
+    "district_slug": "hyderabad",
+    "slug": "nampally",
+    "name_en": "Nampally",
+    "name_te": "నాంపల్లి",
+    "lgd_code": "4504"
+  },
+  {
+    "district_slug": "hyderabad",
+    "slug": "saidabad",
+    "name_en": "Saidabad",
+    "name_te": "సైదాబాద్",
+    "lgd_code": "4511"
+  },
+  {
+    "district_slug": "hyderabad",
+    "slug": "secunderabad",
+    "name_en": "Secunderabad",
+    "name_te": "సికింద్రాబాద్",
+    "lgd_code": "4498"
+  },
+  {
+    "district_slug": "hyderabad",
+    "slug": "shaikpet",
+    "name_en": "Shaikpet",
+    "name_te": "షేక్ పేట్",
+    "lgd_code": "4496"
+  },
+  {
+    "district_slug": "hyderabad",
+    "slug": "tirumalgiri",
+    "name_en": "Tirumalgiri",
+    "name_te": "తిరుమలగిరి",
+    "lgd_code": "4499"
+  },
+  {
+    "district_slug": "jagtial",
+    "slug": "beerpur",
+    "name_en": "Beerpur",
+    "name_te": "బీర్ పూర్",
+    "lgd_code": "6212"
+  },
+  {
+    "district_slug": "jagtial",
+    "slug": "buggaram",
+    "name_en": "Buggaram",
+    "name_te": "బుగ్గారం",
+    "lgd_code": "6213"
+  },
+  {
+    "district_slug": "jagtial",
+    "slug": "dharmapuri",
+    "name_en": "Dharmapuri",
+    "name_te": "ధర్మపురి",
+    "lgd_code": "4397"
+  },
+  {
+    "district_slug": "jagtial",
+    "slug": "gollapalli",
+    "name_en": "Gollapalli",
+    "name_te": "గొల్లపల్లి",
+    "lgd_code": "4412"
+  },
+  {
+    "district_slug": "jagtial",
+    "slug": "ibrahimpatnam",
+    "name_en": "Ibrahimpatnam",
+    "name_te": "ఇబ్రహీంపట్నం",
+    "lgd_code": "4393"
+  },
+  {
+    "district_slug": "jagtial",
+    "slug": "jagitial",
+    "name_en": "Jagitial",
+    "name_te": "జగిత్యాల్",
+    "lgd_code": "4414"
+  },
+  {
+    "district_slug": "jagtial",
+    "slug": "jagitial-rural",
+    "name_en": "Jagitial Rural",
+    "name_te": "జగిత్యాల రూరల్",
+    "lgd_code": "6211"
+  },
+  {
+    "district_slug": "jagtial",
+    "slug": "kathlapur",
+    "name_en": "Kathlapur",
+    "name_te": "కథలాపూర్",
+    "lgd_code": "4418"
+  },
+  {
+    "district_slug": "jagtial",
+    "slug": "kodimial",
+    "name_en": "Kodimial",
+    "name_te": "కొడిమ్యాల",
+    "lgd_code": "4420"
+  },
+  {
+    "district_slug": "jagtial",
+    "slug": "korutla",
+    "name_en": "Korutla",
+    "name_te": "కోరుట్ల",
+    "lgd_code": "4416"
+  },
+  {
+    "district_slug": "jagtial",
+    "slug": "mallapur",
+    "name_en": "Mallapur",
+    "name_te": "మల్లాపూర్",
+    "lgd_code": "4394"
+  },
+  {
+    "district_slug": "jagtial",
+    "slug": "mallial",
+    "name_en": "Mallial",
+    "name_te": "మల్యాల",
+    "lgd_code": "4413"
+  },
+  {
+    "district_slug": "jagtial",
+    "slug": "medipalli",
+    "name_en": "Medipalli",
+    "name_te": "మేడిపల్లి",
+    "lgd_code": "4415"
+  },
+  {
+    "district_slug": "jagtial",
+    "slug": "metpalli",
+    "name_en": "Metpalli",
+    "name_te": "మెట్ పల్లి",
+    "lgd_code": "4417"
+  },
+  {
+    "district_slug": "jagtial",
+    "slug": "pegadapalli",
+    "name_en": "Pegadapalli",
+    "name_te": "పెగడపల్లి",
+    "lgd_code": "4421"
+  },
+  {
+    "district_slug": "jagtial",
+    "slug": "raikal",
+    "name_en": "Raikal",
+    "name_te": "రాయికల్",
+    "lgd_code": "4395"
+  },
+  {
+    "district_slug": "jagtial",
+    "slug": "sarangapur",
+    "name_en": "Sarangapur",
+    "name_te": "సారంగాపూర్",
+    "lgd_code": "4396"
+  },
+  {
+    "district_slug": "jagtial",
+    "slug": "velgatur",
+    "name_en": "Velgatur",
+    "name_te": "వెల్గటూరు",
+    "lgd_code": "4398"
+  },
+  {
+    "district_slug": "jangaon",
+    "slug": "bachannapet",
+    "name_en": "Bachannapet",
+    "name_te": "బచ్చన్నపేట",
+    "lgd_code": "4674"
+  },
+  {
+    "district_slug": "jangaon",
+    "slug": "chilpur",
+    "name_en": "Chilpur",
+    "name_te": "చిల్పూర్",
+    "lgd_code": "6259"
+  },
+  {
+    "district_slug": "jangaon",
+    "slug": "devaruppula",
+    "name_en": "Devaruppula",
+    "name_te": "దేవరుప్పుల",
+    "lgd_code": "4701"
+  },
+  {
+    "district_slug": "jangaon",
+    "slug": "ghanpur-station",
+    "name_en": "Ghanpur (Station)",
+    "name_te": "ఘణపూర్(స్టేషన్)",
+    "lgd_code": "4676"
+  },
+  {
+    "district_slug": "jangaon",
+    "slug": "gundala",
+    "name_en": "Gundala",
+    "name_te": "గుండాల",
+    "lgd_code": "4618"
+  },
+  {
+    "district_slug": "jangaon",
+    "slug": "jangoan",
+    "name_en": "Jangoan",
+    "name_te": "ఙనగామ",
+    "lgd_code": "4699"
+  },
+  {
+    "district_slug": "jangaon",
+    "slug": "kodakandla",
+    "name_en": "Kodakandla",
+    "name_te": "కొడకండ్ల",
+    "lgd_code": "4702"
+  },
+  {
+    "district_slug": "jangaon",
+    "slug": "lingalaghanpur",
+    "name_en": "LingalaGhanpur",
+    "name_te": "లింగాలఘణపూర్",
+    "lgd_code": "4700"
+  },
+  {
+    "district_slug": "jangaon",
+    "slug": "narmetta",
+    "name_en": "Narmetta",
+    "name_te": "నర్మెట్ట",
+    "lgd_code": "4675"
+  },
+  {
+    "district_slug": "jangaon",
+    "slug": "palakurthy",
+    "name_en": "Palakurthy",
+    "name_te": "పాలకుర్తి",
+    "lgd_code": "4697"
+  },
+  {
+    "district_slug": "jangaon",
+    "slug": "ragunathpally",
+    "name_en": "Ragunathpally",
+    "name_te": "రఘునాథపల్లి",
+    "lgd_code": "4698"
+  },
+  {
+    "district_slug": "jangaon",
+    "slug": "tharigoppula",
+    "name_en": "Tharigoppula",
+    "name_te": "తరిగొప్పుల",
+    "lgd_code": "6257"
+  },
+  {
+    "district_slug": "jangaon",
+    "slug": "zaffergadh",
+    "name_en": "Zaffergadh",
+    "name_te": "జఫర్ గడ్",
+    "lgd_code": "4696"
+  },
+  {
+    "district_slug": "jayashankar-bhupalpally",
+    "slug": "bhupalpally",
+    "name_en": "Bhupalpally",
+    "name_te": "భూపాల్ పల్లి",
+    "lgd_code": "4682"
+  },
+  {
+    "district_slug": "jayashankar-bhupalpally",
+    "slug": "chityal",
+    "name_en": "Chityal",
+    "name_te": "చిట్యాల",
+    "lgd_code": "4681"
+  },
+  {
+    "district_slug": "jayashankar-bhupalpally",
+    "slug": "ghanpur-mulug",
+    "name_en": "Ghanpur (Mulug)",
+    "name_te": "ఘణపూర్ (ములుగు)",
+    "lgd_code": "4683"
+  },
+  {
+    "district_slug": "jayashankar-bhupalpally",
+    "slug": "kataram",
+    "name_en": "Kataram",
+    "name_te": "కాటారం",
+    "lgd_code": "4402"
+  },
+  {
+    "district_slug": "jayashankar-bhupalpally",
+    "slug": "mahadevpur",
+    "name_en": "Mahadevpur",
+    "name_te": "మహాదేవపూర్",
+    "lgd_code": "4403"
+  },
+  {
+    "district_slug": "jayashankar-bhupalpally",
+    "slug": "malharrao",
+    "name_en": "Malharrao",
+    "name_te": "మల్హార్ రావు",
+    "lgd_code": "4405"
+  },
+  {
+    "district_slug": "jayashankar-bhupalpally",
+    "slug": "mogullapally",
+    "name_en": "Mogullapally",
+    "name_te": "మొగుళ్ళపల్లి",
+    "lgd_code": "4680"
+  },
+  {
+    "district_slug": "jayashankar-bhupalpally",
+    "slug": "mutharam-mahadevpur",
+    "name_en": "Mutharam Mahadevpur",
+    "name_te": "ముత్తారం (మహదేవ్ పూర్)",
+    "lgd_code": "4404"
+  },
+  {
+    "district_slug": "jayashankar-bhupalpally",
+    "slug": "palimela",
+    "name_en": "Palimela",
+    "name_te": "పల్మెల",
+    "lgd_code": "6250"
+  },
+  {
+    "district_slug": "jayashankar-bhupalpally",
+    "slug": "regonda",
+    "name_en": "Regonda",
+    "name_te": "రేగోండ",
+    "lgd_code": "4690"
+  },
+  {
+    "district_slug": "jayashankar-bhupalpally",
+    "slug": "tekumatla",
+    "name_en": "Tekumatla",
+    "name_te": "టేకుమట్ల",
+    "lgd_code": "6248"
+  },
+  {
+    "district_slug": "jogulamba-gadwal",
+    "slug": "alampur",
+    "name_en": "Alampur",
+    "name_te": "ఆలంపూర్",
+    "lgd_code": "4612"
+  },
+  {
+    "district_slug": "jogulamba-gadwal",
+    "slug": "dharoor",
+    "name_en": "Dharoor",
+    "name_te": "ధరూర్",
+    "lgd_code": "4591"
+  },
+  {
+    "district_slug": "jogulamba-gadwal",
+    "slug": "gadwal",
+    "name_en": "Gadwal",
+    "name_te": "గద్వాల్",
+    "lgd_code": "4603"
+  },
+  {
+    "district_slug": "jogulamba-gadwal",
+    "slug": "ghattu",
+    "name_en": "Ghattu",
+    "name_te": "గట్టు",
+    "lgd_code": "4605"
+  },
+  {
+    "district_slug": "jogulamba-gadwal",
+    "slug": "ieeja",
+    "name_en": "Ieeja",
+    "name_te": "అయిజ",
+    "lgd_code": "4606"
+  },
+  {
+    "district_slug": "jogulamba-gadwal",
+    "slug": "itikyala",
+    "name_en": "Itikyala",
+    "name_te": "ఇటిక్యాల",
+    "lgd_code": "4607"
+  },
+  {
+    "district_slug": "jogulamba-gadwal",
+    "slug": "kaloor-thimmandoddi",
+    "name_en": "Kaloor Thimmandoddi",
+    "name_te": "కలూరి తిమ్మన్ దొడ్డి",
+    "lgd_code": "6297"
+  },
+  {
+    "district_slug": "jogulamba-gadwal",
+    "slug": "maldakal",
+    "name_en": "Maldakal",
+    "name_te": "మల్దకల్",
+    "lgd_code": "4604"
+  },
+  {
+    "district_slug": "jogulamba-gadwal",
+    "slug": "manopad",
+    "name_en": "Manopad",
+    "name_te": "మనాపడ్",
+    "lgd_code": "4611"
+  },
+  {
+    "district_slug": "jogulamba-gadwal",
+    "slug": "rajoli",
+    "name_en": "Rajoli",
+    "name_te": "రాజోలి",
+    "lgd_code": "6296"
+  },
+  {
+    "district_slug": "jogulamba-gadwal",
+    "slug": "undavelly",
+    "name_en": "Undavelly",
+    "name_te": "ఉండవెల్లి",
+    "lgd_code": "6299"
+  },
+  {
+    "district_slug": "jogulamba-gadwal",
+    "slug": "waddepally",
+    "name_en": "Waddepally",
+    "name_te": "వడ్డెపల్లి",
+    "lgd_code": "4610"
+  },
+  {
+    "district_slug": "kamareddy",
+    "slug": "banswada",
+    "name_en": "Banswada",
+    "name_te": "బాన్స్ వాడ",
+    "lgd_code": "4383"
+  },
+  {
+    "district_slug": "kamareddy",
+    "slug": "bhiknoor",
+    "name_en": "Bhiknoor",
+    "name_te": "బిక్ నూర్",
+    "lgd_code": "4391"
+  },
+  {
+    "district_slug": "kamareddy",
+    "slug": "bibipet",
+    "name_en": "Bibipet",
+    "name_te": "బీబీపేట్",
+    "lgd_code": "6242"
+  },
+  {
+    "district_slug": "kamareddy",
+    "slug": "bichkunda",
+    "name_en": "Bichkunda",
+    "name_te": "బిచ్కుంద",
+    "lgd_code": "4374"
+  },
+  {
+    "district_slug": "kamareddy",
+    "slug": "birkur",
+    "name_en": "Birkur",
+    "name_te": "బీర్కూర్",
+    "lgd_code": "4375"
+  },
+  {
+    "district_slug": "kamareddy",
+    "slug": "domakonda",
+    "name_en": "Domakonda",
+    "name_te": "దోమకొండ",
+    "lgd_code": "4392"
+  },
+  {
+    "district_slug": "kamareddy",
+    "slug": "gandhari",
+    "name_en": "Gandhari",
+    "name_te": "గాందారి",
+    "lgd_code": "4382"
+  },
+  {
+    "district_slug": "kamareddy",
+    "slug": "jukkal",
+    "name_en": "Jukkal",
+    "name_te": "జుక్కల్",
+    "lgd_code": "4373"
+  },
+  {
+    "district_slug": "kamareddy",
+    "slug": "kamareddy",
+    "name_en": "Kamareddy",
+    "name_te": "కామారెడ్డి",
+    "lgd_code": "4390"
+  },
+  {
+    "district_slug": "kamareddy",
+    "slug": "lingampet",
+    "name_en": "Lingampet",
+    "name_te": "లింగంపేట్",
+    "lgd_code": "4388"
+  },
+  {
+    "district_slug": "kamareddy",
+    "slug": "machareddy",
+    "name_en": "Machareddy",
+    "name_te": "మాచారెడ్డి",
+    "lgd_code": "4380"
+  },
+  {
+    "district_slug": "kamareddy",
+    "slug": "madnoor",
+    "name_en": "Madnoor",
+    "name_te": "మద్నూర్",
+    "lgd_code": "4372"
+  },
+  {
+    "district_slug": "kamareddy",
+    "slug": "nagireddypet",
+    "name_en": "Nagireddypet",
+    "name_te": "నాగిరెడ్డిపెట్",
+    "lgd_code": "4387"
+  },
+  {
+    "district_slug": "kamareddy",
+    "slug": "nasurullabad",
+    "name_en": "Nasurullabad",
+    "name_te": "నసురుల్లాబాద్",
+    "lgd_code": "6244"
+  },
+  {
+    "district_slug": "kamareddy",
+    "slug": "nizamsagar",
+    "name_en": "Nizamsagar",
+    "name_te": "నిజాంసాగర్",
+    "lgd_code": "4385"
+  },
+  {
+    "district_slug": "kamareddy",
+    "slug": "pedda-kodapgal",
+    "name_en": "Pedda Kodapgal",
+    "name_te": "పెద్ద కోడపగల్",
+    "lgd_code": "6245"
+  },
+  {
+    "district_slug": "kamareddy",
+    "slug": "pitlam",
+    "name_en": "Pitlam",
+    "name_te": "పిట్లం",
+    "lgd_code": "4384"
+  },
+  {
+    "district_slug": "kamareddy",
+    "slug": "rajampet",
+    "name_en": "Rajampet",
+    "name_te": "రాజంపెట్",
+    "lgd_code": "6241"
+  },
+  {
+    "district_slug": "kamareddy",
+    "slug": "ramareddy",
+    "name_en": "Ramareddy",
+    "name_te": "రామారెడ్డి",
+    "lgd_code": "6243"
+  },
+  {
+    "district_slug": "kamareddy",
+    "slug": "sadashivanagar",
+    "name_en": "Sadashivanagar",
+    "name_te": "సదాశివ్ నగర్",
+    "lgd_code": "4381"
+  },
+  {
+    "district_slug": "kamareddy",
+    "slug": "tadwai",
+    "name_en": "Tadwai",
+    "name_te": "తాడ్వాయి",
+    "lgd_code": "4389"
+  },
+  {
+    "district_slug": "kamareddy",
+    "slug": "yellareddy",
+    "name_en": "Yellareddy",
+    "name_te": "ఎల్లారెడ్డి",
+    "lgd_code": "4386"
+  },
+  {
+    "district_slug": "karimnagar",
+    "slug": "chigurumamidi",
+    "name_en": "Chigurumamidi",
+    "name_te": "చిగురుమామిడి",
+    "lgd_code": "4442"
+  },
+  {
+    "district_slug": "karimnagar",
+    "slug": "choppadandi",
+    "name_en": "Choppadandi",
+    "name_te": "చొప్పదండి",
+    "lgd_code": "4424"
+  },
+  {
+    "district_slug": "karimnagar",
+    "slug": "ellandakunta",
+    "name_en": "Ellandakunta",
+    "name_te": "ఇల్లంతకుంట",
+    "lgd_code": "6234"
+  },
+  {
+    "district_slug": "karimnagar",
+    "slug": "gangadhara",
+    "name_en": "Gangadhara",
+    "name_te": "గంగాధర",
+    "lgd_code": "4422"
+  },
+  {
+    "district_slug": "karimnagar",
+    "slug": "ganneruvaram",
+    "name_en": "Ganneruvaram",
+    "name_te": "గన్నేరువరం",
+    "lgd_code": "6232"
+  },
+  {
+    "district_slug": "karimnagar",
+    "slug": "huzurabad",
+    "name_en": "Huzurabad",
+    "name_te": "హుజురాబాద్",
+    "lgd_code": "4446"
+  },
+  {
+    "district_slug": "karimnagar",
+    "slug": "jammikunta",
+    "name_en": "Jammikunta",
+    "name_te": "జమ్మికుంట",
+    "lgd_code": "4440"
+  },
+  {
+    "district_slug": "karimnagar",
+    "slug": "karimnagar",
+    "name_en": "Karimnagar",
+    "name_te": "కరీంనగర్",
+    "lgd_code": "6231"
+  },
+  {
+    "district_slug": "karimnagar",
+    "slug": "karimnagar-rural",
+    "name_en": "Karimnagar Rural",
+    "name_te": "Karimnagar Rural మండలం",
+    "lgd_code": "4428"
+  },
+  {
+    "district_slug": "karimnagar",
+    "slug": "kothapally",
+    "name_en": "Kothapally",
+    "name_te": "Kothapally మండలం",
+    "lgd_code": "6230"
+  },
+  {
+    "district_slug": "karimnagar",
+    "slug": "manakondur",
+    "name_en": "Manakondur",
+    "name_te": "మానకొండూర్",
+    "lgd_code": "4427"
+  },
+  {
+    "district_slug": "karimnagar",
+    "slug": "ramadugu",
+    "name_en": "Ramadugu",
+    "name_te": "రామడుగు",
+    "lgd_code": "4423"
+  },
+  {
+    "district_slug": "karimnagar",
+    "slug": "shankarapatnam",
+    "name_en": "Shankarapatnam",
+    "name_te": "శంకరపట్నం",
+    "lgd_code": "4441"
+  },
+  {
+    "district_slug": "karimnagar",
+    "slug": "thimmapur-lmd",
+    "name_en": "Thimmapur LMD",
+    "name_te": "Thimmapur LMD మండలం",
+    "lgd_code": "4438"
+  },
+  {
+    "district_slug": "karimnagar",
+    "slug": "v-saidapur",
+    "name_en": "V.Saidapur",
+    "name_te": "సైదాపూర్",
+    "lgd_code": "4445"
+  },
+  {
+    "district_slug": "karimnagar",
+    "slug": "veenavanka",
+    "name_en": "Veenavanka",
+    "name_te": "వీణవంక",
+    "lgd_code": "4439"
+  },
+  {
+    "district_slug": "khammam",
+    "slug": "bonakal",
+    "name_en": "Bonakal",
+    "name_te": "బోనకల్",
+    "lgd_code": "4765"
+  },
+  {
+    "district_slug": "khammam",
+    "slug": "chinthakani",
+    "name_en": "Chinthakani",
+    "name_te": "చింతకాని",
+    "lgd_code": "4760"
+  },
+  {
+    "district_slug": "khammam",
+    "slug": "enkoor",
+    "name_en": "Enkoor",
+    "name_te": "ఏనుకూరు",
+    "lgd_code": "4753"
+  },
+  {
+    "district_slug": "khammam",
+    "slug": "kalluru",
+    "name_en": "Kalluru",
+    "name_te": "కల్లూరు",
+    "lgd_code": "4763"
+  },
+  {
+    "district_slug": "khammam",
+    "slug": "kamepalli",
+    "name_en": "Kamepalli",
+    "name_te": "కామేపల్లి",
+    "lgd_code": "4745"
+  },
+  {
+    "district_slug": "khammam",
+    "slug": "khammam-rural",
+    "name_en": "Khammam (Rural)",
+    "name_te": "ఖమ్మం రూరల్",
+    "lgd_code": "4756"
+  },
+  {
+    "district_slug": "khammam",
+    "slug": "khammam-urban",
+    "name_en": "Khammam Urban",
+    "name_te": "ఖమ్మం అర్బన్",
+    "lgd_code": "6326"
+  },
+  {
+    "district_slug": "khammam",
+    "slug": "konijerla",
+    "name_en": "Konijerla",
+    "name_te": "కొణిజర్ల",
+    "lgd_code": "4761"
+  },
+  {
+    "district_slug": "khammam",
+    "slug": "kusumanchi",
+    "name_en": "Kusumanchi",
+    "name_te": "కూసుమంచి",
+    "lgd_code": "4755"
+  },
+  {
+    "district_slug": "khammam",
+    "slug": "madhira",
+    "name_en": "Madhira",
+    "name_te": "మధిర",
+    "lgd_code": "4766"
+  },
+  {
+    "district_slug": "khammam",
+    "slug": "mudigonda",
+    "name_en": "Mudigonda",
+    "name_te": "ముదిగొండ",
+    "lgd_code": "4758"
+  },
+  {
+    "district_slug": "khammam",
+    "slug": "nelakondapalli",
+    "name_en": "Nelakondapalli",
+    "name_te": "నేలకొండపల్లి",
+    "lgd_code": "4759"
+  },
+  {
+    "district_slug": "khammam",
+    "slug": "penuballi",
+    "name_en": "Penuballi",
+    "name_te": "పెనుబల్లి",
+    "lgd_code": "4752"
+  },
+  {
+    "district_slug": "khammam",
+    "slug": "raghunadhapalem",
+    "name_en": "Raghunadhapalem",
+    "name_te": "రఘునాథపాలెం",
+    "lgd_code": "4757"
+  },
+  {
+    "district_slug": "khammam",
+    "slug": "sathupalli",
+    "name_en": "Sathupalli",
+    "name_te": "సత్తుపల్లి",
+    "lgd_code": "4751"
+  },
+  {
+    "district_slug": "khammam",
+    "slug": "singareni",
+    "name_en": "Singareni",
+    "name_te": "సింగరేణి",
+    "lgd_code": "4744"
+  },
+  {
+    "district_slug": "khammam",
+    "slug": "tallada",
+    "name_en": "Thallada",
+    "name_te": "తల్లాడ",
+    "lgd_code": "4762"
+  },
+  {
+    "district_slug": "khammam",
+    "slug": "tirumalayapalem",
+    "name_en": "Tirumalayapalem",
+    "name_te": "తిరుమలాయపాలెం",
+    "lgd_code": "4754"
+  },
+  {
+    "district_slug": "khammam",
+    "slug": "vemsoor",
+    "name_en": "Vemsoor",
+    "name_te": "వేంసూరు",
+    "lgd_code": "4768"
+  },
+  {
+    "district_slug": "khammam",
+    "slug": "wyra",
+    "name_en": "Wyra",
+    "name_te": "వైరా",
+    "lgd_code": "4764"
+  },
+  {
+    "district_slug": "khammam",
+    "slug": "yerrupalem",
+    "name_en": "Yerrupalem",
+    "name_te": "ఎర్రుపాలెం",
+    "lgd_code": "4767"
+  },
+  {
+    "district_slug": "kumuram-bheem-asifabad",
+    "slug": "asifabad",
+    "name_en": "Asifabad",
+    "name_te": "ఆసిఫాబాద్",
+    "lgd_code": "4319"
+  },
+  {
+    "district_slug": "kumuram-bheem-asifabad",
+    "slug": "bejjur",
+    "name_en": "Bejjur",
+    "name_te": "బెజ్జూర్",
+    "lgd_code": "4317"
+  },
+  {
+    "district_slug": "kumuram-bheem-asifabad",
+    "slug": "chintalamanepally",
+    "name_en": "Chintalamanepally",
+    "name_te": "చింతాల మానెపల్లి",
+    "lgd_code": "6314"
+  },
+  {
+    "district_slug": "kumuram-bheem-asifabad",
+    "slug": "dahegoan",
+    "name_en": "Dahegoan",
+    "name_te": "దహెగాం",
+    "lgd_code": "4329"
+  },
+  {
+    "district_slug": "kumuram-bheem-asifabad",
+    "slug": "jainoor",
+    "name_en": "Jainoor",
+    "name_te": "జైనూర్",
+    "lgd_code": "4320"
+  },
+  {
+    "district_slug": "kumuram-bheem-asifabad",
+    "slug": "kagaznagar",
+    "name_en": "Kagaznagar",
+    "name_te": "కాగజ్ నగర్",
+    "lgd_code": "4318"
+  },
+  {
+    "district_slug": "kumuram-bheem-asifabad",
+    "slug": "kerameri",
+    "name_en": "Kerameri",
+    "name_te": "కెరమెరి",
+    "lgd_code": "4313"
+  },
+  {
+    "district_slug": "kumuram-bheem-asifabad",
+    "slug": "koutala",
+    "name_en": "Koutala",
+    "name_te": "కౌటాల",
+    "lgd_code": "4316"
+  },
+  {
+    "district_slug": "kumuram-bheem-asifabad",
+    "slug": "lingapur",
+    "name_en": "Lingapur",
+    "name_te": "లింగాపూర్",
+    "lgd_code": "6311"
+  },
+  {
+    "district_slug": "kumuram-bheem-asifabad",
+    "slug": "penchicalpet",
+    "name_en": "Penchicalpet",
+    "name_te": "పెంచికల్ పేట్",
+    "lgd_code": "6313"
+  },
+  {
+    "district_slug": "kumuram-bheem-asifabad",
+    "slug": "rebbena",
+    "name_en": "Rebbena",
+    "name_te": "రెబ్బెన",
+    "lgd_code": "4327"
+  },
+  {
+    "district_slug": "kumuram-bheem-asifabad",
+    "slug": "sirpur-t",
+    "name_en": "Sirpur (T)",
+    "name_te": "సిర్పూర్ (టి)",
+    "lgd_code": "4315"
+  },
+  {
+    "district_slug": "kumuram-bheem-asifabad",
+    "slug": "sirpur-u",
+    "name_en": "Sirpur U",
+    "name_te": "సిర్పూర్ ( యు )",
+    "lgd_code": "4326"
+  },
+  {
+    "district_slug": "kumuram-bheem-asifabad",
+    "slug": "tiryani",
+    "name_en": "Tiryani",
+    "name_te": "తిర్యాని",
+    "lgd_code": "4333"
+  },
+  {
+    "district_slug": "kumuram-bheem-asifabad",
+    "slug": "wankidi",
+    "name_en": "Wankidi",
+    "name_te": "వాంకిడి",
+    "lgd_code": "4314"
+  },
+  {
+    "district_slug": "mahabubabad",
+    "slug": "bayyaram",
+    "name_en": "Bayyaram",
+    "name_te": "బయ్యారం",
+    "lgd_code": "4742"
+  },
+  {
+    "district_slug": "mahabubabad",
+    "slug": "chinnagudur",
+    "name_en": "Chinnagudur",
+    "name_te": "చిన్నగూడూర్",
+    "lgd_code": "6254"
+  },
+  {
+    "district_slug": "mahabubabad",
+    "slug": "danthalapalle",
+    "name_en": "Danthalapalle",
+    "name_te": "దంతాలపల్లి",
+    "lgd_code": "6255"
+  },
+  {
+    "district_slug": "mahabubabad",
+    "slug": "dornakal",
+    "name_en": "Dornakal",
+    "name_te": "డోర్నకల్",
+    "lgd_code": "4722"
+  },
+  {
+    "district_slug": "mahabubabad",
+    "slug": "gangaram",
+    "name_en": "Gangaram",
+    "name_te": "గంగారం",
+    "lgd_code": "6253"
+  },
+  {
+    "district_slug": "mahabubabad",
+    "slug": "garla",
+    "name_en": "Garla",
+    "name_te": "గార్ల",
+    "lgd_code": "4743"
+  },
+  {
+    "district_slug": "mahabubabad",
+    "slug": "gudur",
+    "name_en": "Gudur",
+    "name_te": "గూడూర్",
+    "lgd_code": "4711"
+  },
+  {
+    "district_slug": "mahabubabad",
+    "slug": "kesamudram",
+    "name_en": "Kesamudram",
+    "name_te": "కేసముద్రం",
+    "lgd_code": "4717"
+  },
+  {
+    "district_slug": "mahabubabad",
+    "slug": "kothaguda",
+    "name_en": "Kothaguda",
+    "name_te": "కొత్తగూడ",
+    "lgd_code": "4710"
+  },
+  {
+    "district_slug": "mahabubabad",
+    "slug": "kuravi",
+    "name_en": "Kuravi",
+    "name_te": "కురవి",
+    "lgd_code": "4721"
+  },
+  {
+    "district_slug": "mahabubabad",
+    "slug": "mahabubabad",
+    "name_en": "Mahabubabad",
+    "name_te": "మహబూబాబాద్",
+    "lgd_code": "4718"
+  },
+  {
+    "district_slug": "mahabubabad",
+    "slug": "maripeda",
+    "name_en": "Maripeda",
+    "name_te": "మరిపెడ",
+    "lgd_code": "4720"
+  },
+  {
+    "district_slug": "mahabubabad",
+    "slug": "narsimhulapet",
+    "name_en": "Narsimhulapet",
+    "name_te": "నర్సింహులపేట",
+    "lgd_code": "4719"
+  },
+  {
+    "district_slug": "mahabubabad",
+    "slug": "nellikudur",
+    "name_en": "Nellikudur",
+    "name_te": "నెల్లికుదురు",
+    "lgd_code": "4716"
+  },
+  {
+    "district_slug": "mahabubabad",
+    "slug": "peddavangara",
+    "name_en": "Peddavangara",
+    "name_te": "పెద్దవంగర",
+    "lgd_code": "6256"
+  },
+  {
+    "district_slug": "mahabubabad",
+    "slug": "thorrur",
+    "name_en": "Thorrur",
+    "name_te": "తొర్రూర్",
+    "lgd_code": "4715"
+  },
+  {
+    "district_slug": "mahabubnagar",
+    "slug": "addakal",
+    "name_en": "Addakal",
+    "name_te": "అడ్డాకల్",
+    "lgd_code": "4586"
+  },
+  {
+    "district_slug": "mahabubnagar",
+    "slug": "balanagar",
+    "name_en": "Balanagar",
+    "name_te": "బాలనగర్",
+    "lgd_code": "4557"
+  },
+  {
+    "district_slug": "mahabubnagar",
+    "slug": "bhoothpur",
+    "name_en": "Bhoothpur",
+    "name_te": "బూత్పూర్",
+    "lgd_code": "4574"
+  },
+  {
+    "district_slug": "mahabubnagar",
+    "slug": "chinnachintakunta",
+    "name_en": "Chinnachintakunta",
+    "name_te": "చిన్నచింతకుంట",
+    "lgd_code": "4587"
+  },
+  {
+    "district_slug": "mahabubnagar",
+    "slug": "devarakadra",
+    "name_en": "Devarakadra",
+    "name_te": "దేవర కద్ర",
+    "lgd_code": "4573"
+  },
+  {
+    "district_slug": "mahabubnagar",
+    "slug": "gandeed",
+    "name_en": "Gandeed",
+    "name_te": "గండీడ్(M)",
+    "lgd_code": "4538"
+  },
+  {
+    "district_slug": "mahabubnagar",
+    "slug": "hanwada",
+    "name_en": "Hanwada",
+    "name_te": "హన్వాడ",
+    "lgd_code": "4555"
+  },
+  {
+    "district_slug": "mahabubnagar",
+    "slug": "jadcherla",
+    "name_en": "Jadcherla",
+    "name_te": "జడ్చర్ల",
+    "lgd_code": "4567"
+  },
+  {
+    "district_slug": "mahabubnagar",
+    "slug": "koilkonda",
+    "name_en": "Koilkonda",
+    "name_te": "కోయిల్ కోండ",
+    "lgd_code": "4569"
+  },
+  {
+    "district_slug": "mahabubnagar",
+    "slug": "mahabubnagar-rural",
+    "name_en": "Mahabubnagar Rural",
+    "name_te": "మహబూబ్ నగర్ (రూరల్)",
+    "lgd_code": "6258"
+  },
+  {
+    "district_slug": "mahabubnagar",
+    "slug": "mahabubnagar-urban",
+    "name_en": "Mahabubnagar Urban",
+    "name_te": "మహబూబ్ నగర్ (అర్బన్)",
+    "lgd_code": "4568"
+  },
+  {
+    "district_slug": "mahabubnagar",
+    "slug": "midjil",
+    "name_en": "Midjil",
+    "name_te": "మిడ్జిల్",
+    "lgd_code": "4566"
+  },
+  {
+    "district_slug": "mahabubnagar",
+    "slug": "moosapet",
+    "name_en": "Moosapet",
+    "name_te": "మూసాపేట్",
+    "lgd_code": "6260"
+  },
+  {
+    "district_slug": "mahabubnagar",
+    "slug": "nawabpet",
+    "name_en": "Nawabpet",
+    "name_te": "నవాబ్ పేట",
+    "lgd_code": "4556"
+  },
+  {
+    "district_slug": "mahabubnagar",
+    "slug": "rajapur",
+    "name_en": "Rajapur",
+    "name_te": "రాజాపూర్",
+    "lgd_code": "6261"
+  },
+  {
+    "district_slug": "mancherial",
+    "slug": "bellampally",
+    "name_en": "Bellampally",
+    "name_te": "బెల్లంపల్లి",
+    "lgd_code": "4350"
+  },
+  {
+    "district_slug": "mancherial",
+    "slug": "bheemaram",
+    "name_en": "Bheemaram",
+    "name_te": "భీమారం",
+    "lgd_code": "6228"
+  },
+  {
+    "district_slug": "mancherial",
+    "slug": "bheemini",
+    "name_en": "Bheemini",
+    "name_te": "భీమిని",
+    "lgd_code": "4328"
+  },
+  {
+    "district_slug": "mancherial",
+    "slug": "chennur",
+    "name_en": "Chennur",
+    "name_te": "చెన్నూర్",
+    "lgd_code": "4356"
+  },
+  {
+    "district_slug": "mancherial",
+    "slug": "dandepally",
+    "name_en": "Dandepally",
+    "name_te": "దండెపల్లి",
+    "lgd_code": "4348"
+  },
+  {
+    "district_slug": "mancherial",
+    "slug": "hajipur",
+    "name_en": "Hajipur",
+    "name_te": "హజిపూర్",
+    "lgd_code": "6227"
+  },
+  {
+    "district_slug": "mancherial",
+    "slug": "jaipur",
+    "name_en": "Jaipur",
+    "name_te": "జైపూర్",
+    "lgd_code": "4355"
+  },
+  {
+    "district_slug": "mancherial",
+    "slug": "jannaram",
+    "name_en": "Jannaram",
+    "name_te": "జన్నారం",
+    "lgd_code": "4334"
+  },
+  {
+    "district_slug": "mancherial",
+    "slug": "kannepally",
+    "name_en": "Kannepally",
+    "name_te": "కన్నేపల్లి",
+    "lgd_code": "6229"
+  },
+  {
+    "district_slug": "mancherial",
+    "slug": "kasipet",
+    "name_en": "Kasipet",
+    "name_te": "కాసిపేట్",
+    "lgd_code": "4349"
+  },
+  {
+    "district_slug": "mancherial",
+    "slug": "kotapally",
+    "name_en": "Kotapally",
+    "name_te": "కోటపల్లి",
+    "lgd_code": "4351"
+  },
+  {
+    "district_slug": "mancherial",
+    "slug": "luxettipet",
+    "name_en": "Luxettipet",
+    "name_te": "లక్సెట్టిపేట్",
+    "lgd_code": "4353"
+  },
+  {
+    "district_slug": "mancherial",
+    "slug": "mancherial",
+    "name_en": "Mancherial",
+    "name_te": "మంచిర్యాల్",
+    "lgd_code": "4354"
+  },
+  {
+    "district_slug": "mancherial",
+    "slug": "mandamarri",
+    "name_en": "Mandamarri",
+    "name_te": "మందమర్రి",
+    "lgd_code": "4352"
+  },
+  {
+    "district_slug": "mancherial",
+    "slug": "naspur",
+    "name_en": "Naspur",
+    "name_te": "నస్పూరు",
+    "lgd_code": "6226"
+  },
+  {
+    "district_slug": "mancherial",
+    "slug": "nennel",
+    "name_en": "Nennel",
+    "name_te": "నెన్నెల్",
+    "lgd_code": "4331"
+  },
+  {
+    "district_slug": "mancherial",
+    "slug": "tandur",
+    "name_en": "Tandur",
+    "name_te": "తాండూర్",
+    "lgd_code": "4332"
+  },
+  {
+    "district_slug": "mancherial",
+    "slug": "vemanpally",
+    "name_en": "Vemanpally",
+    "name_te": "వేమన్ పల్లి",
+    "lgd_code": "4330"
+  },
+  {
+    "district_slug": "medak",
+    "slug": "alladurg",
+    "name_en": "Alladurg",
+    "name_te": "అల్లాదుర్గ్",
+    "lgd_code": "4470"
+  },
+  {
+    "district_slug": "medak",
+    "slug": "chegunta",
+    "name_en": "Chegunta",
+    "name_te": "చేగుంట",
+    "lgd_code": "4466"
+  },
+  {
+    "district_slug": "medak",
+    "slug": "chilpched",
+    "name_en": "Chilpched",
+    "name_te": "చిలపు చెడు",
+    "lgd_code": "6274"
+  },
+  {
+    "district_slug": "medak",
+    "slug": "havelighanapur",
+    "name_en": "Havelighanapur",
+    "name_te": "హవెలి ఘనాపూర్",
+    "lgd_code": "6270"
+  },
+  {
+    "district_slug": "medak",
+    "slug": "kowdipally",
+    "name_en": "Kowdipally",
+    "name_te": "కౌడిపల్లి",
+    "lgd_code": "4480"
+  },
+  {
+    "district_slug": "medak",
+    "slug": "kulcharam",
+    "name_en": "Kulcharam",
+    "name_te": "కుల్చారం",
+    "lgd_code": "4468"
+  },
+  {
+    "district_slug": "medak",
+    "slug": "manoharabad",
+    "name_en": "Manoharabad",
+    "name_te": "మనోహరాబాద్",
+    "lgd_code": "6273"
+  },
+  {
+    "district_slug": "medak",
+    "slug": "medak",
+    "name_en": "Medak",
+    "name_te": "మెదక్",
+    "lgd_code": "4456"
+  },
+  {
+    "district_slug": "medak",
+    "slug": "narsapur",
+    "name_en": "Narsapur",
+    "name_te": "నర్సాపూర్",
+    "lgd_code": "4488"
+  },
+  {
+    "district_slug": "medak",
+    "slug": "narsingi",
+    "name_en": "Narsingi",
+    "name_te": "నర్సింగి",
+    "lgd_code": "6272"
+  },
+  {
+    "district_slug": "medak",
+    "slug": "nizampet",
+    "name_en": "Nizampet",
+    "name_te": "నిజాంపేట్",
+    "lgd_code": "6271"
+  },
+  {
+    "district_slug": "medak",
+    "slug": "papannapet",
+    "name_en": "Papannapet",
+    "name_te": "పాపన్నపేట్",
+    "lgd_code": "4455"
+  },
+  {
+    "district_slug": "medak",
+    "slug": "ramayampet",
+    "name_en": "Ramayampet",
+    "name_te": "రామాయంపేట",
+    "lgd_code": "4457"
+  },
+  {
+    "district_slug": "medak",
+    "slug": "regode",
+    "name_en": "Regode",
+    "name_te": "రేగోడు",
+    "lgd_code": "4471"
+  },
+  {
+    "district_slug": "medak",
+    "slug": "shankarampet-a",
+    "name_en": "Shankarampet (A)",
+    "name_te": "శంకరంపేట్ (ఎ)",
+    "lgd_code": "4454"
+  },
+  {
+    "district_slug": "medak",
+    "slug": "shankarampet-r",
+    "name_en": "Shankarampet (R)",
+    "name_te": "శంకరంపేట(ఆర్)",
+    "lgd_code": "4467"
+  },
+  {
+    "district_slug": "medak",
+    "slug": "shivampet",
+    "name_en": "Shivampet",
+    "name_te": "శివ్వంపేట్",
+    "lgd_code": "4487"
+  },
+  {
+    "district_slug": "medak",
+    "slug": "tekmal",
+    "name_en": "Tekmal",
+    "name_te": "టేక్మాల్",
+    "lgd_code": "4469"
+  },
+  {
+    "district_slug": "medak",
+    "slug": "toopran",
+    "name_en": "Toopran",
+    "name_te": "తూప్రాన్",
+    "lgd_code": "4482"
+  },
+  {
+    "district_slug": "medak",
+    "slug": "yeldurthy",
+    "name_en": "Yeldurthy",
+    "name_te": "ఎల్దుర్తి",
+    "lgd_code": "4481"
+  },
+  {
+    "district_slug": "medchal-malkajgiri",
+    "slug": "alwal",
+    "name_en": "Alwal",
+    "name_te": "అల్వాల్",
+    "lgd_code": "6328"
+  },
+  {
+    "district_slug": "medchal-malkajgiri",
+    "slug": "bachupally",
+    "name_en": "Bachupally",
+    "name_te": "బాచ్ పల్లి",
+    "lgd_code": "6315"
+  },
+  {
+    "district_slug": "medchal-malkajgiri",
+    "slug": "balanagar",
+    "name_en": "Balanagar",
+    "name_te": "బాలానగర్",
+    "lgd_code": "4517"
+  },
+  {
+    "district_slug": "medchal-malkajgiri",
+    "slug": "gandimaisamma-dundigal",
+    "name_en": "Gandimaisamma Dundigal",
+    "name_te": "గండిమైసమ్మ దుండిగల్",
+    "lgd_code": "6316"
+  },
+  {
+    "district_slug": "medchal-malkajgiri",
+    "slug": "ghatkesar",
+    "name_en": "Ghatkesar",
+    "name_te": "ఘట్కేసర్",
+    "lgd_code": "4523"
+  },
+  {
+    "district_slug": "medchal-malkajgiri",
+    "slug": "kapra",
+    "name_en": "Kapra",
+    "name_te": "కాప్రా",
+    "lgd_code": "6317"
+  },
+  {
+    "district_slug": "medchal-malkajgiri",
+    "slug": "keesara",
+    "name_en": "Keesara",
+    "name_te": "కీసర(M)",
+    "lgd_code": "4522"
+  },
+  {
+    "district_slug": "medchal-malkajgiri",
+    "slug": "kukatpally",
+    "name_en": "Kukatpally",
+    "name_te": "కూకట్ పల్లి",
+    "lgd_code": "6327"
+  },
+  {
+    "district_slug": "medchal-malkajgiri",
+    "slug": "malkajgiri",
+    "name_en": "Malkajgiri",
+    "name_te": "మల్కాజగిరి",
+    "lgd_code": "4521"
+  },
+  {
+    "district_slug": "medchal-malkajgiri",
+    "slug": "medchal",
+    "name_en": "Medchal",
+    "name_te": "మేడ్చల్(M)",
+    "lgd_code": "4519"
+  },
+  {
+    "district_slug": "medchal-malkajgiri",
+    "slug": "medipally",
+    "name_en": "Medipally",
+    "name_te": "మేడిపల్లి",
+    "lgd_code": "6318"
+  },
+  {
+    "district_slug": "medchal-malkajgiri",
+    "slug": "muduchinthalapally",
+    "name_en": "Muduchinthalapally",
+    "name_te": "Muduchinthalapally మండలం",
+    "lgd_code": "6671"
+  },
+  {
+    "district_slug": "medchal-malkajgiri",
+    "slug": "qutballapur",
+    "name_en": "Qutballapur",
+    "name_te": "ఖుతుబుల్లాపూర్",
+    "lgd_code": "4518"
+  },
+  {
+    "district_slug": "medchal-malkajgiri",
+    "slug": "shamirpet",
+    "name_en": "Shamirpet",
+    "name_te": "షామీర్ పేట్",
+    "lgd_code": "4520"
+  },
+  {
+    "district_slug": "medchal-malkajgiri",
+    "slug": "uppal",
+    "name_en": "Uppal",
+    "name_te": "ఉప్పల్",
+    "lgd_code": "4524"
+  },
+  {
+    "district_slug": "mulugu",
+    "slug": "eturunagaram",
+    "name_en": "Eturunagaram",
+    "name_te": "ఏటూర్ నాగారం",
+    "lgd_code": "4685"
+  },
+  {
+    "district_slug": "mulugu",
+    "slug": "govindaraopet",
+    "name_en": "Govindaraopet",
+    "name_te": "గోవిందరావుపేట",
+    "lgd_code": "4688"
+  },
+  {
+    "district_slug": "mulugu",
+    "slug": "kannaigudem",
+    "name_en": "Kannaigudem",
+    "name_te": "కన్నాయిగూడెం",
+    "lgd_code": "6251"
+  },
+  {
+    "district_slug": "mulugu",
+    "slug": "mangapet",
+    "name_en": "Mangapet",
+    "name_te": "మంగపేట",
+    "lgd_code": "4686"
+  },
+  {
+    "district_slug": "mulugu",
+    "slug": "mulug",
+    "name_en": "Mulug",
+    "name_te": "ములుగు",
+    "lgd_code": "4689"
+  },
+  {
+    "district_slug": "mulugu",
+    "slug": "tadvai",
+    "name_en": "Tadvai",
+    "name_te": "తాడ్వాయి (సమ్మక్క సారక్క)",
+    "lgd_code": "4687"
+  },
+  {
+    "district_slug": "mulugu",
+    "slug": "venkatapur",
+    "name_en": "Venkatapur",
+    "name_te": "వెంకటాపూర్",
+    "lgd_code": "4684"
+  },
+  {
+    "district_slug": "mulugu",
+    "slug": "venkatapuram",
+    "name_en": "Venkatapuram",
+    "name_te": "వెంకటాపురం",
+    "lgd_code": "4724"
+  },
+  {
+    "district_slug": "mulugu",
+    "slug": "wajedu",
+    "name_en": "Wajedu",
+    "name_te": "వాజేడు",
+    "lgd_code": "4723"
+  },
+  {
+    "district_slug": "nagarkurnool",
+    "slug": "achampet",
+    "name_en": "Achampet",
+    "name_te": "అచ్చం పేట",
+    "lgd_code": "4579"
+  },
+  {
+    "district_slug": "nagarkurnool",
+    "slug": "amrabad",
+    "name_en": "Amrabad",
+    "name_te": "అమ్రాబాద్",
+    "lgd_code": "4578"
+  },
+  {
+    "district_slug": "nagarkurnool",
+    "slug": "balmoor",
+    "name_en": "Balmoor",
+    "name_te": "బల్మూర్",
+    "lgd_code": "4597"
+  },
+  {
+    "district_slug": "nagarkurnool",
+    "slug": "bijinapally",
+    "name_en": "Bijinapally",
+    "name_te": "బిజినేపల్లి",
+    "lgd_code": "4584"
+  },
+  {
+    "district_slug": "nagarkurnool",
+    "slug": "charakonda",
+    "name_en": "Charakonda",
+    "name_te": "చారకోండ",
+    "lgd_code": "6293"
+  },
+  {
+    "district_slug": "nagarkurnool",
+    "slug": "kalwakurthy",
+    "name_en": "Kalwakurthy",
+    "name_te": "కల్వకుర్తి",
+    "lgd_code": "4576"
+  },
+  {
+    "district_slug": "nagarkurnool",
+    "slug": "kodair",
+    "name_en": "Kodair",
+    "name_te": "కోడేరు",
+    "lgd_code": "4600"
+  },
+  {
+    "district_slug": "nagarkurnool",
+    "slug": "kollapur",
+    "name_en": "Kollapur",
+    "name_te": "కొల్లాపూర్",
+    "lgd_code": "4609"
+  },
+  {
+    "district_slug": "nagarkurnool",
+    "slug": "lingal",
+    "name_en": "Lingal",
+    "name_te": "లింగాల్",
+    "lgd_code": "4598"
+  },
+  {
+    "district_slug": "nagarkurnool",
+    "slug": "nagarkurnool",
+    "name_en": "Nagarkurnool",
+    "name_te": "నాగర్ కర్నూల్",
+    "lgd_code": "4583"
+  },
+  {
+    "district_slug": "nagarkurnool",
+    "slug": "padara",
+    "name_en": "Padara",
+    "name_te": "పదర",
+    "lgd_code": "6294"
+  },
+  {
+    "district_slug": "nagarkurnool",
+    "slug": "peddakothapally",
+    "name_en": "Peddakothapally",
+    "name_te": "పెద్దకొత్తపల్లి",
+    "lgd_code": "4599"
+  },
+  {
+    "district_slug": "nagarkurnool",
+    "slug": "pentlavelli",
+    "name_en": "Pentlavelli",
+    "name_te": "పెంట్లవెల్లి",
+    "lgd_code": "6292"
+  },
+  {
+    "district_slug": "nagarkurnool",
+    "slug": "tadoor",
+    "name_en": "Tadoor",
+    "name_te": "తాడూరు",
+    "lgd_code": "4582"
+  },
+  {
+    "district_slug": "nagarkurnool",
+    "slug": "telkapally",
+    "name_en": "Telkapally",
+    "name_te": "తెల్కపల్లి",
+    "lgd_code": "4581"
+  },
+  {
+    "district_slug": "nagarkurnool",
+    "slug": "thimmajipet",
+    "name_en": "Thimmajipet",
+    "name_te": "తిమ్మాజీపేట్",
+    "lgd_code": "4575"
+  },
+  {
+    "district_slug": "nagarkurnool",
+    "slug": "uppununthala",
+    "name_en": "Uppununthala",
+    "name_te": "ఉప్పునుంతల",
+    "lgd_code": "4580"
+  },
+  {
+    "district_slug": "nagarkurnool",
+    "slug": "urkonda",
+    "name_en": "Urkonda",
+    "name_te": "ఊర్కొండ",
+    "lgd_code": "6295"
+  },
+  {
+    "district_slug": "nagarkurnool",
+    "slug": "vangoor",
+    "name_en": "Vangoor",
+    "name_te": "వంగూరు",
+    "lgd_code": "4577"
+  },
+  {
+    "district_slug": "nagarkurnool",
+    "slug": "veldanda",
+    "name_en": "Veldanda",
+    "name_te": "వేల్దండ",
+    "lgd_code": "4565"
+  },
+  {
+    "district_slug": "nalgonda",
+    "slug": "adavidevulapalli",
+    "name_en": "Adavidevulapalli",
+    "name_te": "అడవిదేవులపల్లి",
+    "lgd_code": "6304"
+  },
+  {
+    "district_slug": "nalgonda",
+    "slug": "anumula",
+    "name_en": "Anumula",
+    "name_te": "అనుముల",
+    "lgd_code": "4660"
+  },
+  {
+    "district_slug": "nalgonda",
+    "slug": "chandampeta",
+    "name_en": "ChandamPeta",
+    "name_te": "చందంపేట",
+    "lgd_code": "4652"
+  },
+  {
+    "district_slug": "nalgonda",
+    "slug": "chandur",
+    "name_en": "Chandur",
+    "name_te": "చండూరు",
+    "lgd_code": "4655"
+  },
+  {
+    "district_slug": "nalgonda",
+    "slug": "chinthapally",
+    "name_en": "ChinthaPally",
+    "name_te": "చింతపల్లి",
+    "lgd_code": "4650"
+  },
+  {
+    "district_slug": "nalgonda",
+    "slug": "chityal",
+    "name_en": "Chityal",
+    "name_te": "చిట్యాల",
+    "lgd_code": "4633"
+  },
+  {
+    "district_slug": "nalgonda",
+    "slug": "dameracherla",
+    "name_en": "Dameracherla",
+    "name_te": "దామెరచర్ల",
+    "lgd_code": "4663"
+  },
+  {
+    "district_slug": "nalgonda",
+    "slug": "devarakonda",
+    "name_en": "Devarakonda",
+    "name_te": "దేవరకొండ",
+    "lgd_code": "4653"
+  },
+  {
+    "district_slug": "nalgonda",
+    "slug": "gundlapally",
+    "name_en": "GundlaPally",
+    "name_te": "గుండ్లపల్లి",
+    "lgd_code": "4651"
+  },
+  {
+    "district_slug": "nalgonda",
+    "slug": "gurrampode",
+    "name_en": "Gurrampode",
+    "name_te": "గుర్రంపూడ్",
+    "lgd_code": "4657"
+  },
+  {
+    "district_slug": "nalgonda",
+    "slug": "kanagal",
+    "name_en": "Kanagal",
+    "name_te": "కనగల్",
+    "lgd_code": "4656"
+  },
+  {
+    "district_slug": "nalgonda",
+    "slug": "kattangur",
+    "name_en": "Kattangur",
+    "name_te": "కట్టంగూర్",
+    "lgd_code": "4635"
+  },
+  {
+    "district_slug": "nalgonda",
+    "slug": "kethepally",
+    "name_en": "KethePally",
+    "name_te": "కేతేపల్లి",
+    "lgd_code": "4637"
+  },
+  {
+    "district_slug": "nalgonda",
+    "slug": "kondamallepally",
+    "name_en": "Kondamallepally",
+    "name_te": "కౌండమల్లెపల్లి",
+    "lgd_code": "6307"
+  },
+  {
+    "district_slug": "nalgonda",
+    "slug": "madugulapally",
+    "name_en": "Madugulapally",
+    "name_te": "మడుగుల పల్లె",
+    "lgd_code": "6305"
+  },
+  {
+    "district_slug": "nalgonda",
+    "slug": "marriguda",
+    "name_en": "Marriguda",
+    "name_te": "మర్రిగూడ",
+    "lgd_code": "4649"
+  },
+  {
+    "district_slug": "nalgonda",
+    "slug": "miryalaguda",
+    "name_en": "Miryalaguda",
+    "name_te": "మిర్యాలగూడ",
+    "lgd_code": "4664"
+  },
+  {
+    "district_slug": "nalgonda",
+    "slug": "munugode",
+    "name_en": "Munugode",
+    "name_te": "మునుగోడు",
+    "lgd_code": "4647"
+  },
+  {
+    "district_slug": "nalgonda",
+    "slug": "nakrekal",
+    "name_en": "Nakrekal",
+    "name_te": "నకిరేకల్",
+    "lgd_code": "4636"
+  },
+  {
+    "district_slug": "nalgonda",
+    "slug": "nalgonda",
+    "name_en": "Nalgonda",
+    "name_te": "నల్లగొండ",
+    "lgd_code": "4646"
+  },
+  {
+    "district_slug": "nalgonda",
+    "slug": "nampally",
+    "name_en": "Nampally",
+    "name_te": "నాంపల్లి",
+    "lgd_code": "4654"
+  },
+  {
+    "district_slug": "nalgonda",
+    "slug": "narketpally",
+    "name_en": "Narketpally",
+    "name_te": "నార్కటుపల్లి",
+    "lgd_code": "4634"
+  },
+  {
+    "district_slug": "nalgonda",
+    "slug": "neredugommu",
+    "name_en": "Neredugommu",
+    "name_te": "నేరెడుగొమ్ము",
+    "lgd_code": "6308"
+  },
+  {
+    "district_slug": "nalgonda",
+    "slug": "nidmanoor",
+    "name_en": "Nidmanoor",
+    "name_te": "నిడమనూరు",
+    "lgd_code": "4661"
+  },
+  {
+    "district_slug": "nalgonda",
+    "slug": "pedda-adesherlapally",
+    "name_en": "Pedda Adesherlapally",
+    "name_te": "పెద్ద అడిశర్లపల్లి",
+    "lgd_code": "4658"
+  },
+  {
+    "district_slug": "nalgonda",
+    "slug": "peddavoora",
+    "name_en": "Peddavoora",
+    "name_te": "పెద్దవూర",
+    "lgd_code": "4659"
+  },
+  {
+    "district_slug": "nalgonda",
+    "slug": "shaligouraram",
+    "name_en": "ShaliGouraram",
+    "name_te": "శాలిగౌరారం",
+    "lgd_code": "4624"
+  },
+  {
+    "district_slug": "nalgonda",
+    "slug": "thipparthy",
+    "name_en": "Thipparthy",
+    "name_te": "తిప్పర్తి",
+    "lgd_code": "4645"
+  },
+  {
+    "district_slug": "nalgonda",
+    "slug": "tirumalagiri-sagar",
+    "name_en": "Tirumalagiri Sagar",
+    "name_te": "తిరుమలగిరి సాగర్",
+    "lgd_code": "6306"
+  },
+  {
+    "district_slug": "nalgonda",
+    "slug": "tripuraram",
+    "name_en": "Tripuraram",
+    "name_te": "త్రిపురారం",
+    "lgd_code": "4662"
+  },
+  {
+    "district_slug": "nalgonda",
+    "slug": "vemulapally",
+    "name_en": "Vemulapally",
+    "name_te": "వేములపల్లి",
+    "lgd_code": "4644"
+  },
+  {
+    "district_slug": "narayanpet",
+    "slug": "damargidda",
+    "name_en": "Damargidda",
+    "name_te": "దామర్ గిద్ద",
+    "lgd_code": "4553"
+  },
+  {
+    "district_slug": "narayanpet",
+    "slug": "dhanwada",
+    "name_en": "Dhanwada",
+    "name_te": "దన్వాడ",
+    "lgd_code": "4572"
+  },
+  {
+    "district_slug": "narayanpet",
+    "slug": "kosgi",
+    "name_en": "Kosgi",
+    "name_te": "కోస్గి",
+    "lgd_code": "4551"
+  },
+  {
+    "district_slug": "narayanpet",
+    "slug": "krishna",
+    "name_en": "Krishna",
+    "name_te": "క్రిష్ణ",
+    "lgd_code": "6264"
+  },
+  {
+    "district_slug": "narayanpet",
+    "slug": "maddur",
+    "name_en": "Maddur",
+    "name_te": "మద్దూర్",
+    "lgd_code": "4554"
+  },
+  {
+    "district_slug": "narayanpet",
+    "slug": "maganoor",
+    "name_en": "Maganoor",
+    "name_te": "మాగనూరు",
+    "lgd_code": "4590"
+  },
+  {
+    "district_slug": "narayanpet",
+    "slug": "makthal",
+    "name_en": "Makthal",
+    "name_te": "మఖ్తల్",
+    "lgd_code": "4589"
+  },
+  {
+    "district_slug": "narayanpet",
+    "slug": "marikal",
+    "name_en": "Marikal",
+    "name_te": "మరికల్",
+    "lgd_code": "6263"
+  },
+  {
+    "district_slug": "narayanpet",
+    "slug": "narayanpet",
+    "name_en": "Narayanpet",
+    "name_te": "నారయణ పేట్",
+    "lgd_code": "4570"
+  },
+  {
+    "district_slug": "narayanpet",
+    "slug": "narwa",
+    "name_en": "Narwa",
+    "name_te": "నర్వ",
+    "lgd_code": "4588"
+  },
+  {
+    "district_slug": "narayanpet",
+    "slug": "utkoor",
+    "name_en": "Utkoor",
+    "name_te": "ఉట్కురు",
+    "lgd_code": "4571"
+  },
+  {
+    "district_slug": "nirmal",
+    "slug": "basar",
+    "name_en": "Basar",
+    "name_te": "బాసర",
+    "lgd_code": "6205"
+  },
+  {
+    "district_slug": "nirmal",
+    "slug": "bhainsa",
+    "name_en": "Bhainsa",
+    "name_te": "భైంసా",
+    "lgd_code": "4339"
+  },
+  {
+    "district_slug": "nirmal",
+    "slug": "dasturabad",
+    "name_en": "Dasturabad",
+    "name_te": "దస్తూరబాద్",
+    "lgd_code": "6207"
+  },
+  {
+    "district_slug": "nirmal",
+    "slug": "dilawarpur",
+    "name_en": "Dilawarpur",
+    "name_te": "దిలావర్ పూర్",
+    "lgd_code": "4343"
+  },
+  {
+    "district_slug": "nirmal",
+    "slug": "kaddam-peddur",
+    "name_en": "Kaddam Peddur",
+    "name_te": "కడం పెద్దూర్",
+    "lgd_code": "4335"
+  },
+  {
+    "district_slug": "nirmal",
+    "slug": "khanapur",
+    "name_en": "Khanapur",
+    "name_te": "ఖానాపూర్",
+    "lgd_code": "4347"
+  },
+  {
+    "district_slug": "nirmal",
+    "slug": "kubeer",
+    "name_en": "Kubeer",
+    "name_te": "కుబీర్",
+    "lgd_code": "4338"
+  },
+  {
+    "district_slug": "nirmal",
+    "slug": "kuntala",
+    "name_en": "Kuntala",
+    "name_te": "కుంటాల",
+    "lgd_code": "4337"
+  },
+  {
+    "district_slug": "nirmal",
+    "slug": "laxmanchanda",
+    "name_en": "Laxmanchanda",
+    "name_te": "లక్ష్మణ్ చాంద",
+    "lgd_code": "4345"
+  },
+  {
+    "district_slug": "nirmal",
+    "slug": "lokeswaram",
+    "name_en": "Lokeswaram",
+    "name_te": "లోకేశ్వరం",
+    "lgd_code": "4342"
+  },
+  {
+    "district_slug": "nirmal",
+    "slug": "mamada",
+    "name_en": "Mamada",
+    "name_te": "మామడ",
+    "lgd_code": "4346"
+  },
+  {
+    "district_slug": "nirmal",
+    "slug": "mudhole",
+    "name_en": "Mudhole",
+    "name_te": "ముధోల్",
+    "lgd_code": "4341"
+  },
+  {
+    "district_slug": "nirmal",
+    "slug": "narsapur-g",
+    "name_en": "Narsapur G",
+    "name_te": "నర్సాపూర్ (జి)",
+    "lgd_code": "6208"
+  },
+  {
+    "district_slug": "nirmal",
+    "slug": "nirmal-rural",
+    "name_en": "Nirmal Rural",
+    "name_te": "నిర్మల్ (రూరల్)",
+    "lgd_code": "6210"
+  },
+  {
+    "district_slug": "nirmal",
+    "slug": "nirmal-u",
+    "name_en": "Nirmal U",
+    "name_te": "నిర్మల్ (యు)",
+    "lgd_code": "4344"
+  },
+  {
+    "district_slug": "nirmal",
+    "slug": "pembi",
+    "name_en": "Pembi",
+    "name_te": "పెంబి",
+    "lgd_code": "6206"
+  },
+  {
+    "district_slug": "nirmal",
+    "slug": "sarangapur",
+    "name_en": "Sarangapur",
+    "name_te": "సారంగపూర్",
+    "lgd_code": "4336"
+  },
+  {
+    "district_slug": "nirmal",
+    "slug": "soan",
+    "name_en": "Soan",
+    "name_te": "సోన్",
+    "lgd_code": "6209"
+  },
+  {
+    "district_slug": "nirmal",
+    "slug": "tanoor",
+    "name_en": "Tanoor",
+    "name_te": "తానూర్",
+    "lgd_code": "4340"
+  },
+  {
+    "district_slug": "nizamabad",
+    "slug": "armoor",
+    "name_en": "Armoor",
+    "name_te": "ఆర్మూర్",
+    "lgd_code": "4360"
+  },
+  {
+    "district_slug": "nizamabad",
+    "slug": "balkonda",
+    "name_en": "Balkonda",
+    "name_te": "బాల్కోండ",
+    "lgd_code": "4361"
+  },
+  {
+    "district_slug": "nizamabad",
+    "slug": "bheemgal",
+    "name_en": "Bheemgal",
+    "name_te": "భీంగల్",
+    "lgd_code": "4364"
+  },
+  {
+    "district_slug": "nizamabad",
+    "slug": "bodhan",
+    "name_en": "Bodhan",
+    "name_te": "బోధన్",
+    "lgd_code": "4370"
+  },
+  {
+    "district_slug": "nizamabad",
+    "slug": "chandur",
+    "name_en": "Chandur",
+    "name_te": "Chandur మండలం",
+    "lgd_code": "6669"
+  },
+  {
+    "district_slug": "nizamabad",
+    "slug": "dharpally",
+    "name_en": "Dharpally",
+    "name_te": "ధర్ పల్లి",
+    "lgd_code": "4378"
+  },
+  {
+    "district_slug": "nizamabad",
+    "slug": "dichpally",
+    "name_en": "Dichpally",
+    "name_te": "డిచ్ పల్లి",
+    "lgd_code": "4377"
+  },
+  {
+    "district_slug": "nizamabad",
+    "slug": "indalwai",
+    "name_en": "Indalwai",
+    "name_te": "ఇందల్ వాయి",
+    "lgd_code": "6236"
+  },
+  {
+    "district_slug": "nizamabad",
+    "slug": "jakranpally",
+    "name_en": "Jakranpally",
+    "name_te": "జక్రాన్ పల్లి",
+    "lgd_code": "4366"
+  },
+  {
+    "district_slug": "nizamabad",
+    "slug": "kammarpally",
+    "name_en": "Kammarpally",
+    "name_te": "కమ్మర్ పల్లి",
+    "lgd_code": "4363"
+  },
+  {
+    "district_slug": "nizamabad",
+    "slug": "kotagiri",
+    "name_en": "Kotagiri",
+    "name_te": "కోటగిరి",
+    "lgd_code": "4371"
+  },
+  {
+    "district_slug": "nizamabad",
+    "slug": "makloor",
+    "name_en": "Makloor",
+    "name_te": "మక్లూర్",
+    "lgd_code": "4367"
+  },
+  {
+    "district_slug": "nizamabad",
+    "slug": "mendora",
+    "name_en": "Mendora",
+    "name_te": "మెండొర",
+    "lgd_code": "6237"
+  },
+  {
+    "district_slug": "nizamabad",
+    "slug": "morthad",
+    "name_en": "Morthad",
+    "name_te": "మోర్తాడ్",
+    "lgd_code": "4362"
+  },
+  {
+    "district_slug": "nizamabad",
+    "slug": "mosara",
+    "name_en": "Mosara",
+    "name_te": "Mosara మండలం",
+    "lgd_code": "6668"
+  },
+  {
+    "district_slug": "nizamabad",
+    "slug": "mugpal",
+    "name_en": "Mugpal",
+    "name_te": "ముగ్పాల్",
+    "lgd_code": "6235"
+  },
+  {
+    "district_slug": "nizamabad",
+    "slug": "mupkal",
+    "name_en": "Mupkal",
+    "name_te": "ముప్ కాల్",
+    "lgd_code": "6238"
+  },
+  {
+    "district_slug": "nizamabad",
+    "slug": "nandipet",
+    "name_en": "Nandipet",
+    "name_te": "నందిపేట్",
+    "lgd_code": "4359"
+  },
+  {
+    "district_slug": "nizamabad",
+    "slug": "navipet",
+    "name_en": "Navipet",
+    "name_te": "నవీపేట్",
+    "lgd_code": "4358"
+  },
+  {
+    "district_slug": "nizamabad",
+    "slug": "nizamabad-north",
+    "name_en": "Nizamabad North",
+    "name_te": "నిజామాబాదు నార్త్",
+    "lgd_code": "4368"
+  },
+  {
+    "district_slug": "nizamabad",
+    "slug": "nizamabad-rural",
+    "name_en": "Nizamabad Rural",
+    "name_te": "నిజామాబాదు రూరల్",
+    "lgd_code": "6233"
+  },
+  {
+    "district_slug": "nizamabad",
+    "slug": "nizamabad-south",
+    "name_en": "Nizamabad South",
+    "name_te": "నిజామాబాదు సౌత్",
+    "lgd_code": "6385"
+  },
+  {
+    "district_slug": "nizamabad",
+    "slug": "renjal",
+    "name_en": "Renjal",
+    "name_te": "రేంజల్",
+    "lgd_code": "4357"
+  },
+  {
+    "district_slug": "nizamabad",
+    "slug": "rudrur",
+    "name_en": "Rudrur",
+    "name_te": "రుద్రూర్",
+    "lgd_code": "6240"
+  },
+  {
+    "district_slug": "nizamabad",
+    "slug": "sirikonda",
+    "name_en": "Sirikonda",
+    "name_te": "సిరికోండ",
+    "lgd_code": "4379"
+  },
+  {
+    "district_slug": "nizamabad",
+    "slug": "vailpoor",
+    "name_en": "Vailpoor",
+    "name_te": "వేల్పూర్",
+    "lgd_code": "4365"
+  },
+  {
+    "district_slug": "nizamabad",
+    "slug": "varni",
+    "name_en": "Varni",
+    "name_te": "వర్ని",
+    "lgd_code": "4376"
+  },
+  {
+    "district_slug": "nizamabad",
+    "slug": "yedapally",
+    "name_en": "Yedapally",
+    "name_te": "ఎడపల్లి",
+    "lgd_code": "4369"
+  },
+  {
+    "district_slug": "nizamabad",
+    "slug": "yergatla",
+    "name_en": "Yergatla",
+    "name_te": "ఎర్ గట్ల",
+    "lgd_code": "6239"
+  },
+  {
+    "district_slug": "peddapalli",
+    "slug": "anthergaon",
+    "name_en": "Anthergaon",
+    "name_te": "అంతర్ గాం",
+    "lgd_code": "6214"
+  },
+  {
+    "district_slug": "peddapalli",
+    "slug": "dharmaram",
+    "name_en": "Dharmaram",
+    "name_te": "ధర్మారం",
+    "lgd_code": "4411"
+  },
+  {
+    "district_slug": "peddapalli",
+    "slug": "eligaid",
+    "name_en": "Eligaid",
+    "name_te": "ఎలిగేడు",
+    "lgd_code": "4410"
+  },
+  {
+    "district_slug": "peddapalli",
+    "slug": "julapalli",
+    "name_en": "Julapalli",
+    "name_te": "జూలపల్లి",
+    "lgd_code": "4409"
+  },
+  {
+    "district_slug": "peddapalli",
+    "slug": "kamanpur",
+    "name_en": "Kamanpur",
+    "name_te": "కమాన్ పూర్",
+    "lgd_code": "4400"
+  },
+  {
+    "district_slug": "peddapalli",
+    "slug": "manthani",
+    "name_en": "Manthani",
+    "name_te": "మంథని",
+    "lgd_code": "4401"
+  },
+  {
+    "district_slug": "peddapalli",
+    "slug": "mutharam-manthani",
+    "name_en": "Mutharam (Manthani)",
+    "name_te": "ముత్తారం(మంథని)",
+    "lgd_code": "4406"
+  },
+  {
+    "district_slug": "peddapalli",
+    "slug": "odela",
+    "name_en": "Odela",
+    "name_te": "ఓదెల",
+    "lgd_code": "4426"
+  },
+  {
+    "district_slug": "peddapalli",
+    "slug": "palakurthy",
+    "name_en": "Palakurthy",
+    "name_te": "పాలకుర్తి",
+    "lgd_code": "6215"
+  },
+  {
+    "district_slug": "peddapalli",
+    "slug": "peddapalli",
+    "name_en": "Peddapalli",
+    "name_te": "పెద్దపల్లి",
+    "lgd_code": "4408"
+  },
+  {
+    "district_slug": "peddapalli",
+    "slug": "ramagiri",
+    "name_en": "Ramagiri",
+    "name_te": "రామగిరి",
+    "lgd_code": "6216"
+  },
+  {
+    "district_slug": "peddapalli",
+    "slug": "ramagundam",
+    "name_en": "Ramagundam",
+    "name_te": "రామగుండం",
+    "lgd_code": "4399"
+  },
+  {
+    "district_slug": "peddapalli",
+    "slug": "srirampur",
+    "name_en": "Srirampur",
+    "name_te": "శ్రీ రాంపూర్",
+    "lgd_code": "4407"
+  },
+  {
+    "district_slug": "peddapalli",
+    "slug": "sulthanabad",
+    "name_en": "Sulthanabad",
+    "name_te": "సుల్తానాబాద్",
+    "lgd_code": "4425"
+  },
+  {
+    "district_slug": "rajanna-sircilla",
+    "slug": "boinpalli",
+    "name_en": "Boinpalli",
+    "name_te": "బోయినిపల్లి",
+    "lgd_code": "4429"
+  },
+  {
+    "district_slug": "rajanna-sircilla",
+    "slug": "chandurthi",
+    "name_en": "Chandurthi",
+    "name_te": "చందుర్తి",
+    "lgd_code": "4419"
+  },
+  {
+    "district_slug": "rajanna-sircilla",
+    "slug": "gambhiraopet",
+    "name_en": "Gambhiraopet",
+    "name_te": "గంభీరావు పేట",
+    "lgd_code": "4433"
+  },
+  {
+    "district_slug": "rajanna-sircilla",
+    "slug": "illanthakunta",
+    "name_en": "Illanthakunta",
+    "name_te": "ఇల్లంతకుంట",
+    "lgd_code": "4436"
+  },
+  {
+    "district_slug": "rajanna-sircilla",
+    "slug": "konaraopet",
+    "name_en": "Konaraopet",
+    "name_te": "కోనరావు పేట",
+    "lgd_code": "4431"
+  },
+  {
+    "district_slug": "rajanna-sircilla",
+    "slug": "mustabad",
+    "name_en": "Mustabad",
+    "name_te": "ముస్తాబాద్",
+    "lgd_code": "4434"
+  },
+  {
+    "district_slug": "rajanna-sircilla",
+    "slug": "rudrangi",
+    "name_en": "Rudrangi",
+    "name_te": "రుద్రంగి",
+    "lgd_code": "6219"
+  },
+  {
+    "district_slug": "rajanna-sircilla",
+    "slug": "sircilla",
+    "name_en": "Sircilla",
+    "name_te": "సిరిసిల్ల",
+    "lgd_code": "4435"
+  },
+  {
+    "district_slug": "rajanna-sircilla",
+    "slug": "thangallapalli",
+    "name_en": "Thangallapalli",
+    "name_te": "తంగళ్ల పల్లి",
+    "lgd_code": "6217"
+  },
+  {
+    "district_slug": "rajanna-sircilla",
+    "slug": "veernapalli",
+    "name_en": "Veernapalli",
+    "name_te": "వీర్న పల్లి",
+    "lgd_code": "6220"
+  },
+  {
+    "district_slug": "rajanna-sircilla",
+    "slug": "vemulawada",
+    "name_en": "Vemulawada",
+    "name_te": "వేములవాడ",
+    "lgd_code": "4430"
+  },
+  {
+    "district_slug": "rajanna-sircilla",
+    "slug": "vemulawada-rural",
+    "name_en": "Vemulawada Rural",
+    "name_te": "వేములవాడ రూరల్",
+    "lgd_code": "6218"
+  },
+  {
+    "district_slug": "rajanna-sircilla",
+    "slug": "yellareddipet",
+    "name_en": "Yellareddipet",
+    "name_te": "యెల్లరెడ్డి పేట్",
+    "lgd_code": "4432"
+  },
+  {
+    "district_slug": "rangareddy",
+    "slug": "abdullapurmet",
+    "name_en": "Abdullapurmet",
+    "name_te": "అబ్దుల్లాపూర్మెట్",
+    "lgd_code": "6319"
+  },
+  {
+    "district_slug": "rangareddy",
+    "slug": "amangal",
+    "name_en": "Amangal",
+    "name_te": "అమంగల్",
+    "lgd_code": "4563"
+  },
+  {
+    "district_slug": "rangareddy",
+    "slug": "balapur",
+    "name_en": "Balapur",
+    "name_te": "బాలాపూర్",
+    "lgd_code": "6323"
+  },
+  {
+    "district_slug": "rangareddy",
+    "slug": "chevella",
+    "name_en": "Chevella",
+    "name_te": "చేవెళ్ళ",
+    "lgd_code": "4529"
+  },
+  {
+    "district_slug": "rangareddy",
+    "slug": "farooqnagar",
+    "name_en": "Farooqnagar",
+    "name_te": "ఫరూఖ్ నగర్",
+    "lgd_code": "4559"
+  },
+  {
+    "district_slug": "rangareddy",
+    "slug": "gandipet",
+    "name_en": "Gandipet",
+    "name_te": "గండిపెట్",
+    "lgd_code": "6320"
+  },
+  {
+    "district_slug": "rangareddy",
+    "slug": "hayathnagar",
+    "name_en": "Hayathnagar",
+    "name_te": "హయత్ నగర్",
+    "lgd_code": "4525"
+  },
+  {
+    "district_slug": "rangareddy",
+    "slug": "ibrahimpatnam",
+    "name_en": "Ibrahimpatnam",
+    "name_te": "ఇబ్రహీంపట్నం",
+    "lgd_code": "4546"
+  },
+  {
+    "district_slug": "rangareddy",
+    "slug": "jilled-chowdergudem",
+    "name_en": "Jilled Chowdergudem",
+    "name_te": "జిల్లెడ్ చౌదెర్గూడెం",
+    "lgd_code": "6322"
+  },
+  {
+    "district_slug": "rangareddy",
+    "slug": "kadthal",
+    "name_en": "Kadthal",
+    "name_te": "కడ్తాల్",
+    "lgd_code": "6324"
+  },
+  {
+    "district_slug": "rangareddy",
+    "slug": "kandukur",
+    "name_en": "Kandukur",
+    "name_te": "కందుకూరు",
+    "lgd_code": "4545"
+  },
+  {
+    "district_slug": "rangareddy",
+    "slug": "keshampet",
+    "name_en": "Keshampet",
+    "name_te": "కేశంపేట",
+    "lgd_code": "4561"
+  },
+  {
+    "district_slug": "rangareddy",
+    "slug": "kondurg",
+    "name_en": "Kondurg",
+    "name_te": "కోందుర్గు",
+    "lgd_code": "4558"
+  },
+  {
+    "district_slug": "rangareddy",
+    "slug": "kothur",
+    "name_en": "Kothur",
+    "name_te": "కోత్తూర్",
+    "lgd_code": "4560"
+  },
+  {
+    "district_slug": "rangareddy",
+    "slug": "madgul",
+    "name_en": "Madgul",
+    "name_te": "మాడ్గుల",
+    "lgd_code": "4564"
+  },
+  {
+    "district_slug": "rangareddy",
+    "slug": "maheshwaram",
+    "name_en": "Maheshwaram",
+    "name_te": "మహేశ్వరం",
+    "lgd_code": "4544"
+  },
+  {
+    "district_slug": "rangareddy",
+    "slug": "manchal",
+    "name_en": "Manchal",
+    "name_te": "మంచాల్",
+    "lgd_code": "4547"
+  },
+  {
+    "district_slug": "rangareddy",
+    "slug": "moinabad",
+    "name_en": "Moinabad",
+    "name_te": "మోయినా బాద్",
+    "lgd_code": "4528"
+  },
+  {
+    "district_slug": "rangareddy",
+    "slug": "nandigama",
+    "name_en": "Nandigama",
+    "name_te": "నందిగామ",
+    "lgd_code": "6321"
+  },
+  {
+    "district_slug": "rangareddy",
+    "slug": "rajendranagar",
+    "name_en": "Rajendranagar",
+    "name_te": "రాజేంద్ర నగర్",
+    "lgd_code": "4527"
+  },
+  {
+    "district_slug": "rangareddy",
+    "slug": "saroornagar",
+    "name_en": "Saroornagar",
+    "name_te": "సరూర్ నగర్",
+    "lgd_code": "4526"
+  },
+  {
+    "district_slug": "rangareddy",
+    "slug": "serilingampally",
+    "name_en": "Serilingampally",
+    "name_te": "శేరిలింగంపల్లి",
+    "lgd_code": "4516"
+  },
+  {
+    "district_slug": "rangareddy",
+    "slug": "shabad",
+    "name_en": "Shabad",
+    "name_te": "షాబాద్",
+    "lgd_code": "4542"
+  },
+  {
+    "district_slug": "rangareddy",
+    "slug": "shamshabad",
+    "name_en": "Shamshabad",
+    "name_te": "శంషాబాద్",
+    "lgd_code": "4543"
+  },
+  {
+    "district_slug": "rangareddy",
+    "slug": "shankarpalle",
+    "name_en": "Shankarpalle",
+    "name_te": "శంకర్ పల్లి",
+    "lgd_code": "4515"
+  },
+  {
+    "district_slug": "rangareddy",
+    "slug": "thalakondapally",
+    "name_en": "Thalakondapally",
+    "name_te": "తలకోండపల్లి",
+    "lgd_code": "4562"
+  },
+  {
+    "district_slug": "rangareddy",
+    "slug": "yacharam",
+    "name_en": "Yacharam",
+    "name_te": "యాచారం",
+    "lgd_code": "4548"
+  },
+  {
+    "district_slug": "sangareddy",
+    "slug": "ameenpur",
+    "name_en": "Ameenpur",
+    "name_te": "అమిన్ పూర్",
+    "lgd_code": "6276"
+  },
+  {
+    "district_slug": "sangareddy",
+    "slug": "andole",
+    "name_en": "Andole",
+    "name_te": "ఆందోల్",
+    "lgd_code": "4479"
+  },
+  {
+    "district_slug": "sangareddy",
+    "slug": "gummadidala",
+    "name_en": "Gummadidala",
+    "name_te": "గుమ్మడిదల",
+    "lgd_code": "6277"
+  },
+  {
+    "district_slug": "sangareddy",
+    "slug": "hathnoora",
+    "name_en": "Hathnoora",
+    "name_te": "హత్నూర",
+    "lgd_code": "4489"
+  },
+  {
+    "district_slug": "sangareddy",
+    "slug": "jharasangam",
+    "name_en": "Jharasangam",
+    "name_te": "ఝరాసంఘం",
+    "lgd_code": "4476"
+  },
+  {
+    "district_slug": "sangareddy",
+    "slug": "jinnaram",
+    "name_en": "Jinnaram",
+    "name_te": "జిన్నారం",
+    "lgd_code": "4493"
+  },
+  {
+    "district_slug": "sangareddy",
+    "slug": "kalher",
+    "name_en": "Kalher",
+    "name_te": "కల్హేర్",
+    "lgd_code": "4453"
+  },
+  {
+    "district_slug": "sangareddy",
+    "slug": "kandi",
+    "name_en": "Kandi",
+    "name_te": "కంది",
+    "lgd_code": "6275"
+  },
+  {
+    "district_slug": "sangareddy",
+    "slug": "kangti",
+    "name_en": "Kangti",
+    "name_te": "కంగ్టి",
+    "lgd_code": "4450"
+  },
+  {
+    "district_slug": "sangareddy",
+    "slug": "kohir",
+    "name_en": "Kohir",
+    "name_te": "కోహిర్",
+    "lgd_code": "4475"
+  },
+  {
+    "district_slug": "sangareddy",
+    "slug": "kondapur",
+    "name_en": "Kondapur",
+    "name_te": "కొండాపూర్",
+    "lgd_code": "4491"
+  },
+  {
+    "district_slug": "sangareddy",
+    "slug": "manoor",
+    "name_en": "Manoor",
+    "name_te": "మనూర్",
+    "lgd_code": "4451"
+  },
+  {
+    "district_slug": "sangareddy",
+    "slug": "mogudampally",
+    "name_en": "Mogudampally",
+    "name_te": "మొగుడంపల్లి",
+    "lgd_code": "6278"
+  },
+  {
+    "district_slug": "sangareddy",
+    "slug": "munipally",
+    "name_en": "Munipally",
+    "name_te": "మునిపల్లి",
+    "lgd_code": "4477"
+  },
+  {
+    "district_slug": "sangareddy",
+    "slug": "nagalgidda",
+    "name_en": "Nagalgidda",
+    "name_te": "నాగల్ గిద్ద",
+    "lgd_code": "6280"
+  },
+  {
+    "district_slug": "sangareddy",
+    "slug": "narayankhed",
+    "name_en": "Narayankhed",
+    "name_te": "నారాయణఖేడ్",
+    "lgd_code": "4452"
+  },
+  {
+    "district_slug": "sangareddy",
+    "slug": "nyalkal",
+    "name_en": "Nyalkal",
+    "name_te": "న్యాల్ కల్",
+    "lgd_code": "4473"
+  },
+  {
+    "district_slug": "sangareddy",
+    "slug": "patancheru",
+    "name_en": "Patancheru",
+    "name_te": "పటాన్ చెరు",
+    "lgd_code": "4494"
+  },
+  {
+    "district_slug": "sangareddy",
+    "slug": "pulkal",
+    "name_en": "Pulkal",
+    "name_te": "పుల్కల్",
+    "lgd_code": "4478"
+  },
+  {
+    "district_slug": "sangareddy",
+    "slug": "raikode",
+    "name_en": "Raikode",
+    "name_te": "రాయకోడ్",
+    "lgd_code": "4472"
+  },
+  {
+    "district_slug": "sangareddy",
+    "slug": "ramchandrapuram",
+    "name_en": "Ramchandrapuram",
+    "name_te": "రామచంద్రాపురం",
+    "lgd_code": "4495"
+  },
+  {
+    "district_slug": "sangareddy",
+    "slug": "sadasivpet",
+    "name_en": "Sadasivpet",
+    "name_te": "సదాశివపేట్",
+    "lgd_code": "4490"
+  },
+  {
+    "district_slug": "sangareddy",
+    "slug": "sangareddy",
+    "name_en": "Sangareddy",
+    "name_te": "సంగారెడ్డి",
+    "lgd_code": "4492"
+  },
+  {
+    "district_slug": "sangareddy",
+    "slug": "sirgapoor",
+    "name_en": "Sirgapoor",
+    "name_te": "సిర్గాపూర్",
+    "lgd_code": "6279"
+  },
+  {
+    "district_slug": "sangareddy",
+    "slug": "vatpally",
+    "name_en": "Vatpally",
+    "name_te": "వట్ పల్లి",
+    "lgd_code": "6291"
+  },
+  {
+    "district_slug": "sangareddy",
+    "slug": "zahirabad",
+    "name_en": "Zahirabad",
+    "name_te": "జహీరాబాద్",
+    "lgd_code": "4474"
+  },
+  {
+    "district_slug": "siddipet",
+    "slug": "akkannapet",
+    "name_en": "Akkannapet",
+    "name_te": "అక్కన్నపేట",
+    "lgd_code": "6285"
+  },
+  {
+    "district_slug": "siddipet",
+    "slug": "bejjanki",
+    "name_en": "Bejjanki",
+    "name_te": "బెజ్జంకి",
+    "lgd_code": "4437"
+  },
+  {
+    "district_slug": "siddipet",
+    "slug": "cherial",
+    "name_en": "Cherial",
+    "name_te": "చేర్యాల",
+    "lgd_code": "4672"
+  },
+  {
+    "district_slug": "siddipet",
+    "slug": "chinnakodur",
+    "name_en": "Chinnakodur",
+    "name_te": "చిన్నకోడూర్",
+    "lgd_code": "4460"
+  },
+  {
+    "district_slug": "siddipet",
+    "slug": "doultabad",
+    "name_en": "Doultabad",
+    "name_te": "దౌల్తాబాద్",
+    "lgd_code": "4465"
+  },
+  {
+    "district_slug": "siddipet",
+    "slug": "dubbak",
+    "name_en": "Dubbak",
+    "name_te": "దుబ్బాక",
+    "lgd_code": "4458"
+  },
+  {
+    "district_slug": "siddipet",
+    "slug": "gajwel",
+    "name_en": "Gajwel",
+    "name_te": "గజ్వెల్",
+    "lgd_code": "4483"
+  },
+  {
+    "district_slug": "siddipet",
+    "slug": "husnabad",
+    "name_en": "Husnabad",
+    "name_te": "హుస్నాబాద్",
+    "lgd_code": "4444"
+  },
+  {
+    "district_slug": "siddipet",
+    "slug": "jagdevpur",
+    "name_en": "Jagdevpur",
+    "name_te": "జగదేవ్ పూర్",
+    "lgd_code": "4484"
+  },
+  {
+    "district_slug": "siddipet",
+    "slug": "koheda",
+    "name_en": "Koheda",
+    "name_te": "కోహెడ",
+    "lgd_code": "4443"
+  },
+  {
+    "district_slug": "siddipet",
+    "slug": "komuravelli",
+    "name_en": "Komuravelli",
+    "name_te": "కొమురవెల్లి",
+    "lgd_code": "6284"
+  },
+  {
+    "district_slug": "siddipet",
+    "slug": "kondapak",
+    "name_en": "Kondapak",
+    "name_te": "కొండపాక",
+    "lgd_code": "4462"
+  },
+  {
+    "district_slug": "siddipet",
+    "slug": "maddur",
+    "name_en": "Maddur",
+    "name_te": "మద్దూరు",
+    "lgd_code": "4673"
+  },
+  {
+    "district_slug": "siddipet",
+    "slug": "markook",
+    "name_en": "Markook",
+    "name_te": "మర్కుక్",
+    "lgd_code": "6282"
+  },
+  {
+    "district_slug": "siddipet",
+    "slug": "mirdoddi",
+    "name_en": "Mirdoddi",
+    "name_te": "మిర్ దొడ్డి",
+    "lgd_code": "4464"
+  },
+  {
+    "district_slug": "siddipet",
+    "slug": "mulug",
+    "name_en": "Mulug",
+    "name_te": "ములుగు",
+    "lgd_code": "4486"
+  },
+  {
+    "district_slug": "siddipet",
+    "slug": "nangnoor",
+    "name_en": "Nangnoor",
+    "name_te": "నంగునూరు",
+    "lgd_code": "4461"
+  },
+  {
+    "district_slug": "siddipet",
+    "slug": "narayanaraopet",
+    "name_en": "Narayanaraopet",
+    "name_te": "Narayanaraopet మండలం",
+    "lgd_code": "6670"
+  },
+  {
+    "district_slug": "siddipet",
+    "slug": "raipole",
+    "name_en": "Raipole",
+    "name_te": "రాయపోల్",
+    "lgd_code": "6283"
+  },
+  {
+    "district_slug": "siddipet",
+    "slug": "siddipet-rural",
+    "name_en": "Siddipet Rural",
+    "name_te": "సిద్దిపేట (రూరల్)",
+    "lgd_code": "6281"
+  },
+  {
+    "district_slug": "siddipet",
+    "slug": "siddipet-urban",
+    "name_en": "Siddipet Urban",
+    "name_te": "సిద్దిపేట (అర్బన్)",
+    "lgd_code": "4459"
+  },
+  {
+    "district_slug": "siddipet",
+    "slug": "thoguta",
+    "name_en": "Thoguta",
+    "name_te": "తొగుట",
+    "lgd_code": "4463"
+  },
+  {
+    "district_slug": "siddipet",
+    "slug": "wargal",
+    "name_en": "Wargal",
+    "name_te": "వర్గల్",
+    "lgd_code": "4485"
+  },
+  {
+    "district_slug": "suryapet",
+    "slug": "ananthagiri",
+    "name_en": "Ananthagiri",
+    "name_te": "అనంతగిరి",
+    "lgd_code": "6302"
+  },
+  {
+    "district_slug": "suryapet",
+    "slug": "atmakur-s",
+    "name_en": "Atmakur (S)",
+    "name_te": "ఆత్మకూరు (సూ)",
+    "lgd_code": "4622"
+  },
+  {
+    "district_slug": "suryapet",
+    "slug": "chilkur",
+    "name_en": "Chilkur",
+    "name_te": "చిలుకూరు",
+    "lgd_code": "4667"
+  },
+  {
+    "district_slug": "suryapet",
+    "slug": "chinthalapalem",
+    "name_en": "Chinthalapalem",
+    "name_te": "చింతలపాలెం (మల్లారెడ్డి గూడెం)",
+    "lgd_code": "6303"
+  },
+  {
+    "district_slug": "suryapet",
+    "slug": "chivemla",
+    "name_en": "Chivemla",
+    "name_te": "చివ్వేంల",
+    "lgd_code": "4639"
+  },
+  {
+    "district_slug": "suryapet",
+    "slug": "garidepally",
+    "name_en": "GaridePally",
+    "name_te": "గరిడేపల్లి",
+    "lgd_code": "4666"
+  },
+  {
+    "district_slug": "suryapet",
+    "slug": "huzurnagar",
+    "name_en": "Huzurnagar",
+    "name_te": "హుజుర్ నగర్",
+    "lgd_code": "4669"
+  },
+  {
+    "district_slug": "suryapet",
+    "slug": "jajireddygudem",
+    "name_en": "JajiReddyGudem",
+    "name_te": "జాజిరెడ్డిగూడెం",
+    "lgd_code": "4623"
+  },
+  {
+    "district_slug": "suryapet",
+    "slug": "kodad",
+    "name_en": "Kodad",
+    "name_te": "కోదాడ్",
+    "lgd_code": "4668"
+  },
+  {
+    "district_slug": "suryapet",
+    "slug": "maddirala",
+    "name_en": "Maddirala",
+    "name_te": "మద్దిరాల",
+    "lgd_code": "6300"
+  },
+  {
+    "district_slug": "suryapet",
+    "slug": "mattampally",
+    "name_en": "MattamPally",
+    "name_te": "మట్టంపల్లి",
+    "lgd_code": "4670"
+  },
+  {
+    "district_slug": "suryapet",
+    "slug": "mellachervu",
+    "name_en": "MellaChervu",
+    "name_te": "మేళ్ళచెరువు",
+    "lgd_code": "4671"
+  },
+  {
+    "district_slug": "suryapet",
+    "slug": "mothey",
+    "name_en": "Mothey",
+    "name_te": "మోతె",
+    "lgd_code": "4640"
+  },
+  {
+    "district_slug": "suryapet",
+    "slug": "munagala",
+    "name_en": "Munagala",
+    "name_te": "మునగాల",
+    "lgd_code": "4642"
+  },
+  {
+    "district_slug": "suryapet",
+    "slug": "nadigudem",
+    "name_en": "Nadigudem",
+    "name_te": "నడిగూడెం",
+    "lgd_code": "4641"
+  },
+  {
+    "district_slug": "suryapet",
+    "slug": "nagaram",
+    "name_en": "Nagaram",
+    "name_te": "నాగారం",
+    "lgd_code": "6298"
+  },
+  {
+    "district_slug": "suryapet",
+    "slug": "nereducherla",
+    "name_en": "Nereducherla",
+    "name_te": "నేరేడ్ చర్ల",
+    "lgd_code": "4665"
+  },
+  {
+    "district_slug": "suryapet",
+    "slug": "nuthanakal",
+    "name_en": "Nuthanakal",
+    "name_te": "నూతనకల్లు",
+    "lgd_code": "4621"
+  },
+  {
+    "district_slug": "suryapet",
+    "slug": "palakeedu",
+    "name_en": "Palakeedu",
+    "name_te": "పాలకీడు",
+    "lgd_code": "6301"
+  },
+  {
+    "district_slug": "suryapet",
+    "slug": "penpahad",
+    "name_en": "Penpahad",
+    "name_te": "పెనుపహడ్",
+    "lgd_code": "4643"
+  },
+  {
+    "district_slug": "suryapet",
+    "slug": "suryapet",
+    "name_en": "Suryapet",
+    "name_te": "సూర్యాపేట",
+    "lgd_code": "4638"
+  },
+  {
+    "district_slug": "suryapet",
+    "slug": "thirumalagiri",
+    "name_en": "Thirumalagiri",
+    "name_te": "తిర్మలగిరి",
+    "lgd_code": "4619"
+  },
+  {
+    "district_slug": "suryapet",
+    "slug": "thungaturthy",
+    "name_en": "Thungaturthy",
+    "name_te": "తుంగతుర్తి",
+    "lgd_code": "4620"
+  },
+  {
+    "district_slug": "vikarabad",
+    "slug": "bantwaram",
+    "name_en": "Bantwaram",
+    "name_te": "బంట్వారం",
+    "lgd_code": "4532"
+  },
+  {
+    "district_slug": "vikarabad",
+    "slug": "basheerabad",
+    "name_en": "Basheerabad",
+    "name_te": "బషీరాబాద్",
+    "lgd_code": "4535"
+  },
+  {
+    "district_slug": "vikarabad",
+    "slug": "bomaraspeta",
+    "name_en": "Bomaraspeta",
+    "name_te": "బోంరాస్ పేట",
+    "lgd_code": "4550"
+  },
+  {
+    "district_slug": "vikarabad",
+    "slug": "dharur",
+    "name_en": "Dharur",
+    "name_te": "ధారూరు",
+    "lgd_code": "4531"
+  },
+  {
+    "district_slug": "vikarabad",
+    "slug": "doma",
+    "name_en": "Doma",
+    "name_te": "దోమ(M)",
+    "lgd_code": "4537"
+  },
+  {
+    "district_slug": "vikarabad",
+    "slug": "doulathabad",
+    "name_en": "Doulathabad",
+    "name_te": "దౌలతాబాద్",
+    "lgd_code": "4552"
+  },
+  {
+    "district_slug": "vikarabad",
+    "slug": "kodangal",
+    "name_en": "Kodangal",
+    "name_te": "కోడంగల్",
+    "lgd_code": "4549"
+  },
+  {
+    "district_slug": "vikarabad",
+    "slug": "kotepally",
+    "name_en": "Kotepally",
+    "name_te": "కోటెపల్లి",
+    "lgd_code": "6312"
+  },
+  {
+    "district_slug": "vikarabad",
+    "slug": "kulkacharla",
+    "name_en": "Kulkacharla",
+    "name_te": "కుల్కచర్ల(M)",
+    "lgd_code": "4539"
+  },
+  {
+    "district_slug": "vikarabad",
+    "slug": "marpalle",
+    "name_en": "Marpalle",
+    "name_te": "మర్పల్లి(M)",
+    "lgd_code": "4512"
+  },
+  {
+    "district_slug": "vikarabad",
+    "slug": "mominpet",
+    "name_en": "Mominpet",
+    "name_te": "మోమిన్ పేట్",
+    "lgd_code": "4513"
+  },
+  {
+    "district_slug": "vikarabad",
+    "slug": "nawabpet",
+    "name_en": "Nawabpet",
+    "name_te": "నవాబ్ పేట్",
+    "lgd_code": "4514"
+  },
+  {
+    "district_slug": "vikarabad",
+    "slug": "pargi",
+    "name_en": "Pargi",
+    "name_te": "పరిగి",
+    "lgd_code": "4540"
+  },
+  {
+    "district_slug": "vikarabad",
+    "slug": "peddemul",
+    "name_en": "Peddemul",
+    "name_te": "పెద్దముల్",
+    "lgd_code": "4533"
+  },
+  {
+    "district_slug": "vikarabad",
+    "slug": "pudur",
+    "name_en": "Pudur",
+    "name_te": "పూడూర్(M)",
+    "lgd_code": "4541"
+  },
+  {
+    "district_slug": "vikarabad",
+    "slug": "tandur",
+    "name_en": "Tandur",
+    "name_te": "తాండూర్",
+    "lgd_code": "4534"
+  },
+  {
+    "district_slug": "vikarabad",
+    "slug": "vikarabad",
+    "name_en": "Vikarabad",
+    "name_te": "వికారాబాద్",
+    "lgd_code": "4530"
+  },
+  {
+    "district_slug": "vikarabad",
+    "slug": "yelal",
+    "name_en": "Yelal",
+    "name_te": "యాలాల్(M)",
+    "lgd_code": "4536"
+  },
+  {
+    "district_slug": "wanaparthy",
+    "slug": "amarchintha",
+    "name_en": "Amarchintha",
+    "name_te": "అమరచింత",
+    "lgd_code": "6290"
+  },
+  {
+    "district_slug": "wanaparthy",
+    "slug": "atmakur",
+    "name_en": "Atmakur",
+    "name_te": "ఆత్మకూర్",
+    "lgd_code": "4592"
+  },
+  {
+    "district_slug": "wanaparthy",
+    "slug": "chinnambavi",
+    "name_en": "Chinnambavi",
+    "name_te": "చిన్నంబావి",
+    "lgd_code": "6287"
+  },
+  {
+    "district_slug": "wanaparthy",
+    "slug": "ghanpur",
+    "name_en": "Ghanpur",
+    "name_te": "ఘనపూర్",
+    "lgd_code": "4585"
+  },
+  {
+    "district_slug": "wanaparthy",
+    "slug": "gopalpeta",
+    "name_en": "Gopalpeta",
+    "name_te": "గోపాల్ పేట",
+    "lgd_code": "4596"
+  },
+  {
+    "district_slug": "wanaparthy",
+    "slug": "kothakota",
+    "name_en": "Kothakota",
+    "name_te": "కోత్తకోట",
+    "lgd_code": "4593"
+  },
+  {
+    "district_slug": "wanaparthy",
+    "slug": "madanapur",
+    "name_en": "Madanapur",
+    "name_te": "మదనాపురం",
+    "lgd_code": "6289"
+  },
+  {
+    "district_slug": "wanaparthy",
+    "slug": "pangal",
+    "name_en": "Pangal",
+    "name_te": "పాన్ గల్",
+    "lgd_code": "4601"
+  },
+  {
+    "district_slug": "wanaparthy",
+    "slug": "pebbair",
+    "name_en": "Pebbair",
+    "name_te": "పెబ్బెర్",
+    "lgd_code": "4602"
+  },
+  {
+    "district_slug": "wanaparthy",
+    "slug": "peddamandadi",
+    "name_en": "Peddamandadi",
+    "name_te": "పెద్ద మందడి",
+    "lgd_code": "4594"
+  },
+  {
+    "district_slug": "wanaparthy",
+    "slug": "revally",
+    "name_en": "Revally",
+    "name_te": "రేవల్లి",
+    "lgd_code": "6286"
+  },
+  {
+    "district_slug": "wanaparthy",
+    "slug": "srirangapur",
+    "name_en": "Srirangapur",
+    "name_te": "శ్రీ రంగాపూర్",
+    "lgd_code": "6288"
+  },
+  {
+    "district_slug": "wanaparthy",
+    "slug": "wanaparthy",
+    "name_en": "Wanaparthy",
+    "name_te": "వనపర్తి",
+    "lgd_code": "4595"
+  },
+  {
+    "district_slug": "wanaparthy",
+    "slug": "weepangandla",
+    "name_en": "Weepangandla",
+    "name_te": "వీపన్ గండ్ల",
+    "lgd_code": "4608"
+  },
+  {
+    "district_slug": "warangal",
+    "slug": "athmakur",
+    "name_en": "Athmakur",
+    "name_te": "ఆత్మాకూర్",
+    "lgd_code": "4694"
+  },
+  {
+    "district_slug": "warangal",
+    "slug": "chennaraopet",
+    "name_en": "Chennaraopet",
+    "name_te": "చెన్నారావుపేట",
+    "lgd_code": "4712"
+  },
+  {
+    "district_slug": "warangal",
+    "slug": "damera",
+    "name_en": "Damera",
+    "name_te": "దామెర",
+    "lgd_code": "6375"
+  },
+  {
+    "district_slug": "warangal",
+    "slug": "duggondi",
+    "name_en": "Duggondi",
+    "name_te": "దుగ్గొండి",
+    "lgd_code": "4693"
+  },
+  {
+    "district_slug": "warangal",
+    "slug": "geesugonda",
+    "name_en": "Geesugonda",
+    "name_te": "గీసుగొండ",
+    "lgd_code": "4707"
+  },
+  {
+    "district_slug": "warangal",
+    "slug": "khanapur",
+    "name_en": "Khanapur",
+    "name_te": "ఖానాపూర్",
+    "lgd_code": "4709"
+  },
+  {
+    "district_slug": "warangal",
+    "slug": "nadikula",
+    "name_en": "Nadikula",
+    "name_te": "Nadikula మండలం",
+    "lgd_code": "6547"
+  },
+  {
+    "district_slug": "warangal",
+    "slug": "nallabelli",
+    "name_en": "Nallabelli",
+    "name_te": "నల్లబెల్లి",
+    "lgd_code": "4692"
+  },
+  {
+    "district_slug": "warangal",
+    "slug": "narsampet",
+    "name_en": "Narsampet",
+    "name_te": "నర్సంపేట",
+    "lgd_code": "4708"
+  },
+  {
+    "district_slug": "warangal",
+    "slug": "nekkonda",
+    "name_en": "Nekkonda",
+    "name_te": "నెక్కొండ",
+    "lgd_code": "4713"
+  },
+  {
+    "district_slug": "warangal",
+    "slug": "parkal",
+    "name_en": "Parkal",
+    "name_te": "పర్కాల",
+    "lgd_code": "4679"
+  },
+  {
+    "district_slug": "warangal",
+    "slug": "parvathagiri",
+    "name_en": "Parvathagiri",
+    "name_te": "పర్వతగిరి",
+    "lgd_code": "4714"
+  },
+  {
+    "district_slug": "warangal",
+    "slug": "rayaparthy",
+    "name_en": "Rayaparthy",
+    "name_te": "రాయపర్తి",
+    "lgd_code": "4703"
+  },
+  {
+    "district_slug": "warangal",
+    "slug": "sangem",
+    "name_en": "Sangem",
+    "name_te": "సంగెం",
+    "lgd_code": "4705"
+  },
+  {
+    "district_slug": "warangal",
+    "slug": "shayampet",
+    "name_en": "Shayampet",
+    "name_te": "శాయంపేట్",
+    "lgd_code": "4691"
+  },
+  {
+    "district_slug": "warangal",
+    "slug": "wardhannapet",
+    "name_en": "Wardhannapet",
+    "name_te": "వర్దన్నపేట",
+    "lgd_code": "4704"
+  },
+  {
+    "district_slug": "yadadri-bhuvanagiri",
+    "slug": "adda-guduru",
+    "name_en": "Adda Guduru",
+    "name_te": "అడ్డగూడూరు",
+    "lgd_code": "6310"
+  },
+  {
+    "district_slug": "yadadri-bhuvanagiri",
+    "slug": "alair",
+    "name_en": "Alair",
+    "name_te": "ఆలేరు",
+    "lgd_code": "4617"
+  },
+  {
+    "district_slug": "yadadri-bhuvanagiri",
+    "slug": "atmakur-m",
+    "name_en": "Atmakur (M)",
+    "name_te": "ఆత్మకూరు (మో)",
+    "lgd_code": "4626"
+  },
+  {
+    "district_slug": "yadadri-bhuvanagiri",
+    "slug": "b-pochampally",
+    "name_en": "B Pochampally",
+    "name_te": "బి.పోచంపల్లి",
+    "lgd_code": "4630"
+  },
+  {
+    "district_slug": "yadadri-bhuvanagiri",
+    "slug": "bhongir",
+    "name_en": "Bhongir",
+    "name_te": "భూవనగిరి",
+    "lgd_code": "4628"
+  },
+  {
+    "district_slug": "yadadri-bhuvanagiri",
+    "slug": "bibinagar",
+    "name_en": "Bibinagar",
+    "name_te": "బీబినగర్",
+    "lgd_code": "4629"
+  },
+  {
+    "district_slug": "yadadri-bhuvanagiri",
+    "slug": "bommalaramaram",
+    "name_en": "Bommalaramaram",
+    "name_te": "బొమ్మలరామారం",
+    "lgd_code": "4613"
+  },
+  {
+    "district_slug": "yadadri-bhuvanagiri",
+    "slug": "choutuppal",
+    "name_en": "Choutuppal",
+    "name_te": "చౌట్టుప్పల్",
+    "lgd_code": "4631"
+  },
+  {
+    "district_slug": "yadadri-bhuvanagiri",
+    "slug": "motakonduru",
+    "name_en": "Motakonduru",
+    "name_te": "మూటకొండూరు",
+    "lgd_code": "6309"
+  },
+  {
+    "district_slug": "yadadri-bhuvanagiri",
+    "slug": "mothkur",
+    "name_en": "Mothkur",
+    "name_te": "మోతుకూరు",
+    "lgd_code": "4625"
+  },
+  {
+    "district_slug": "yadadri-bhuvanagiri",
+    "slug": "narayanpur",
+    "name_en": "Narayanpur",
+    "name_te": "నారాయణపూర్",
+    "lgd_code": "4648"
+  },
+  {
+    "district_slug": "yadadri-bhuvanagiri",
+    "slug": "rajapeta",
+    "name_en": "Rajapeta",
+    "name_te": "రాజాపేట",
+    "lgd_code": "4615"
+  },
+  {
+    "district_slug": "yadadri-bhuvanagiri",
+    "slug": "ramannapet",
+    "name_en": "Ramannapet",
+    "name_te": "రామన్నపేట",
+    "lgd_code": "4632"
+  },
+  {
+    "district_slug": "yadadri-bhuvanagiri",
+    "slug": "thurkapally",
+    "name_en": "Thurkapally",
+    "name_te": "తుర్కపల్లి",
+    "lgd_code": "4614"
+  },
+  {
+    "district_slug": "yadadri-bhuvanagiri",
+    "slug": "valigonda",
+    "name_en": "Valigonda",
+    "name_te": "వలిగొండ",
+    "lgd_code": "4627"
+  },
+  {
+    "district_slug": "yadadri-bhuvanagiri",
+    "slug": "yadagirigutta",
+    "name_en": "Yadagirigutta",
+    "name_te": "యాదగిరి గుట్ట",
+    "lgd_code": "4616"
+  }
+]

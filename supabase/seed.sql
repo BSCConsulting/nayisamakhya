@@ -41,7 +41,8 @@ ON CONFLICT (slug) DO UPDATE SET
   name_te = EXCLUDED.name_te,
   zone = EXCLUDED.zone;
 
--- Sample mandals only (phase 2 will expand). Districts without mandals are expected for now.
+-- Sample rich hubs (kept for portal content). Full 589-mandal directory:
+-- run `seed_phase2_mandals.sql` after phase 1 districts.
 WITH d AS (SELECT id, slug FROM districts WHERE slug IN ('suryapet', 'khammam', 'adilabad'))
 INSERT INTO mandals (
   district_id, slug, name_en, name_te,

@@ -1,6 +1,10 @@
 import { NextResponse } from "next/server";
 import { getSupabase } from "@/lib/supabase/client";
 import { listDistricts } from "@/lib/data/districts";
+import {
+  canonicalDistrictSlug,
+  canonicalMandalSlug,
+} from "@/lib/data/locationAliases";
 import { listMandalsDirectory } from "@/lib/data/mandalsDirectory";
 
 export const runtime = "nodejs";
@@ -25,8 +29,6 @@ function staticLocations(): {
   districts: LocationDistrict[];
   mandals: LocationMandal[];
 } {
-  // Client selector uses slug as district id so cascading stays stable
-  // whether data comes from static files or Supabase UUIDs.
   const districts: LocationDistrict[] = listDistricts()
     .map((d) => ({
       id: d.slug,
@@ -49,10 +51,10 @@ function staticLocations(): {
   return { districts, mandals };
 }
 
-function mergeBySlug<T extends { slug: string }>(
+function mergeByKey<T>(
   base: T[],
   remote: T[],
-  keyFn: (row: T) => string = (row) => row.slug,
+  keyFn: (row: T) => string,
 ): T[] {
   const map = new Map(base.map((row) => [keyFn(row), row]));
   for (const row of remote) {
@@ -88,8 +90,9 @@ export async function GET() {
           name_en: string;
           name_te: string;
         }>) {
-          uuidToSlug.set(row.id, row.slug);
+          uuidToSlug.set(row.id, canonicalDistrictSlug(row.slug));
         }
+
         const remoteDistricts: LocationDistrict[] = (
           dRes.data as Array<{
             id: string;
@@ -97,15 +100,21 @@ export async function GET() {
             name_en: string;
             name_te: string;
           }>
-        ).map((row) => ({
-          id: row.slug,
-          slug: row.slug,
-          name_en: row.name_en,
-          name_te: row.name_te,
-        }));
-        districts = mergeBySlug(fallback.districts, remoteDistricts).sort(
-          (a, b) => a.name_en.localeCompare(b.name_en),
-        );
+        ).map((row) => {
+          const slug = canonicalDistrictSlug(row.slug);
+          return {
+            id: slug,
+            slug,
+            name_en: row.name_en,
+            name_te: row.name_te,
+          };
+        });
+
+        districts = mergeByKey(
+          fallback.districts,
+          remoteDistricts,
+          (row) => row.slug,
+        ).sort((a, b) => a.name_en.localeCompare(b.name_en));
       }
 
       if (!mRes.error && mRes.data?.length) {
@@ -119,19 +128,21 @@ export async function GET() {
           }>
         )
           .map((row) => {
-            const districtSlug =
-              uuidToSlug.get(row.district_id) || row.district_id;
+            const districtSlug = canonicalDistrictSlug(
+              uuidToSlug.get(row.district_id) || row.district_id,
+            );
+            const slug = canonicalMandalSlug(row.slug);
             return {
               id: row.id,
               district_id: districtSlug,
-              slug: row.slug,
+              slug,
               name_en: row.name_en,
               name_te: row.name_te,
             };
           })
           .filter((row) => Boolean(row.district_id));
 
-        mandals = mergeBySlug(
+        mandals = mergeByKey(
           fallback.mandals,
           remoteMandals,
           (row) => `${row.district_id}::${row.slug}`,
